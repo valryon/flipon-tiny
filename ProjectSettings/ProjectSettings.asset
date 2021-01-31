@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Damien Mayance
-  productName: Flipon
+  productName: Tiny Flipon
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -124,7 +124,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.4.1
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -169,7 +169,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: io.pixelnest.pon
-    Standalone: com.pid.flipon
+    Standalone: io.mayance.tinyflipon
     Tizen: io.pixelnest.patapon
     iOS: io.pixelnest.pon
     tvOS: io.pixelnest.patapon
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 0a9778b8c86b6024d96b281e4af2a3b9, type: 3}
+      m_Icon: {fileID: 2800000, guid: 524d895f4251e6b4d8798a200e1aefa0, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -733,7 +733,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: ODIN_INSPECTOR
+    1: 
     4: ODIN_INSPECTOR
     7: ODIN_INSPECTOR
     13: ODIN_INSPECTOR
