@@ -39,6 +39,17 @@ What is not included?
 - ❌ Custom editor tools
 - ❌ Console and mobile ports
 
+## Code Architecture & quality 
+
+**THIS IS A FAR FROM PERFECT CODEBASE** and it doesn't matter. I'm not releasing it because I want to show my C# skill, instead I want to show what a released game looks like inside: complex, some dead code (but some dead code is link to the "tiny" part), lots of code that could be refactored, scrap from previous projects... 
+
+Now, with Flipon I wanted to avoid using Unity's scene as much as possible except for the UI. That's why the `Game` scene doesn't display anything when not running: everything is created on Play.
+
+I also wanted to have a testable independant C# project for the `Core`. That's why you have `Block` (core) and `BlockScript` (Unity MonoBehaviour).
+Turns out it wasn't a great idea, but I did manage to have Unit tests for most of that part. Also it could be reused in ahything else (ML, Flipon 99 players online, whatever).
+
+BUT in the end a lot of game logic also happen in `PonGameScript` and `GridScript` (like chain detection), so it is far from perfect.
+
 ## How to run
 
 Open the project in [Unity](unity3d.com/) (2019.4.0f18).
