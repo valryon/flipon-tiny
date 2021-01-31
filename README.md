@@ -11,6 +11,8 @@ Get the original game on:
 - [Android](https://play.google.com/store/apps/details?id=com.pid.flipon) 
 - [iOS](https://apps.apple.com/us/app/flipon/id1535461342)
 
+The game was made by me (dev, project manager, release), Aurélien Regard (2D art), Yoann Bazoge (UI/UX), Swann Ménage (sound design) and Zander Noriega (music).
+
 ## What is Tiny Flipon
 
 Tiny Flipon is a playable Unity project containing the core gameplay of Flipon. Most of the source code is a direct copy of what is in the complete game.
