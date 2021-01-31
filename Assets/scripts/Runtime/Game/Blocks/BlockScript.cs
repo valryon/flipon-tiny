@@ -13,10 +13,7 @@ namespace Pon
   /// </summary>
   public class BlockScript : MonoBehaviour
   {
-    public static Vector2 DefaultMovingSpeed = new Vector2(12f, 12.5f);
-
-    private static readonly int Alpha = Shader.PropertyToID("_Alpha");
-    private static readonly int Blackness = Shader.PropertyToID("_Val");
+    public static Vector2 defaultMovingSpeed = new Vector2(12f, 12.5f);
 
     public const int HIGHLIGHT_ORDER = 50;
     private const int SELECT_ORDER = 10;
@@ -28,7 +25,7 @@ namespace Pon
     #region Members
 
     public Block block;
-    public Vector2 movingSpeed = DefaultMovingSpeed;
+    public Vector2 movingSpeed = defaultMovingSpeed;
     public Vector2 shift;
 
     public event System.Action<BlockDefinition> OnEmpty;
@@ -37,12 +34,10 @@ namespace Pon
     private SpriteRenderer hideRenderer;
     private BoxCollider2D collider2d;
 
-    private GridScript parent;
     private float darkness;
     private int dangerHeight;
-    private bool isScrollingOn = true;
 
-    private float previousDarkness, previousAlpha;
+    private float previousDarkness;
 
     #endregion
 
@@ -69,15 +64,9 @@ namespace Pon
       var grid = FindObjectOfType<GridScript>();
       if (block != null) SetBlock(block, grid.TheGrid.height, !grid.settings.noScrolling);
     }
-
-    void Start()
-    {
-      parent = GetComponentInParent<GridScript>();
-    }
-
+    
     void OnDestroy()
     {
-      parent = null;
       OnEmpty = null;
     }
 
@@ -117,19 +106,11 @@ namespace Pon
         darkness = 0;
       }
 
-      // Update HSV shader. COST CPU
-      var a = spriteRenderer.color.a;
       if (darkness != previousDarkness)
       {
-        spriteRenderer.material.SetFloat(Blackness, 1f - darkness);
+        spriteRenderer.color= Color.Lerp(Color.white, Color.black, darkness);
       }
-
-      if (a != previousAlpha)
-      {
-        spriteRenderer.material.SetFloat(Alpha, a);
-      }
-
-      previousAlpha = a;
+      
       previousDarkness = darkness;
     }
 
@@ -154,7 +135,6 @@ namespace Pon
       block.OnNewNeighbor += UpdateSlicedSprite;
 
       dangerHeight = height;
-      isScrollingOn = scrollingOn;
     }
 
     public void SetMaterial()
@@ -273,9 +253,15 @@ namespace Pon
       {
         Reveal(0, 2.5f);
       }
+      
+      // Blink fade
+      spriteRenderer.DOFade(0.5f, 0.1f).SetLoops(-1, LoopType.Yoyo);
 
       yield return new WaitForSeconds(BLINK_DURATION);
 
+      spriteRenderer.DOKill();
+      spriteRenderer.DOFade(0.75f, 0f);
+      
       // Grow...
       var previousScale = transform.localScale;
       StartCoroutine(Interpolators.Curve(Interpolators.EaseOutCurve, 0f, 1f, GROW_DURATION,

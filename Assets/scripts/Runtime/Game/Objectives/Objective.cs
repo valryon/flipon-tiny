@@ -45,7 +45,7 @@ namespace Pon
     public int speedLevel;
     public int highestChain;
     public int totalChains;
-    public int digHeight;
+    public int digHeight; // ⚠ Not working in the tiny project
 
     public ObjectiveStats(PlayerScript p1, float timeElapsed)
       : this(p1.player.Score, p1.grid.SpeedLevel, timeElapsed,

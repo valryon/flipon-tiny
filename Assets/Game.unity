@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 2017043633}
   - component: {fileID: 2017043632}
   m_Layer: 0
-  m_Name: Game Settings
+  m_Name: GAME SETTINGS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
     startLines: 3
     startLevel: 0
     limitLevel: 0
-    speedUpDuration: 1
+    speedUpDuration: 0.2
     noScrolling: 0
     noLevelUp: 0
     hideOnPause: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
     type: 0
     name: Me
     allowGridAngle: 0
-    power: 0
+    power: 1
     background: {fileID: 21300000, guid: d254bb4c46defb44d8ea71d744bf9da2, type: 3}
     gridViewport:
       serializedVersion: 2
@@ -295,7 +295,7 @@ MonoBehaviour:
     type: 1
     name: Bot
     allowGridAngle: 0
-    power: 0
+    power: 3
     background: {fileID: 21300000, guid: d254bb4c46defb44d8ea71d744bf9da2, type: 3}
     gridViewport:
       serializedVersion: 2
@@ -316,7 +316,7 @@ MonoBehaviour:
       timeReached: 0
       timeMax: 0
       highestCombo: 0
-      totalCombos: 0
+      totalCombos: 30
       total4Combos: 0
       total5Combos: 0
       totalLCombos: 0

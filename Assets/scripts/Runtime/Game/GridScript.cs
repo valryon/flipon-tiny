@@ -59,9 +59,10 @@ namespace Pon
 
     [HideInInspector]
     public Rect viewportRect = new Rect(0, 0, 1, 1);
+
     [HideInInspector]
     public float angle = 0;
-    
+
     [HideInInspector]
     public Player player;
 
@@ -145,9 +146,10 @@ namespace Pon
       level = settings.startLevel;
       SetSpeedForLevel();
       currentSpeed = ScrollingSpeed * currentSpeedBonus;
-      
+
       // Create grid
-      grid = new Grid(transform.position, settings.width, settings.height, settings.previewLines, BlockDefinitionBank.Instance);
+      grid = new Grid(transform.position, settings.width, settings.height, settings.previewLines,
+        BlockDefinitionBank.Instance);
       grid.OnComboDetected += ComboDetected;
       grid.OnFallEnd += FallEnd;
       grid.OnLineUp += OnLineUp;
@@ -496,6 +498,10 @@ namespace Pon
 
       GameUIScript.DisplayComboWidget(this, comboMultiplier, blocksCount, points, comboBlocks[0].Definition,
         loc, locs);
+      if (isChain)
+      {
+        GameUIScript.DisplayChainWidget(this, chainCount, points, comboBlocks[0].Definition.color, loc);
+      }
     }
 
     private int GetScore(int blocksCount, bool isChain)
@@ -876,7 +882,7 @@ namespace Pon
     #endregion
 
     #region Garbage blocks
-    
+
     public struct GarbageStored
     {
       public int width;

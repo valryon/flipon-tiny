@@ -112,7 +112,7 @@ namespace Pon
       if (movesCount > 1)
       {
         Target.block.movingSpeed =
-          new Vector2(BlockScript.DefaultMovingSpeed.x * 1.5f, BlockScript.DefaultMovingSpeed.y);
+          new Vector2(BlockScript.defaultMovingSpeed.x * 1.5f, BlockScript.defaultMovingSpeed.y);
       }
     }
 
@@ -122,7 +122,7 @@ namespace Pon
 
       if (Target != null)
       {
-        Target.block.movingSpeed = BlockScript.DefaultMovingSpeed;
+        Target.block.movingSpeed = BlockScript.defaultMovingSpeed;
       }
 
       Target = null;

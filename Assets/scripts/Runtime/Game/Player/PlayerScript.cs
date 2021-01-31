@@ -23,6 +23,12 @@ namespace Pon
 
     public bool AnyWasPressed => move != Vector2.zero || action || speed || power;
 
+    /// <summary>
+    /// ⚠ This is not code from the real game!
+    /// The game use InControl, a premium plugin.
+    /// This is just a simple 1P keyboard mapping.
+    /// </summary>
+    /// <returns></returns>
     public static InputState GetKeyboardState()
     {
       return new InputState()
@@ -208,7 +214,8 @@ namespace Pon
       }
       else if (input == InputType.TactileMouse)
       {
-        if (InputState.GetKeyboardState().AnyWasPressed || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return) ||
+        if (InputState.GetKeyboardState().AnyWasPressed || Input.GetKeyDown(KeyCode.Escape) ||
+            Input.GetKeyDown(KeyCode.Return) ||
             Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.AltGr)
             || Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt)
             || Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)
@@ -550,7 +557,7 @@ namespace Pon
 
     protected virtual InputState GetPadState()
     {
-      var state = new InputState();
+      var state = InputState.GetKeyboardState();
       var isKeyboard = true; // Gamepad removed in tiny
       var thresholdX = isKeyboard ? KEYBOARD_THRESHOLD_X : PAD_THRESHOLD_X;
       var thresholdY = isKeyboard ? KEYBOARD_THRESHOLD_Y : PAD_THRESHOLD_Y;
@@ -558,7 +565,7 @@ namespace Pon
       var repeatCooldownNext = isKeyboard ? KEYBOARD_REPEAT_COOLDOWN_NEXT : PAD_REPEAT_COOLDOWN_NEXT;
       var repeatThresholdX = isKeyboard ? KEYBOARD_REPEAT_THRESHOLD_X : PAD_REPEAT_THRESHOLD_X;
       var repeatThresholdY = isKeyboard ? KEYBOARD_REPEAT_THRESHOLD_Y : PAD_REPEAT_THRESHOLD_Y;
-      
+
       #region Movement
 
       Vector2 move = Vector3.zero;
@@ -724,10 +731,13 @@ namespace Pon
       {
         if (Mathf.Abs(dir.x) > 0.25f)
         {
+          int dirInt = (int) Mathf.Sign(dir.x);
+          grid.Move(target.block, dirInt);
           moveType = 1;
         }
         else if (dir.y < -0.25f)
         {
+          grid.ForceFall(target.block);
           moveType = 2;
         }
       }

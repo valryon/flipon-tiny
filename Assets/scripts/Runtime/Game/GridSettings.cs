@@ -34,9 +34,6 @@ namespace Pon
     public bool noScrolling = false;
     public bool noLevelUp = false;
 
-    [System.NonSerialized]
-    public bool animateBlockSpawn = true;
-
     public bool hideOnPause;
 
     public GridSettings(int level = 1)
