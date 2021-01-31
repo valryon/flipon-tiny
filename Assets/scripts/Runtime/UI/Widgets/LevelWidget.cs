@@ -29,7 +29,7 @@ namespace Pon
         levelText.transform.DOKill();
         levelText.transform.localScale = baseScale;
         levelText.transform.DOPunchScale(Vector3.one * 1.15f, 0.75f, 1).SetDelay(0.15f);
-        
+
         var color = levelText.color;
         levelText.color = Color.Lerp(color, Color.white, 0.5f);
         levelText.DOColor(color, 0.5f);

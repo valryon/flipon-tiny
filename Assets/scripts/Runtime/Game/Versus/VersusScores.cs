@@ -22,6 +22,7 @@ namespace Pon.Versus
       P7 = 0;
       P8 = 0;
     }
+
     public static void Win(int playerIndex)
     {
       switch (playerIndex)
@@ -52,6 +53,7 @@ namespace Pon.Versus
           break;
       }
     }
+
     public static int Get(int playerIndex)
     {
       switch (playerIndex)

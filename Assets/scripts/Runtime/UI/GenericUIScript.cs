@@ -40,7 +40,7 @@ namespace Pon
     private TimeWidget time;
 
     #endregion
-    
+
     #region Public methods
 
     public abstract void SetPlayersCount(int totalPlayersCount, int aiPlayerCount);

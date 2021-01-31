@@ -159,17 +159,17 @@ namespace Pon
     }
 
     private DynamicVersusPlayerUI CreatePlayerUI()
-      {
-        playerUI.gameObject.SetActive(false);
+    {
+      playerUI.gameObject.SetActive(false);
 
-        var ui = Instantiate(playerUI.gameObject, transform, true);
-        ui.transform.localScale = Vector3.one;
-        ui.SetActive(true);
+      var ui = Instantiate(playerUI.gameObject, transform, true);
+      ui.transform.localScale = Vector3.one;
+      ui.SetActive(true);
 
-        var pUI = ui.GetComponent<DynamicVersusPlayerUI>();
+      var pUI = ui.GetComponent<DynamicVersusPlayerUI>();
 
-        return pUI;
-      }
+      return pUI;
+    }
 
 
     public override void SetScore(int player, string t)

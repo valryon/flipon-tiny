@@ -8,7 +8,7 @@ namespace Pon
   {
     public Image fill;
     public TextMeshProUGUI text;
-    
-    public GridScript.GarbageStored GarbageStored  { get; set; }
+
+    public GridScript.GarbageStored GarbageStored { get; set; }
   }
 }

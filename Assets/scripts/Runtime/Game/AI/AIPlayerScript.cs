@@ -37,8 +37,8 @@ namespace Pon
 
       var game = PonGameScript.instance;
       aiSettings = player.GetAISettings(); // Get it from settings!
-      
-      var weights =  aiSettings.weights;
+
+      var weights = aiSettings.weights;
 
       // Add weights on objectives if we have some
       if (game != null && game.Objectives != null)

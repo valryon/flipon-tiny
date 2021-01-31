@@ -34,7 +34,7 @@ namespace Pon
 
       DontDestroyOnLoad(gameObject);
     }
-    
+
     #endregion
 
     #region Private methods

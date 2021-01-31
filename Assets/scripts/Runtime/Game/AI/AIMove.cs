@@ -40,7 +40,7 @@ namespace Pon
     {
       this.parent = parent;
     }
- 
+
     public override string ToString()
     {
       return $"(X:{x} Y:{y} dir:{direction}) weight:{weight} depth:{depthLevel} comboCount:{comboCount}";

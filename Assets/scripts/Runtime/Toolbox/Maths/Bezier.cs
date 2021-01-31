@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using UnityEngine;
 
 namespace Pon
@@ -29,7 +30,7 @@ namespace Pon
       float uu = u * u;
       float uuu = uu * u;
       float ttt = tt * t;
-      
+
       Vector3 p = uuu * p0; //first term
       p += 3 * uu * t * p1; //second term
       p += 3 * u * tt * p2; //third term

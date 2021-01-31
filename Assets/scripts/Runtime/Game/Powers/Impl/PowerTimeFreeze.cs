@@ -5,8 +5,8 @@ namespace Pon.Powers
 {
   public class PowerTimeFreeze : Power
   {
-    public override PowerType PowerType => PowerType.TimeFreeze; 
-    
+    public override PowerType PowerType => PowerType.TimeFreeze;
+
     protected override IEnumerator UsePowerRoutine(GridScript gridScript, Grid grid)
     {
       const float DURATION = 5f;
@@ -35,12 +35,12 @@ namespace Pon.Powers
 
       EndPower(gridScript);
     }
-    
+
     public override bool CanUseOnOpponent(GridScript gridScript, Grid grid)
     {
       return false;
     }
-    
+
     protected override IEnumerator UsePowerOnOpponent(GridScript gridScript, Grid grid, PowerUseParams param)
     {
       EndPowerOnOpponent(gridScript, grid);

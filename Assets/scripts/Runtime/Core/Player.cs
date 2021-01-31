@@ -18,6 +18,7 @@ namespace Pon
   {
     [Header("Player")]
     public int index;
+
     public PlayerType type;
     public string name;
     public bool allowGridAngle;
@@ -26,9 +27,10 @@ namespace Pon
 
     [HideInInspector]
     public Rect gridViewport = new Rect(0, 0, 1, 1);
+
     [HideInInspector]
     public float gridAngle = 0;
-    
+
     [Header("AI")]
     public DifficultySettings difficultySettings;
 

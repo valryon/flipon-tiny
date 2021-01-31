@@ -64,7 +64,7 @@ namespace Pon
       var grid = FindObjectOfType<GridScript>();
       if (block != null) SetBlock(block, grid.TheGrid.height, !grid.settings.noScrolling);
     }
-    
+
     void OnDestroy()
     {
       OnEmpty = null;
@@ -108,9 +108,9 @@ namespace Pon
 
       if (darkness != previousDarkness)
       {
-        spriteRenderer.color= Color.Lerp(Color.white, Color.black, darkness);
+        spriteRenderer.color = Color.Lerp(Color.white, Color.black, darkness);
       }
-      
+
       previousDarkness = darkness;
     }
 
@@ -253,7 +253,7 @@ namespace Pon
       {
         Reveal(0, 2.5f);
       }
-      
+
       // Blink fade
       spriteRenderer.DOFade(0.5f, 0.1f).SetLoops(-1, LoopType.Yoyo);
 
@@ -261,7 +261,7 @@ namespace Pon
 
       spriteRenderer.DOKill();
       spriteRenderer.DOFade(0.75f, 0f);
-      
+
       // Grow...
       var previousScale = transform.localScale;
       StartCoroutine(Interpolators.Curve(Interpolators.EaseOutCurve, 0f, 1f, GROW_DURATION,
@@ -402,7 +402,7 @@ namespace Pon
     }
 
     #endregion
-    
+
     #region Selection
 
     private int selectionState;
@@ -491,6 +491,5 @@ namespace Pon
     }
 
     #endregion
-    
   }
 }

@@ -11,7 +11,7 @@ namespace Pon
   /// Random for gameplay, for a predictable seeded sequence.
   /// Careful with the calls, make sure they NEVER rely on a player action.
   /// </summary>
-  public class GameRandom 
+  public class GameRandom
   {
     /// <summary>
     /// Debug to see where random calls are done
@@ -76,7 +76,7 @@ namespace Pon
     /// </summary>
     public float Range(System.Random r, float min, float max)
     {
-      float v = (float)r.NextDouble() * (max - min) + min;
+      float v = (float) r.NextDouble() * (max - min) + min;
 
       if (debug) Log.Debug("RANDOM Range(" + min + "," + max + ")=" + v);
 
@@ -91,7 +91,7 @@ namespace Pon
       return new Vector2(
         Range(xMin, xMax),
         Range(yMin, yMax)
-        );
+      );
     }
 
     /// <summary>
@@ -120,5 +120,4 @@ namespace Pon
       return RandomEx.MatchingProbability<T>(probabilityTable, Range(r, 0f, total));
     }
   }
-
 }

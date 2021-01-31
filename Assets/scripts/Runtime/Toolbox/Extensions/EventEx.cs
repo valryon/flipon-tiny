@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using System;
 
 namespace Pon
@@ -8,9 +9,11 @@ namespace Pon
   public static class EventEx
   {
     #region Members
+
     #endregion
 
     #region Constructors
+
     #endregion
 
     #region Methods

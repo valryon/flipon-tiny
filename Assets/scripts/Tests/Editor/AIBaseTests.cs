@@ -106,7 +106,7 @@ namespace Pon.Tests
     private void TestGetMoves(string gridString, int expectedMoves)
     {
       var grid = GridTests.CreateGrid(gridString, 0);
-      var solver = new AISolver(grid, new AISettings() { maxDepth = 1, pickNotTheBestProbability = 0f});
+      var solver = new AISolver(grid, new AISettings() {maxDepth = 1, pickNotTheBestProbability = 0f});
       var moves = solver.GetMoves(0, grid.ToIntArray(), 0, grid.width, null);
 
       Assert.AreEqual(expectedMoves, moves.Count);
@@ -137,7 +137,7 @@ namespace Pon.Tests
     private void TestWeightMoves(string gridString, bool hasWeight)
     {
       var grid = GridTests.CreateGrid(gridString, 0);
-      var solver = new AISolver(grid, new AISettings(){ maxDepth = 1, pickNotTheBestProbability = 0f});
+      var solver = new AISolver(grid, new AISettings() {maxDepth = 1, pickNotTheBestProbability = 0f});
       var moves = solver.GetWeightedMoves(0, 0, grid.ToIntArray(), 0, grid.width, null);
 
       if (hasWeight)

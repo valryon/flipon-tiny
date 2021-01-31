@@ -22,7 +22,7 @@ namespace Pon
 
     [Header("Powers")]
     public List<PowerData> PowerData;
-    
+
     private void Awake()
     {
       Instance = this;

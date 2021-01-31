@@ -134,7 +134,7 @@ namespace Pon
       Profiler.EndSample();
 #endif
     }
-    
+
 
     private void PrepareMoveToPlay(AIMove move)
     {

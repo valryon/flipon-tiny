@@ -12,10 +12,13 @@ namespace Pon
 
     [Range(0, 1f)]
     public float alphaMin = 0.25f;
+
     [Range(0, 1f)]
     public float alphaMax = 1f;
+
     [Range(-1, 1f)]
     public float signStart = 1f;
+
     [Range(0, 5f)]
     public float duration = 1f;
 

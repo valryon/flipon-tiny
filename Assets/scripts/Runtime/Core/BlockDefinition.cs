@@ -17,9 +17,10 @@ namespace Pon
 
     [Header("Block")]
     public Color color;
+
     public Sprite sprite;
     public Material material;
-    
+
     public virtual bool isGarbage => false;
 
     private bool IsNotGarbage => !isGarbage;

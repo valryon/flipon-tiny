@@ -88,7 +88,7 @@ namespace Pon
         completed.gameObject.SetActive(false);
         transform.DOKill();
         transform.DOScale(1f, 0f);
-        
+
         const float MIN = 0.1f;
         const float MAX = 1f;
         filler.DOKill();

@@ -1,6 +1,7 @@
 // Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using System;
 using System.Collections;
 using UnityEngine;
@@ -81,7 +82,7 @@ namespace Pon
     /// <returns></returns>
     public static IEnumerator Linear(float from, float to, float duration, Action<float> step, Action completed)
     {
-      return InterpolateFloat(false, LinearCurve, from, to, duration,step, completed);
+      return InterpolateFloat(false, LinearCurve, from, to, duration, step, completed);
     }
 
     /// <summary>
@@ -93,7 +94,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator LinearRealtime(float from, float to, float duration, System.Action<float> step, System.Action completed)
+    public static IEnumerator LinearRealtime(float from, float to, float duration, System.Action<float> step,
+      System.Action completed)
     {
       return InterpolateFloat(true, LinearCurve, from, to, duration, step, completed);
     }
@@ -123,7 +125,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator Curve(AnimationCurve curve, float from, float to, float duration, System.Action<float> step, System.Action completed)
+    public static IEnumerator Curve(AnimationCurve curve, float from, float to, float duration,
+      System.Action<float> step, System.Action completed)
     {
       return InterpolateFloat(false, curve, from, to, duration, step, completed);
     }
@@ -138,7 +141,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator Curve(AnimationCurve curve, Vector3 from, Vector3 to, float duration, System.Action<Vector3> step, System.Action completed)
+    public static IEnumerator Curve(AnimationCurve curve, Vector3 from, Vector3 to, float duration,
+      System.Action<Vector3> step, System.Action completed)
     {
       return InterpolateVector(false, curve, from, to, duration, step, completed);
     }
@@ -153,7 +157,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator CurveRealtime(AnimationCurve curve, Vector3 from, Vector3 to, float duration, System.Action<Vector3> step, System.Action completed)
+    public static IEnumerator CurveRealtime(AnimationCurve curve, Vector3 from, Vector3 to, float duration,
+      System.Action<Vector3> step, System.Action completed)
     {
       return InterpolateVector(true, curve, from, to, duration, step, completed);
     }
@@ -168,7 +173,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator CurveRealtime(AnimationCurve curve, float from, float to, float duration, System.Action<float> step, System.Action completed)
+    public static IEnumerator CurveRealtime(AnimationCurve curve, float from, float to, float duration,
+      System.Action<float> step, System.Action completed)
     {
       return InterpolateFloat(true, curve, from, to, duration, step, completed);
     }
@@ -184,7 +190,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator InterpolateFloat(bool realtime, AnimationCurve curve, float from, float to, float duration, System.Action<float> step, System.Action completed)
+    public static IEnumerator InterpolateFloat(bool realtime, AnimationCurve curve, float from, float to,
+      float duration, System.Action<float> step, System.Action completed)
     {
       float t = 0;
 
@@ -229,7 +236,8 @@ namespace Pon
     /// <param name="step"></param>
     /// <param name="completed"></param>
     /// <returns></returns>
-    public static IEnumerator InterpolateVector(bool realtime, AnimationCurve curve, Vector3 from, Vector3 to, float duration, System.Action<Vector3> step, System.Action completed)
+    public static IEnumerator InterpolateVector(bool realtime, AnimationCurve curve, Vector3 from, Vector3 to,
+      float duration, System.Action<Vector3> step, System.Action completed)
     {
       float t = 0;
 

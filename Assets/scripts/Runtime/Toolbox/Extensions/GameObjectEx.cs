@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace Pon
       where T : Component
     {
       T component = gameObject.GetComponent<T>();
-      if(component == default(T))
+      if (component == default(T))
       {
         component = gameObject.AddComponent<T>();
       }

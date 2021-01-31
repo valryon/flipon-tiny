@@ -12,7 +12,7 @@ namespace Pon
     Low,
     None
   }
-  
+
   /// <summary>
   /// Grid parameters as an object you pass from menu scene to game scene.
   /// </summary>
@@ -27,7 +27,7 @@ namespace Pon
     public bool disableChains;
     public bool enableObjectives;
     public Objective objective;
-    
+
     #endregion
 
     #region Timeline

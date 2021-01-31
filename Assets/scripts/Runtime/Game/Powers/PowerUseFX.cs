@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,7 @@ namespace Pon
           delta += 15;
         }
       }
+
       yield return null;
     }
 
@@ -135,6 +137,7 @@ namespace Pon
         Loom.RunCoroutine(AnimateSendSingle(gridScript, s));
         yield return new WaitForSeconds(Random.Range(0.015f, 0.135f));
       }
+
       yield return null;
     }
 
@@ -142,10 +145,10 @@ namespace Pon
     {
       const float DURATION = 1.35f;
       float t = 0f;
-      
-      Vector3 start = gridScript.transform.position 
-        + new Vector3(gridScript.settings.width, gridScript.settings.height, 0)
-        + RandomEx.GetVector3(0f, 4f, 0f, 4f, 0, 0);
+
+      Vector3 start = gridScript.transform.position
+                      + new Vector3(gridScript.settings.width, gridScript.settings.height, 0)
+                      + RandomEx.GetVector3(0f, 4f, 0f, 4f, 0, 0);
       Vector3 end = start + new Vector3(-12, -13, 0);
 
       while (t < DURATION)
@@ -169,5 +172,4 @@ namespace Pon
       }
     }
   }
-
 }

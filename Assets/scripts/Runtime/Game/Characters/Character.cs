@@ -6,7 +6,7 @@ namespace Pon
   {
     [Header("Settings")]
     public string characterName;
-    
+
     [Header("Sprites")]
     public Sprite icon;
 

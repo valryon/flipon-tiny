@@ -25,6 +25,7 @@ namespace Pon
       {
         magicNumber = 1.5f;
       }
+
       transform.position = new Vector3((p.grid.settings.width + 1) / magicNumber,
         transform.position.y, transform.position.z);
 
@@ -91,7 +92,7 @@ namespace Pon
         // if (player.grid.IsRainingGarbages) v.fill.fillAmount = 1f;
         // else
         // {
-          v.fill.fillAmount = 1f - player.grid.GarbageCooldownPercent;
+        v.fill.fillAmount = 1f - player.grid.GarbageCooldownPercent;
         // }
       }
     }

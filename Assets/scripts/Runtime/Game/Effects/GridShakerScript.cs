@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using UnityEngine;
 
 namespace Pon
@@ -39,7 +40,7 @@ namespace Pon
     void Update()
     {
       duration -= Time.deltaTime;
-      if(duration < 0)
+      if (duration < 0)
       {
         // Reset position
         gameObject.transform.position = originalPosition;

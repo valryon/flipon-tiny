@@ -325,13 +325,13 @@ namespace Pon
 
       return grid;
     }
-    
+
     public void StartGrids()
     {
       foreach (var playerScript in players)
       {
         playerScript.grid.IsStarted = true;
-      } 
+      }
     }
 
     #endregion

@@ -35,7 +35,7 @@ namespace Pon
       return new Vector2(
         Random.Range(xMin, xMax),
         Random.Range(yMin, yMax)
-        );
+      );
     }
 
     /// <summary>
@@ -89,7 +89,7 @@ namespace Pon
         Random.Range(xMin, xMax),
         Random.Range(yMin, yMax),
         Random.Range(zMin, zMax)
-        );
+      );
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ namespace Pon
         Random.Range(0f, 1f),
         Random.Range(0f, 1f),
         Random.Range(0f, 1f)
-        );
+      );
     }
 
     /// <summary>
@@ -159,6 +159,5 @@ namespace Pon
 
       return MatchingProbability<T>(probabilityTable, Random.Range(0, total));
     }
-
   }
 }

@@ -6,9 +6,9 @@ namespace Pon.Powers
   public class PowerShittyBlockSpawner : Power
   {
     public override float ChargeMultiplicator => 1.15f;
-    
-    public override PowerType PowerType => PowerType.ShittyBlockSpawner; 
-    
+
+    public override PowerType PowerType => PowerType.ShittyBlockSpawner;
+
     protected override IEnumerator UsePowerRoutine(GridScript gridScript, Grid grid)
     {
       gridScript.PowerCharge = 0f;

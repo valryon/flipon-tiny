@@ -19,6 +19,7 @@ namespace Pon
 
     [Header("Garbages")]
     public Sprite leftSprite;
+
     public Sprite middleSprite;
     public Sprite rightSprite;
   }

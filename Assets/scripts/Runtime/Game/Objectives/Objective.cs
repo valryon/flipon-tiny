@@ -195,7 +195,7 @@ namespace Pon
     {
       return (Objective) MemberwiseClone();
     }
-    
+
     public bool IsMultiObjectives => GetSubObjectives().Count > 1;
 
     public ObjectiveStats StartStats

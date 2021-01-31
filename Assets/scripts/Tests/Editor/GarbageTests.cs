@@ -272,7 +272,8 @@ namespace Pon.Tests
             var right = b.Right;
             while (right != null)
             {
-              Assert.AreEqual(b.position.y, right.position.y, debugMessage + "POS= " + b.position.y + " != " + right.position.y);
+              Assert.AreEqual(b.position.y, right.position.y,
+                debugMessage + "POS= " + b.position.y + " != " + right.position.y);
               Assert.AreEqual(b.y, right.y, debugMessage + "Y= " + b.y + " != " + right.y);
 
               right = right.Right;

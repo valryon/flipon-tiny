@@ -39,7 +39,8 @@ namespace Runtime.UI.Game.Widgets
         arrow.SetActive(true);
         var t = canvas.transform;
         t.position = new Vector3(basePosition.x, 0.8f, basePosition.z);
-        t.localPosition =  new Vector3(baseLocalPosition.x, t.localPosition.y, t.localPosition.z);;
+        t.localPosition = new Vector3(baseLocalPosition.x, t.localPosition.y, t.localPosition.z);
+        ;
       }
       else
       {

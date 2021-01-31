@@ -6,14 +6,14 @@ namespace Pon
     {
       if (string.IsNullOrEmpty(path)) return;
 #if UNITY_STANDALONE_WIN
-        OpenWindows(path);
+      OpenWindows(path);
 #elif UNITY_STANDALONE_OSX
         OpenMacOS(path);
 #elif UNITY_STANDALONE_LINUX
         OpenLinux(path);
 #endif
     }
-    
+
     private static void OpenWindows(string path)
     {
       var cleanPath = System.IO.Path.GetFullPath(path);

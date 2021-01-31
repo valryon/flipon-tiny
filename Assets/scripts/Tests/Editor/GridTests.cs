@@ -477,7 +477,7 @@ namespace Pon.Tests
       Assert.True(grid.Get(1, 1).IsEmpty);
       Assert.True(grid.Get(2, 1).IsEmpty);
     }
-    
+
     [Test]
     public void TestAirCombo()
     {
@@ -485,10 +485,7 @@ namespace Pon.Tests
 
       int comboCountComputed = 0;
 
-      grid.OnComboDetected += (blocks, n, i) =>
-      {
-        comboCountComputed += 1;
-      };
+      grid.OnComboDetected += (blocks, n, i) => { comboCountComputed += 1; };
 
       grid.Update(0f, 20f);
 

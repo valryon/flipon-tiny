@@ -1,6 +1,7 @@
 ﻿// Tiny Flipon by Damien Mayance
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.md', which is part of this source code package.
+
 using System;
 using UnityEngine;
 
@@ -25,6 +26,7 @@ namespace Pon
           t.SetPixel(x, y, c);
         }
       }
+
       t.Apply();
 
       return t;
@@ -37,13 +39,14 @@ namespace Pon
 
       for (int x = 0; x < t.width; x++)
       {
-        float p = (x / (float)t.width);
+        float p = (x / (float) t.width);
 
         for (int y = 0; y < t.height; y++)
         {
           t.SetPixel(x, y, Color.Lerp(color1, color2, p));
         }
       }
+
       t.Apply();
 
       return t;
@@ -60,6 +63,7 @@ namespace Pon
       {
         return null;
       }
+
       return Sprite.Create(t, new Rect(0, 0, t.width, t.height), pivot, pixelsPerUnit);
     }
   }

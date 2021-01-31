@@ -7,8 +7,8 @@ namespace Pon.Powers
   {
     public override float ChargeMultiplicator => 1.1f;
 
-    public override PowerType PowerType => PowerType.LineHider; 
-    
+    public override PowerType PowerType => PowerType.LineHider;
+
     protected override IEnumerator UsePowerRoutine(GridScript gridScript, Grid grid)
     {
       gridScript.PowerCharge = 0f;

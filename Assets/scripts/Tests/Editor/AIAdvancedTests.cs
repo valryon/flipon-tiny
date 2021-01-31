@@ -90,7 +90,7 @@ namespace Pon.Tests
                "3 0 2\n" +
                "3 0 2\n" +
                "1 0 1";
-      
+
       var grid = GridTests.CreateGrid(gs, 0);
       Assert.NotNull(grid);
       grid.Print();
@@ -104,7 +104,7 @@ namespace Pon.Tests
       foreach (var m in solver.Moves)
       {
         Debug.Log("Move " + m);
-        
+
         grid.Move(grid.Get(m.x, m.y), m.direction);
 
         for (var i = 0f; i < 10f; i += 0.05f)
@@ -114,14 +114,14 @@ namespace Pon.Tests
 
         var g1 = Grid.ToString(grid.ToIntArray());
         var g2 = Grid.ToString(m.gridAfterMove);
-        
+
         if (g1.StartsWith("0 0 0 \n")) g1 = g1.Replace("0 0 0 \n", "");
         if (g1.EndsWith("0 0 0 \n")) g1 = g1.Replace("0 0 0 \n", "");
         if (g2.StartsWith("0 0 0 \n")) g2 = g2.Replace("0 0 0 \n", "");
         if (g2.EndsWith("0 0 0 \n")) g1 = g1.Replace("0 0 0 \n", "");
 
         Debug.Log("COMPARE\n" + g1 + "VS\n" + g2);
-        
+
         Assert.AreEqual(g1, g2, "Grid after moves are different!");
       }
     }
