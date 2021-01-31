@@ -15,6 +15,8 @@ Get the original game on:
 
 Tiny Flipon is a playable Unity project containing the core gameplay of Flipon. Most of the source code is a direct copy of what is in the complete game.
 
+![Tiny Flipon GIF](tiny-flipon.gif)
+
 What is included?
 
 - ✅ Core logic: Grid of blocks, move horizontally, combo, chain
@@ -22,6 +24,7 @@ What is included?
 - ✅ Objectives 
 - ✅ Local multiplayer logic
 - ✅ "AI" 
+- ✅ Touch controls
 - ✅ Dynamic UI and screen split
 - ✅ Unit tests for gameplay
 
@@ -29,6 +32,7 @@ What is not included?
 
 - ❌ Assets (no sprites, no backgrounds, no sounds, no FXs) - no copyrighted files!
 - ❌ Third-party premium plugins (Odin Inspector, InControl, etc)
+- ❌ Gamepad support 
 - ❌ Menus, UI
 - ❌ Dialog system
 - ❌ i18n and texts
@@ -37,7 +41,15 @@ What is not included?
 
 ## How to run
 
-TODO
+Open the project in [Unity](unity3d.com/) (2019.4.0f18).
+
+Open the `Game` scene.
+
+Play. It should run.
+
+Now you can tweak the `GAME SETTINGS` GameObject to change players, objectives, grid size, speed, etc.
+
+![Game Settinngs GameObject](settings.png)
 
 ## Question? Join the discord
 
