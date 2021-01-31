@@ -34,6 +34,7 @@ What is not included?
 
 - ❌ Assets (no sprites, no backgrounds, no sounds, no FXs) - no copyrighted files!
 - ❌ Third-party premium plugins (Odin Inspector, InControl, etc)
+- ❌ Audio
 - ❌ Gamepad support 
 - ❌ Menus, UI
 - ❌ Dialog system
@@ -73,6 +74,9 @@ Join the [official Flipon discord](https://discord.gg/7jFZ2fC) if you have any q
 The gameplay code is this repository is the same than in the game.
 If you want to make a significant modification or addition, I may or may not add it in the final game. If so, I'll indeed properly credits your work.
 
+There's a `.DotSettings` file for Rider/Omnisharp if you want to follow the coding style of the prokject.
+
 Note: I use as much Gitmoji as possible my commit messages.
+
 
 
