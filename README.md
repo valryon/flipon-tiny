@@ -16,6 +16,7 @@ Get the original game on:
 Tiny Flipon is a playable Unity project containing the core gameplay of Flipon. Most of the source code is a direct copy of what is in the complete game.
 
 What is included?
+
 ✅ Core logic: Grid of blocks, move horizontally, combo, chain
 ✅ Unity project
 ✅ Objectives 
@@ -25,6 +26,7 @@ What is included?
 ✅ Unit tests for gameplay
 
 What is not included?
+
 ❌ Assets (no sprites, no backgrounds, no sounds, no FXs) - no copyrighted files!
 ❌ Third-party premium plugins (Odin Inspector, InControl, etc)
 ❌ Menus, UI
