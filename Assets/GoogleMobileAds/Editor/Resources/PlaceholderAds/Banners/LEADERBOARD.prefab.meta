@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: 60a76727b740d485fa446352e56931c5
+guid: 724b2eb8479233a4dbfcf13c823322ff
 labels:
 - gvh
-- gvh_version-8.5.2
-- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/LEADERBOARD.prefab
-timeCreated: 1480838400
-NativeFormatImporter:
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 100100000
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

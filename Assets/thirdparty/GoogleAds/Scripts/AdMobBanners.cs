@@ -5,12 +5,13 @@ using System.Collections;
 public class AdMobBanners : MonoBehaviour
 {
 #if UNITY_ANDROID
-	string adUnitid = "ca-app-pub-3940256099942544/6300978111*;
+	string adUnitid = "ca-app-pub-4133264752903581~5788723812";
 #elif UNITY_IPHONE
-	string adUnitId = "ca-app-pub-3940256099942544/2934735716*;
+	string adUnitId = "ca-app-pub-4133264752903581/3796985290";
 #else
 	string adUnitId = "unexpected platform";
 #endif
+	public string publisherID = "pub-4133264752903581";
 	public bool isTesting = true;
 	public bool guessSelfDeviceId = true;
 	public AdSizes size = AdSizes.SMART_BANNER;

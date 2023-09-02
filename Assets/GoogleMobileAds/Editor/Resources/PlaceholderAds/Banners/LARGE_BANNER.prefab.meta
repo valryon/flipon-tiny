@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: 2758392ec5c0c413886eaf50350c125e
+guid: 644a3b2b57100cb448f5c49c7f284f50
 labels:
 - gvh
-- gvh_version-8.5.2
-- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/LARGE_BANNER.prefab
-timeCreated: 1480838400
-NativeFormatImporter:
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 100100000
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -3,132 +3,189 @@ using Microsoft.SqlServer.Server;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AdRewards : MonoBehaviour
 {
-	public enum AdOrientation { HORIZONTAL, VERTICAL };
-
-	public void Start()
+	/// <summary>
+	/// UI element activated when an ad is ready to show.
+	/// </summary>
+	public GameObject AdLoadedStatus;
+	public GameObject RewardPopup;
+	// These ad units are configured to always serve test ads.
+#if UNITY_ANDROID
+	string adUnitId = "ca-app-pub-4133264752903581~5788723812";
+#elif UNITY_IPHONE
+      string adUnitId = "ca-app-pub-4133264752903581/8344688679";
+#else
+        private const string _adUnitId = "unused";
+#endif
+	RequestConfiguration requestConfiguration = new RequestConfiguration
 	{
+		TestDeviceIds = new List<string>
+			{
+				AdRequest.TestDeviceSimulator,
+                // Add your test device IDs (replace with your own device IDs).
+                #if UNITY_IPHONE
+                "96e23e80653bb28980d3f40beb58915c"
+                #elif UNITY_ANDROID
+                "75EF8D155528C04DACBBA6F36F433035"
+                #endif
+            }
+	};
+	private RewardedAd _rewardedAd;
+	public void Awake()
+	{
+		// Set your test devices.
+		// https://developers.google.com/admob/unity/test-ads
+		RequestConfiguration requestConfiguration = new RequestConfiguration
+		{
+			TestDeviceIds = new List<string>
+			{
+				AdRequest.TestDeviceSimulator,
+                // Add your test device IDs (replace with your own device IDs).
+                #if UNITY_IPHONE
+                "96e23e80653bb28980d3f40beb58915c"
+                #elif UNITY_ANDROID
+                "75EF8D155528C04DACBBA6F36F433035"
+                #endif
+            }
+		};
+		MobileAds.SetRequestConfiguration(requestConfiguration);
+
 		// Initialize the Google Mobile Ads SDK.
 		MobileAds.Initialize((InitializationStatus initStatus) =>
 		{
 			// This callback is called once the MobileAds SDK is initialized.
+
 		});
-		this.LoadRewardedAd();
 	}
-	// These ad units are configured to always serve test ads.
-#if UNITY_ANDROID
-  private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
-#elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
-#else
-	private string _adUnitId = "unused";
-#endif
-
-	private RewardedAd rewardedAd;
-
 	/// <summary>
-	/// Loads the rewarded ad.
+	/// Loads the ad.
 	/// </summary>
-	public void LoadRewardedAd()
+	public void LoadAd()
 	{
+
 		// Clean up the old ad before loading a new one.
-		if (rewardedAd != null)
+		if (_rewardedAd != null)
 		{
-			rewardedAd.Destroy();
-			rewardedAd = null;
+			DestroyAd();
 		}
 
-		Debug.Log("Loading the rewarded ad.");
+		Debug.Log("Loading rewarded ad.");
 
-		// create our request used to load the ad.
+		// Create our request used to load the ad.
 		var adRequest = new AdRequest();
-		adRequest.Keywords.Add("unity-admob-sample");
 
-		// send the request to load the ad.
-		RewardedAd.Load(_adUnitId, adRequest,
-			(RewardedAd ad, LoadAdError error) =>
-			{
-				// if error is not null, the load request failed.
-				if (error != null || ad == null)
-				{
-					Debug.LogError("Rewarded ad failed to load an ad " +
-								   "with error : " + error);
-					return;
-				}
-
-				Debug.Log("Rewarded ad loaded with response : "
-						  + ad.GetResponseInfo());
-
-				rewardedAd = ad;
-				ShowRewardedAd();
-	});
-    }
-public void ShowRewardedAd()
-{
-	const string rewardMsg =
-		"Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
-
-	if (rewardedAd != null && rewardedAd.CanShowAd())
-	{
-
-		RegisterEventHandlers(rewardedAd);
-		rewardedAd.Show((Reward reward) =>
+		// Send the request to load the ad.
+		RewardedAd.Load(adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
 		{
-				// TODO: Reward the user.
-				Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
-				// rewardedAd.OnAdRewarded += HandleRewardBasedVideoRewarded;
-			});
+			// If the operation failed with a reason.
+			if (error != null)
+			{
+				Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
+				return;
+			}
+			// If the operation failed for unknown reasons.
+			// This is an unexpected error, please report this bug if it happens.
+			if (ad == null)
+			{
+				Debug.LogError("Unexpected error: Rewarded load event fired with null ad and null error.");
+				return;
+			}
+
+			// The operation completed successfully.
+			Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
+
+			_rewardedAd = ad;
+
+			// Register to ad events to extend functionality.
+			RegisterEventHandlers(ad);
+
+			// Inform the UI that the ad is ready.
+			AdLoadedStatus?.SetActive(true);
+
+
+		});
 	}
-}
-public void HandleRewardBasedVideoRewarded(object sender, Reward args)
-{
-	string type = args.Type;
-	double amount = args.Amount;
-	//Reawrd User here
-	print("User rewarded with: " + amount.ToString() + " " + type);
-}
-private void RegisterEventHandlers(RewardedAd ad)
-{
-	// Raised when the ad is estimated to have earned money.
-	ad.OnAdPaid += (AdValue adValue) =>
+
+	/// <summary>
+	/// Shows the ad.
+	/// </summary>
+	public void ShowAd()
 	{
-		Debug.Log(String.Format("Rewarded ad paid {0} {1}.",
-			adValue.Value,
-			adValue.CurrencyCode));
-	};
-	// Raised when an impression is recorded for an ad.
-	ad.OnAdImpressionRecorded += () =>
+		if (_rewardedAd != null && _rewardedAd.CanShowAd())
+		{
+			Debug.Log("Showing rewarded ad.");
+			_rewardedAd.Show((Reward reward) =>
+			{
+				Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
+										reward.Amount,
+										reward.Type));
+				GameObject temp = Instantiate(RewardPopup);
+				temp.GetComponentInChildren<TMP_Text>().text = String.Format("Rewarded ad granted a reward: {0} {1}", reward.Amount, reward.Type);
+				this.transform.parent.gameObject.SetActive(false);
+			});
+		}
+		else
+		{
+			Debug.LogError("Rewarded ad is not ready yet.");
+		}
+
+		// Inform the UI that the ad is not ready.
+		AdLoadedStatus?.SetActive(false);
+	}
+
+	/// <summary>
+	/// Destroys the ad.
+	/// </summary>
+	public void DestroyAd()
 	{
-		Debug.Log("Rewarded ad recorded an impression.");
-	};
-	// Raised when a click is recorded for an ad.
-	ad.OnAdClicked += () =>
+		if (_rewardedAd != null)
+		{
+			Debug.Log("Destroying rewarded ad.");
+			_rewardedAd.Destroy();
+			_rewardedAd = null;
+		}
+
+		// Inform the UI that the ad is not ready.
+		AdLoadedStatus?.SetActive(false);
+	}
+	private void RegisterEventHandlers(RewardedAd ad)
 	{
-		rewardedAd.Destroy();
-		Debug.Log("Rewarded ad was clicked.");
-	};
-	// Raised when an ad opened full screen content.
-	ad.OnAdFullScreenContentOpened += () =>
-	{
-		Debug.Log("Rewarded ad full screen content opened.");
-	};
-	// Raised when the ad closed full screen content.
-	ad.OnAdFullScreenContentClosed += () =>
-	{
-		Debug.Log("Rewarded ad full screen content closed.");
-			// Reload the ad so that we can show another as soon as possible.
-			LoadRewardedAd();
-	};
-	// Raised when the ad failed to open full screen content.
-	ad.OnAdFullScreenContentFailed += (AdError error) =>
-	{
-		Debug.LogError("Rewarded ad failed to open full screen content " +
-					   "with error : " + error);
-			// Reload the ad so that we can show another as soon as possible.
-			LoadRewardedAd();
-	};
-} 
+		// Raised when the ad is estimated to have earned money.
+		ad.OnAdPaid += (AdValue adValue) =>
+		{
+			Debug.Log(String.Format("Rewarded ad paid {0} {1}.",
+				adValue.Value,
+				adValue.CurrencyCode));
+		};
+		// Raised when an impression is recorded for an ad.
+		ad.OnAdImpressionRecorded += () =>
+		{
+			Debug.Log("Rewarded ad recorded an impression.");
+		};
+		// Raised when a click is recorded for an ad.
+		ad.OnAdClicked += () =>
+		{
+			Debug.Log("Rewarded ad was clicked.");
+		};
+		// Raised when the ad opened full screen content.
+		ad.OnAdFullScreenContentOpened += () =>
+		{
+			Debug.Log("Rewarded ad full screen content opened.");
+		};
+		// Raised when the ad closed full screen content.
+		ad.OnAdFullScreenContentClosed += () =>
+		{
+			Debug.Log("Rewarded ad full screen content closed.");
+		};
+		// Raised when the ad failed to open full screen content.
+		ad.OnAdFullScreenContentFailed += (AdError error) =>
+		{
+			Debug.LogError("Rewarded ad failed to open full screen content with error : "
+				+ error);
+		};
+	}
 }

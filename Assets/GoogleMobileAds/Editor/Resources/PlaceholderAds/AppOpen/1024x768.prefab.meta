@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 30454d768d0994255b52eafa89dad8e2
+guid: 400e823ff595e1949a7c11a032724b23
 labels:
 - gvh
-- gvh_version-8.5.2
-- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/AppOpen/1024x768.prefab
-timeCreated: 1480838400
 PrefabImporter:
   externalObjects: {}
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

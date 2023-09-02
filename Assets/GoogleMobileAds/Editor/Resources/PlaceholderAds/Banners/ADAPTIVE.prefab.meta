@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: b2a3ea2f1837847d9981501e0eeca085
+guid: 7e9c6e90c649338459e74f4997b9c9e8
 labels:
 - gvh
-- gvh_version-8.5.2
-- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/Banners/ADAPTIVE.prefab
-timeCreated: 1480838400
-NativeFormatImporter:
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 100100000
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
