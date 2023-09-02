@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 4711865395537040666}
+  - component: {fileID: 2192700943454362330}
+  m_Layer: 0
+  m_Name: AdMobPlugin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4711865395537040666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee301d536864ffe46addcc287900283b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTesting: 1
+  guessSelfDeviceId: 1
+  size: 0
+  orientation: 0
+  horizontalPosition: 1
+  verticalPosition: 2
+  refreshInterval: 30
+  loadOnStart: 1
+  setTargetOnStart: 0
+  loadOnReconfigure: 1
+--- !u!114 &2192700943454362330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c1e2b29b44cc644bd0b72f5612566b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeInEditMode: 1
+  style: 1
+  texts:
+  - Bugs that go away by themselves come back by themselves.
+  - If it doesn't work, it doesn't matter how fast it doesn't work.
+  - Hi, IM A BANNER
+  - I'M WORKING
+  - The code is 100% complete, it just doesn't work yet.
+  icons:
+  - {fileID: 2800000, guid: 898f886a39d714db5b90d2c36676c894, type: 3}
+  actions: []
+  darkBackground: {fileID: 2800000, guid: 1100a1d3aa4a74b368a375480493b3b4, type: 3}
+  lightBackground: {fileID: 2800000, guid: 0645a190a320e6146910ba02a2b4e69f, type: 3}
+  rectangles:
+    loadButton:
+      serializedVersion: 2
+      x: 790
+      y: 32
+      width: 64
+      height: 48
+    exitButton:
+      serializedVersion: 2
+      x: 872
+      y: 32
+      width: 64
+      height: 48
+    showButton:
+      serializedVersion: 2
+      x: 790
+      y: 88
+      width: 64
+      height: 48
+    hideButton:
+      serializedVersion: 2
+      x: 872
+      y: 88
+      width: 64
+      height: 48
+    horizontalPositionButton:
+      serializedVersion: 2
+      x: 789.4
+      y: 149.8
+      width: 150
+      height: 48
+    verticalPositionButton:
+      serializedVersion: 2
+      x: 789.4
+      y: 213.9
+      width: 150
+      height: 48
+    orientationButton:
+      serializedVersion: 2
+      x: 789.4
+      y: 275.6
+      width: 150
+      height: 48
+    sizeButton:
+      serializedVersion: 2
+      x: 789.4
+      y: 338.5
+      width: 150
+      height: 48
+    lastErrorRectButton:
+      serializedVersion: 2
+      x: 674.3
+      y: 10.5
+      width: 384
+      height: 50
+    receivedLabel:
+      serializedVersion: 2
+      x: 674.3
+      y: 10.5
+      width: 384
+      height: 50
