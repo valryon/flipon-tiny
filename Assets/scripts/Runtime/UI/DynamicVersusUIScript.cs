@@ -57,10 +57,22 @@ namespace Pon
     private void ConfigureRect(int totalPlayersCount, int iaPlayersCount)
     {
       playerZones = new PlayerZone[totalPlayersCount];
-
+      
+      // Single Player
+      // =================================================
+      if (totalPlayersCount == 1)
+      {
+        playerZones[0] = new PlayerZone()
+        {
+          index = 0,
+          rect = new Rect(0, 0f, 1f, 1f),
+          angle = 0f
+        };
+      }
+      
       // 2P
       // =================================================
-      if (totalPlayersCount == 2)
+      else if (totalPlayersCount == 2) // if this is left as just an additional if, the UI doesn't work
       {
         playerZones[0] = new PlayerZone()
         {
