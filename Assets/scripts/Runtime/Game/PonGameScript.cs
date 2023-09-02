@@ -182,7 +182,6 @@ namespace Pon
       {
         //Log.Error("Needs 2 players.");  We need to allow just one player
         settings.playMode = PlayMode.Singleplayer; // Change playmode to singleplayer checks later
-        return;
       }
 
       if (settings.enableObjectives)
