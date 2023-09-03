@@ -12,6 +12,7 @@ namespace DG.Tweening
 {
   public static class DOTweenModuleSprite
   {
+
     #region Shortcuts
 
     #region SpriteRenderer
@@ -22,6 +23,7 @@ namespace DG.Tweening
     public static TweenerCore<Color, Color, ColorOptions> DOColor(this SpriteRenderer target, Color endValue,
       float duration)
     {
+       
       TweenerCore<Color, Color, ColorOptions> t = DOTween.To(() => target.color, x => target.color = x, endValue,
         duration);
       t.SetTarget(target);

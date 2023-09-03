@@ -523,12 +523,7 @@ namespace Pon
       isOver = true;
 
       // level ends, go back to map scene
-      // SceneManager.LoadSceneAsync("Map"); 
-
-            // CAUSING ERROR: MissingReferenceException: The object of type 'SpriteRenderer' has been destroyed but you are still trying to access it.
-            // Your script should either check if it is null or you should not destroy the object.
-            // UnityEngine.SpriteRenderer.get_color()(at < 10871f9e312b442cb78b9b97db88fdcb >:0)
-            // DG.Tweening.DOTweenModuleSprite +<> c__DisplayClass1_0.< DOFade > b__0()(at Assets / thirdparty / DOTween / Modules / DOTweenModuleSprite.cs:37) <- WHERE THE ERROR IS
+      // SceneManager.LoadSceneAsync("Map"); // CAUSING ERROR
     }
 
     #endregion
