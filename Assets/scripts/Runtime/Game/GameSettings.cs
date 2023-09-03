@@ -41,17 +41,32 @@ namespace Pon
 
     void Awake()
     {
-      // find the MapManager object (that wasn't destroyed from map scene)
-      MapUIScript mapScript = FindObjectOfType<MapUIScript>();
-      if (mapScript)
-      {
-          // set game settings based on level
-          gridSettings.startLines = mapScript.numStartingLines;
-      }
-      
-      DontDestroyOnLoad(gameObject);
+            // find the MapManager object (that wasn't destroyed from map scene)
+            /*
+            MapUIScript mapScript = FindObjectOfType<MapUIScript>();
+
+
+
+            if (mapScript)
+            {
+                // set game settings based on level
+                gridSettings.startLines = mapScript.numStartingLines;
+                Debug.Log(mapScript.numStartingLines);
+            }
+            */
+            if (MapUIScript.mapInstance != null)
+            {
+                gridSettings.startLines = MapUIScript.mapInstance.numStartingLines; // not actually affecting game settings ???
+                Debug.Log("STARTING LINES SET TO:");
+                Debug.Log(gridSettings.startLines); // working, just not changing the actual game for some reason
+                Debug.Log(MapUIScript.mapInstance.numStartingLines);
+            }
+
+            DontDestroyOnLoad(gameObject);
     }
 
-    #endregion
-  }
+ 
+
+        #endregion
+    }
 }
