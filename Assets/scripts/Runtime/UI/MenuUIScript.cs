@@ -13,7 +13,7 @@ public class MenuUIScript : MonoBehaviour
     }
 
     private IEnumerator AsyncLoadIntoGame(){
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Game");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map");
         
         while(!asyncLoad.isDone){
             if(loadingTimer <= 0.75f){
@@ -24,5 +24,7 @@ public class MenuUIScript : MonoBehaviour
             }
             yield return null;
         }
+
+        
     }
 }
