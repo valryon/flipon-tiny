@@ -13,6 +13,7 @@ public class AdRewards : MonoBehaviour
 	/// </summary>
 	public GameObject AdLoadedStatus;
 	public GameObject RewardPopup;
+	public Boolean PurchaseNoAds;
 	// These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
 	string adUnitId = "ca-app-pub-4133264752903581~5788723812";
@@ -34,6 +35,10 @@ public class AdRewards : MonoBehaviour
                 #endif
             }
 	};
+	public void SetPurchase()
+	{
+		PurchaseNoAds = true;
+	}
 	private RewardedAd _rewardedAd;
 	public void Awake()
 	{
@@ -66,39 +71,40 @@ public class AdRewards : MonoBehaviour
 	/// </summary>
 	public void LoadAd()
 	{
-
-		// Clean up the old ad before loading a new one.
-		if (_rewardedAd != null)
+		if (!PurchaseNoAds)
 		{
-			DestroyAd();
-		}
+			// Clean up the old ad before loading a new one.
+			if (_rewardedAd != null)
+			{
+				DestroyAd();
+			}
 
-		Debug.Log("Loading rewarded ad.");
+			Debug.Log("Loading rewarded ad.");
 
-		// Create our request used to load the ad.
-		var adRequest = new AdRequest();
+			// Create our request used to load the ad.
+			var adRequest = new AdRequest();
 
-		// Send the request to load the ad.
-		RewardedAd.Load(adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
-		{
+			// Send the request to load the ad.
+			RewardedAd.Load(adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+			{
 			// If the operation failed with a reason.
 			if (error != null)
-			{
-				Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
-				return;
-			}
+				{
+					Debug.LogError("Rewarded ad failed to load an ad with error : " + error);
+					return;
+				}
 			// If the operation failed for unknown reasons.
 			// This is an unexpected error, please report this bug if it happens.
 			if (ad == null)
-			{
-				Debug.LogError("Unexpected error: Rewarded load event fired with null ad and null error.");
-				return;
-			}
+				{
+					Debug.LogError("Unexpected error: Rewarded load event fired with null ad and null error.");
+					return;
+				}
 
 			// The operation completed successfully.
 			Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
 
-			_rewardedAd = ad;
+				_rewardedAd = ad;
 
 			// Register to ad events to extend functionality.
 			RegisterEventHandlers(ad);
@@ -107,7 +113,8 @@ public class AdRewards : MonoBehaviour
 			AdLoadedStatus?.SetActive(true);
 
 
-		});
+			});
+		}
 	}
 
 	/// <summary>
@@ -115,26 +122,29 @@ public class AdRewards : MonoBehaviour
 	/// </summary>
 	public void ShowAd()
 	{
-		if (_rewardedAd != null && _rewardedAd.CanShowAd())
+		if (!PurchaseNoAds)
 		{
-			Debug.Log("Showing rewarded ad.");
-			_rewardedAd.Show((Reward reward) =>
+			if (_rewardedAd != null && _rewardedAd.CanShowAd())
 			{
-				Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
-										reward.Amount,
-										reward.Type));
-				GameObject temp = Instantiate(RewardPopup);
-				temp.GetComponentInChildren<TMP_Text>().text = String.Format("Rewarded ad granted a reward: {0} {1}", reward.Amount, reward.Type);
-				this.transform.parent.gameObject.SetActive(false);
-			});
-		}
-		else
-		{
-			Debug.LogError("Rewarded ad is not ready yet.");
-		}
+				Debug.Log("Showing rewarded ad.");
+				_rewardedAd.Show((Reward reward) =>
+				{
+					Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
+											reward.Amount,
+											reward.Type));
+					GameObject temp = Instantiate(RewardPopup);
+					temp.GetComponentInChildren<TMP_Text>().text = String.Format("Rewarded ad granted a reward: {0} {1}", reward.Amount, reward.Type);
+					this.transform.parent.gameObject.SetActive(false);
+				});
+			}
+			else
+			{
+				Debug.LogError("Rewarded ad is not ready yet.");
+			}
 
-		// Inform the UI that the ad is not ready.
-		AdLoadedStatus?.SetActive(false);
+			// Inform the UI that the ad is not ready.
+			AdLoadedStatus?.SetActive(false);
+		}
 	}
 
 	/// <summary>
