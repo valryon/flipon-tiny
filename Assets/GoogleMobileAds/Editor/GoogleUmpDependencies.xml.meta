@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 846f54408edc1944481c2ede1943d3f3
+guid: c327cfbeae774a768fe60f1357bc08d3
 labels:
 - gvh
-TextScriptImporter:
-  externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+- gvh_version-8.5.2
+- gvhp_exportpath-GoogleMobileAds/Editor/GoogleUmpDependencies.xml
+timeCreated: 1480838400
+DefaultImporter:
+  userData:
+  assetBundleName:
+  assetBundleVariant:

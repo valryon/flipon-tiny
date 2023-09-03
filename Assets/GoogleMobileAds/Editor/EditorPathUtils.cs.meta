@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: ae8e340e8c81d174b90662a9ae993c24
+guid: 515bf4efba604780b3c586fda8815765
 labels:
 - gvh
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+- gvh_version-8.5.2
+- gvhp_exportpath-GoogleMobileAds/Editor/EditorPathUtils.cs
+timeCreated: 1480838400
+DefaultImporter:
+  userData:
+  assetBundleName:
+  assetBundleVariant:

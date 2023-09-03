@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 1c0d8a6c9b36440eaa4c01518670217f
+guid: 3fbd85863e7246c8b9de13243cc83b5d
 labels:
 - gvh
 - gvh_version-8.5.2
-- gvhp_exportpath-Plugins/iOS/GADUAdNetworkExtras.h
+- gvhp_exportpath-Plugins/iOS/unity-plugin-library.a
 timeCreated: 1480838400
 PluginImporter:
   serializedVersion: 1

@@ -1,9 +1,13 @@
 fileFormatVersion: 2
-guid: c1348b383ca00464a94c8c3ef35b167b
+guid: 4e3dd9a9607da46da8125b4b59a18db2
 labels:
 - gvh
-PrefabImporter:
+- gvh_version-8.5.2
+- gvhp_exportpath-GoogleMobileAds/Editor/Resources/PlaceholderAds/Rewarded/768x1024.prefab
+timeCreated: 1480838400
+NativeFormatImporter:
   externalObjects: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  mainObjectFileID: 100100000
+  userData:
+  assetBundleName:
+  assetBundleVariant:
