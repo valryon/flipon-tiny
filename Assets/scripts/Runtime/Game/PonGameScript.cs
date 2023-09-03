@@ -6,6 +6,7 @@ using System.Linq;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Pon
 {
@@ -180,8 +181,8 @@ namespace Pon
 
       if (settings.players.Length == 1)
       {
-        Log.Error("Needs 2 players.");
-        return;
+        //Log.Error("Needs 2 players.");  We need to allow just one player
+        settings.playMode = PlayMode.Singleplayer; // Change playmode to singleplayer checks later
       }
 
       if (settings.enableObjectives)
@@ -520,6 +521,9 @@ namespace Pon
       Log.Warning("Game is ended.");
       SetPause(true);
       isOver = true;
+
+      // level ends, go back to map scene
+      // SceneManager.LoadSceneAsync("Map"); // CAUSING ERROR
     }
 
     #endregion

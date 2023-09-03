@@ -13,6 +13,12 @@ namespace Pon
     None
   }
 
+  public enum PlayMode
+  {
+    Singleplayer,
+    Versus
+  }
+
   /// <summary>
   /// Grid parameters as an object you pass from menu scene to game scene.
   /// </summary>
@@ -27,6 +33,7 @@ namespace Pon
     public bool disableChains;
     public bool enableObjectives;
     public Objective objective;
+    public PlayMode playMode;
 
     #endregion
 
@@ -34,9 +41,16 @@ namespace Pon
 
     void Awake()
     {
-      DontDestroyOnLoad(gameObject);
+            if (MapUIScript.mapInstance != null)
+            {
+                // set game settings based on level
+                gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
+            }
+
+            DontDestroyOnLoad(gameObject);
     }
 
-    #endregion
-  }
+
+        #endregion
+    }
 }

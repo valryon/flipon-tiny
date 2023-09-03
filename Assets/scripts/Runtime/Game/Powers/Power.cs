@@ -23,7 +23,8 @@ namespace Pon
     GarbageBreaker,
     UNUSED,
     LineHider,
-    ShittyBlockSpawner
+    ShittyBlockSpawner,
+    ColumnClear
   }
 
   public abstract class Power
@@ -54,6 +55,8 @@ namespace Pon
           return new PowerLineHider();
         case PowerType.TimeFreeze:
           return new PowerTimeFreeze();
+        case PowerType.ColumnClear:
+          return new PowerColumnClear();
         case PowerType.None:
           return null;
       }
