@@ -6,60 +6,34 @@ using UnityEngine.UI;
 
 public class MapUIScript : MonoBehaviour
 {  
-    private Button levelOneButton;
+    // private Button levelOneButton;
     public int numStartingLines;
     GameObject canvas;
 
-    private static MapUIScript mapInstance;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // levelOneButton = FindObjectOfType<Button>();
-        // GameObject gameSettings = FindObjectOfType<GameSettings>()
-
-        
-
-        // passes argument to PlayLevel() when level one button is clicked
-        
-        
-    }
+    public static MapUIScript mapInstance;
 
     // method that loads Title Screen Scene on button click 
     public void BackToMenu()
     {
         SceneManager.LoadSceneAsync("TitleScreen");
+        Debug.Log("GO TO MAIN MENU");
     }
 
     // method that loads the Game Scene on button click and sets a variable for the game settings
     public void PlayLevel(int startingLines)
     {
-        numStartingLines = startingLines;
+        mapInstance.numStartingLines = startingLines;
         SceneManager.LoadSceneAsync("Game");
+        Debug.Log("PLAY GAME");
     }
 
     public void Awake()
     {
-        // get the number of map managers (this)
-        /*
-        int numManagers = FindObjectsOfType().Length;
-        if (numManagers > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        */
-        levelOneButton = GameObject.Find("PlayLevel1Button").GetComponent<Button>();
-        levelOneButton.onClick.AddListener(() => PlayLevel(1));
-
-        // don't destroy the mapManager object so that we can keep info from the level buttons
-        DontDestroyOnLoad(gameObject);
+        // levelOneButton = GameObject.Find("PlayLevel1Button").GetComponent<Button>();
+        // levelOneButton.onClick.AddListener(() => PlayLevel(1));
 
         // get the canvas object so we can reset it to Active when the scene is loaded
-        canvas = GameObject.FindWithTag("Canvas"); 
+        canvas = GameObject.FindWithTag("Canvas");
 
         if (canvas != null)
         {
@@ -69,16 +43,21 @@ public class MapUIScript : MonoBehaviour
             // note: canvas has to be child of mapManager so that the reference to the button is not destroyed
         }
 
-        
         // prevents duplicate mapManagers from spawning when running DontDestroyOnLoad()
-        if (mapInstance == null)
+        if (mapInstance != null)
         {
-            mapInstance = this;
+            // delete itself if it's a duplicate 
+            Destroy(gameObject);
+            return;
         }
         else
         {
-            Destroy(gameObject); // deletes itself if it's a duplicate
+            mapInstance = this;
+            // don't destroy the mapManager object so that we can keep info from the level buttons
+            DontDestroyOnLoad(gameObject);
+
         }
+
         
     }
 }

@@ -41,17 +41,16 @@ namespace Pon
 
     void Awake()
     {
-      // find the MapManager object (that wasn't destroyed from map scene)
-      MapUIScript mapScript = FindObjectOfType<MapUIScript>();
-      if (mapScript)
-      {
-          // set game settings based on level
-          gridSettings.startLines = mapScript.numStartingLines;
-      }
-      
-      DontDestroyOnLoad(gameObject);
+            if (MapUIScript.mapInstance != null)
+            {
+                // set game settings based on level
+                gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
+            }
+
+            DontDestroyOnLoad(gameObject);
     }
 
-    #endregion
-  }
+
+        #endregion
+    }
 }
