@@ -589,6 +589,7 @@ MonoBehaviour:
   AdLoadedStatus: {fileID: 5286310133533437564}
   RewardPopup: {fileID: 2195539079420672452, guid: f7b61371c51e9eb47b8ece8495bac520,
     type: 3}
+  PurchaseNoAds: 0
 --- !u!1 &4624436811583821506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.999695, y: 0}
+  m_AnchoredPosition: {x: 113, y: -22}
   m_SizeDelta: {x: 174.2276, y: 89.8604}
   m_Pivot: {x: 0.000000070780516, y: 1}
 --- !u!222 &574374036516585194
