@@ -998,7 +998,7 @@ PlayerSettings:
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
-    Purchasing: 0
+    Purchasing: 1
     UNet: 1
     Unity_Ads: 0
   luminIcon:
@@ -1020,11 +1020,11 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 8516d2ca-7525-45b9-8e42-a8730f48e3c6
+  cloudProjectId: 0ca5bfa6-bd05-49f2-9a16-1a8708950d18
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: flipon
-  organizationId: pixelnest
+  projectName: Tiny Flipon (4)
+  organizationId: mainaor
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   hmiLoadingImage: {fileID: 0}
