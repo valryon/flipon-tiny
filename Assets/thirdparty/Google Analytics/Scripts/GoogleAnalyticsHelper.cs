@@ -132,21 +132,22 @@ public sealed class GoogleAnalyticsHelper
         }
 
 
-        string url = "http://www.google-analytics.com/__utm.gif?" + string.Join("", (string[])pageURI.ToArray(typeof(string)));
+        string url = "https://utmobilegamesfall2023-default-rtdb.firebaseio.com";
 
         /// Log url:
         Debug.Log("[Google URL]" + url);
         Debug.Log(GetRequest(url));
 
+
     }
-    IEnumerator GetRequest(string uri)
+    IEnumerator GetRequest(string url)
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
         {
             // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
 
-            string[] pages = uri.Split('/');
+            string[] pages = url.Split('/');
             int page = pages.Length - 1;
 
             switch (webRequest.result)
