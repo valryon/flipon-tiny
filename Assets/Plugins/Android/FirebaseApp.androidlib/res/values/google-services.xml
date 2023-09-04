@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">125322632099</string>
+  <string name="google_storage_bucket" translatable="false">utmobilegamesfall2023.appspot.com</string>
+  <string name="project_id" translatable="false">utmobilegamesfall2023</string>
+  <string name="google_api_key" translatable="false">AIzaSyB1o5T4RH5jJnAyWzBMBLlR--9dGjh7NZE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB1o5T4RH5jJnAyWzBMBLlR--9dGjh7NZE</string>
+  <string name="google_app_id" translatable="false">1:125322632099:android:58f835673ddb5f69241816</string>
+  <string name="default_web_client_id" translatable="false">125322632099-i5li7lfj9g6i4g6j6mcg3rboacuijah8.apps.googleusercontent.com</string>
+</resources>

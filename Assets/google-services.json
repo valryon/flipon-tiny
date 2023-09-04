@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125322632099",
+    "project_id": "utmobilegamesfall2023",
+    "storage_bucket": "utmobilegamesfall2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125322632099:android:58f835673ddb5f69241816",
+        "android_client_info": {
+          "package_name": "io.pixelnest.pon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125322632099-i5li7lfj9g6i4g6j6mcg3rboacuijah8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1o5T4RH5jJnAyWzBMBLlR--9dGjh7NZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125322632099-i5li7lfj9g6i4g6j6mcg3rboacuijah8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

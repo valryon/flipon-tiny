@@ -1,17 +1,22 @@
 <dependencies>
   <packages>
     <package>com.google.android.gms:play-services-ads:22.3.0</package>
+    <package>com.google.android.gms:play-services-base:18.2.0</package>
     <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
+    <package>com.google.firebase:firebase-analytics:21.3.0</package>
+    <package>com.google.firebase:firebase-analytics-unity:11.4.0</package>
+    <package>com.google.firebase:firebase-app-unity:11.4.0</package>
+    <package>com.google.firebase:firebase-common:20.3.3</package>
   </packages>
   <files>
-    <file>Assets/Plugins/Android/androidx.annotation.annotation-1.2.0.jar</file>
+    <file>Assets/Plugins/Android/androidx.annotation.annotation-1.5.0.jar</file>
     <file>Assets/Plugins/Android/androidx.annotation.annotation-experimental-1.1.0.aar</file>
     <file>Assets/Plugins/Android/androidx.arch.core.core-common-2.1.0.jar</file>
     <file>Assets/Plugins/Android/androidx.arch.core.core-runtime-2.1.0.aar</file>
     <file>Assets/Plugins/Android/androidx.asynclayoutinflater.asynclayoutinflater-1.0.0.aar</file>
     <file>Assets/Plugins/Android/androidx.browser.browser-1.4.0.aar</file>
     <file>Assets/Plugins/Android/androidx.collection.collection-1.1.0.jar</file>
-    <file>Assets/Plugins/Android/androidx.concurrent.concurrent-futures-1.0.0.jar</file>
+    <file>Assets/Plugins/Android/androidx.concurrent.concurrent-futures-1.1.0.jar</file>
     <file>Assets/Plugins/Android/androidx.coordinatorlayout.coordinatorlayout-1.0.0.aar</file>
     <file>Assets/Plugins/Android/androidx.core.core-1.6.0.aar</file>
     <file>Assets/Plugins/Android/androidx.cursoradapter.cursoradapter-1.0.0.aar</file>
@@ -47,13 +52,32 @@
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-ads-identifier-18.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-ads-lite-22.3.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-appset-16.0.1.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.gms.play-services-base-18.0.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.gms.play-services-basement-18.0.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-base-20.1.2.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-api-20.1.2.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-18.0.1.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-base-18.2.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-basement-18.1.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-api-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-base-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-impl-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-measurement-sdk-api-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-stats-17.0.2.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-18.0.2.aar</file>
     <file>Assets/Plugins/Android/com.google.android.ump.user-messaging-platform-2.1.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.errorprone.error_prone_annotations-2.9.0.jar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-analytics-21.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-analytics-unity-11.4.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-annotations-16.2.0.jar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-app-unity-11.4.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-common-20.3.3.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-components-17.1.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-installations-17.0.1.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-installations-interop-17.0.1.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-measurement-connector-19.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.guava.listenablefuture-1.0.jar</file>
+    <file>Assets/Plugins/Android/javax.inject.javax.inject-1.jar</file>
+    <file>Assets/Plugins/Android/org.jetbrains.annotations-13.0.jar</file>
+    <file>Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-1.7.10.jar</file>
+    <file>Assets/Plugins/Android/org.jetbrains.kotlin.kotlin-stdlib-common-1.7.10.jar</file>
   </files>
   <settings>
     <setting name="androidAbis" value="armeabi-v7a,x86" />
