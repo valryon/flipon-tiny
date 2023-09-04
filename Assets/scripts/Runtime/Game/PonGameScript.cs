@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening.Core;
 
 namespace Pon
 {
