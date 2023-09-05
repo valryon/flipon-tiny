@@ -16,6 +16,7 @@ namespace Pon
 	/// </summary>
 	public class PonGameScript : MonoBehaviour
 	{
+		private static GameObject DOTweenGameObject;
 		static PonGameScript()
 		{
 			UnityLog.Init();
@@ -49,6 +50,7 @@ namespace Pon
 
 		private void Start()
 		{
+			
 			// Threads
 			Loom.Initialize();
 
@@ -59,6 +61,16 @@ namespace Pon
 			CreatePlayersAndGrids();
 
 			StartGrids();
+
+			if (DOTweenGameObject == null)
+			{
+				DOTweenGameObject = GameObject.Find("[DOTween]");
+			}
+			else {
+				DestroyImmediate(DOTweenGameObject);
+				DOTweenGameObject = new GameObject("[DOTween]");
+				DOTweenGameObject.AddComponent<DOTweenComponent>();
+			}
 			Firebase.Analytics.FirebaseAnalytics.LogEvent(
 			   Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
 			   new Firebase.Analytics.Parameter[] {
@@ -67,6 +79,7 @@ namespace Pon
 
 			   }
 		   );
+
 		}
 
 		private void OnDestroy()
@@ -527,7 +540,7 @@ namespace Pon
 
 		private void TriggerGameOver()
 		{
-			FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
+			DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
