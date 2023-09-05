@@ -61,6 +61,7 @@ namespace Pon
 			CreatePlayersAndGrids();
 
 			StartGrids();
+
 			if (DOTweenGameObject == null)
 			{
 				DOTweenGameObject = GameObject.Find("[DOTween]");
@@ -70,6 +71,15 @@ namespace Pon
 				DOTweenGameObject = new GameObject("[DOTween]");
 				DOTweenGameObject.AddComponent<DOTweenComponent>();
 			}
+			Firebase.Analytics.FirebaseAnalytics.LogEvent(
+			   Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
+			   new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter(
+						Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
+
+			   }
+		   );
+
 		}
 
 		private void OnDestroy()
@@ -534,6 +544,15 @@ namespace Pon
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
+			
+		    Firebase.Analytics.FirebaseAnalytics.LogEvent(
+				Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
+				new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter(
+						Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
+
+				}
+			);
 			// level ends, go back to map scene
 			SceneManager.LoadSceneAsync("Map");
 		}
