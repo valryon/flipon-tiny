@@ -91,7 +91,7 @@ public class Loom : MonoBehaviour
 
       var g = new GameObject("Threads");
       _current = g.AddComponent<Loom>();
-      DontDestroyOnLoad(g);
+      // DontDestroyOnLoad(g);
     }
   }
 

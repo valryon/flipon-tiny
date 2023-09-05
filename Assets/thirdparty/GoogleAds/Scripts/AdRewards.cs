@@ -88,7 +88,7 @@ public class AdRewards : MonoBehaviour
 			var adRequest = new AdRequest();
 
 			// Send the request to load the ad.
-			RewardedAd.Load(adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+			RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
 			{
 
 

@@ -45,6 +45,8 @@ namespace Pon
 		private void Awake()
 		{
 			instance = this;
+
+			
 		}
 
 		private void Start()
@@ -59,6 +61,10 @@ namespace Pon
 			CreatePlayersAndGrids();
 
 			StartGrids();
+
+			Debug.Log(FindAnyObjectByType<DOTweenComponent>().gameObject.name);
+			// FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(true); //Deactivate DoTween GameObject when moving back to map
+			/*
 			Firebase.Analytics.FirebaseAnalytics.LogEvent(
 			   Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
 			   new Firebase.Analytics.Parameter[] {
@@ -66,7 +72,9 @@ namespace Pon
 						Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
 
 			   }
+
 		   );
+			*/
 		}
 
 		private void OnDestroy()
@@ -527,11 +535,13 @@ namespace Pon
 
 		private void TriggerGameOver()
 		{
-			FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
+			// Destroy(FindAnyObjectByType<DOTweenComponent>().gameObject); //Deactivate DoTween GameObject when moving back to map
+			// FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
 			
+			/*
 		    Firebase.Analytics.FirebaseAnalytics.LogEvent(
 				Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
 				new Firebase.Analytics.Parameter[] {
@@ -540,6 +550,7 @@ namespace Pon
 
 				}
 			);
+			*/
 			// level ends, go back to map scene
 			SceneManager.LoadSceneAsync("Map");
 		}
