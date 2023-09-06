@@ -17,6 +17,7 @@ public class MenuUIScript : MonoBehaviour
     public Toggle dailyToggle;
     public Toggle eventsToggle;
     public Toggle hintsToggle;
+    public Toggle colorBlindToggle;
 
     public AudioMixer mixer;
     public Slider musicSlider;
@@ -24,29 +25,32 @@ public class MenuUIScript : MonoBehaviour
 
     public TMP_Dropdown graphicsDropdown;
 
-    private float currentMusicVolume;
-    private float currentSoundVolume;
+    private float currentMusicVolume = 0.0f;
+    private float currentMusicValue = 1.0f;
+
+    private float currentSoundVolume = 0.0f;
+    private float currentSoundValue = 1.0f;
 
     private void Start()
     {
+        // LOAD SETTINGS
+        LoadSettings();
+
         // get mute toggle
         if (muteVolumeToggle != null)
         {
-            muteVolumeToggle.isOn = false;
             muteVolumeToggle.onValueChanged.AddListener((bool isOn) => { Mute(muteVolumeToggle.isOn); });
         }
 
         // get notification toggles
         if (notifictationToggle != null)
         {
-            notifictationToggle.isOn = true;
             notifictationToggle.onValueChanged.AddListener((bool isOn) => { EnableNotifications(notifictationToggle.isOn); });
         }
 
         // get hints toggle
         if (hintsToggle != null)
         {
-            hintsToggle.isOn = false;
             hintsToggle.onValueChanged.AddListener((bool isOn) => { EnableHints(hintsToggle.isOn); });
         }
 
@@ -55,6 +59,12 @@ public class MenuUIScript : MonoBehaviour
         if (graphicsDropdown != null)
         {
             graphicsDropdown.onValueChanged.AddListener((int qualityIndex) => { SetQualityLevel(graphicsDropdown.value); }); 
+        }
+
+        // set colorblind toggle
+        if (colorBlindToggle != null)
+        {
+            colorBlindToggle.onValueChanged.AddListener((bool isOn) => { SetColorBlindMode(colorBlindToggle.isOn); });
         }
     }
 
@@ -80,11 +90,14 @@ public class MenuUIScript : MonoBehaviour
     // mute or set all volume based on toggle value
     void Mute(bool isOn)
     {
-        if (isOn)
+        if (isOn) // is muted
         {
             Debug.Log("Volume Muted");
             musicSlider.interactable = false;
             soundSlider.interactable = false;
+
+            musicSlider.value = 0.0001f;
+            soundSlider.value = 0.0001f;
 
             mixer.SetFloat("MusicVolume", -80.0f);
             mixer.SetFloat("SoundVolume", -80.0f);
@@ -94,6 +107,10 @@ public class MenuUIScript : MonoBehaviour
             Debug.Log("Volume Unmuted");
             musicSlider.interactable = true;
             soundSlider.interactable = true;
+
+            musicSlider.value = currentMusicValue;
+            soundSlider.value = currentSoundValue;
+            Debug.Log(currentMusicValue);
 
             mixer.SetFloat("MusicVolume", currentMusicVolume);
             mixer.SetFloat("SoundVolume", currentSoundVolume);
@@ -106,6 +123,10 @@ public class MenuUIScript : MonoBehaviour
         if (isOn)
         {
             Debug.Log("Notifs enabled");
+            livesToggle.isOn = true;
+            dailyToggle.isOn = true;
+            eventsToggle.isOn = true;
+
             livesToggle.interactable = true;
             dailyToggle.interactable = true;
             eventsToggle.interactable = true;
@@ -113,12 +134,17 @@ public class MenuUIScript : MonoBehaviour
         else
         {
             Debug.Log("Notifs disabled");
+            livesToggle.isOn = false;
+            dailyToggle.isOn = false;
+            eventsToggle.isOn = false; 
+
             livesToggle.interactable = false;
             dailyToggle.interactable = false;
             eventsToggle.interactable = false;
         }
     }
 
+    // enable hints feature based on toggle
     public void EnableHints(bool isOn)
     {
         if (isOn)
@@ -131,6 +157,7 @@ public class MenuUIScript : MonoBehaviour
         }
     }
 
+    // set quality level in project settings based on dropdown
     public void SetQualityLevel(int qualityIndex)
     {
         Debug.Log(qualityIndex);
@@ -142,11 +169,204 @@ public class MenuUIScript : MonoBehaviour
     {
         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         currentMusicVolume = Mathf.Log10(sliderValue) * 20;
+        currentMusicValue = sliderValue;
     }
 
     public void SetSoundLevel(float sliderValue)
     {
         mixer.SetFloat("SoundVolume", Mathf.Log10(sliderValue) * 20);
         currentSoundVolume = Mathf.Log10(sliderValue) * 20;
+        currentSoundValue = sliderValue;
+    }
+
+    // set colorblind graphics based on toggle
+    public void SetColorBlindMode(bool isOn)
+    {
+        if (isOn)
+        {
+            Debug.Log("ColorBlind Mode Enabled");
+        }
+        else
+        {
+            Debug.Log("ColorBlind Mode Disabled");
+        }
+    }
+
+    // saving settings
+    public void SaveSettings()
+    {
+        // Sound
+        PlayerPrefs.SetInt("MuteVolumePreference", (muteVolumeToggle.isOn ? 1 : 0));
+        PlayerPrefs.SetFloat("MusicVolume", currentMusicVolume);
+        PlayerPrefs.SetFloat("SoundVolume", currentSoundVolume);
+        PlayerPrefs.SetFloat("MusicValue", currentMusicValue);
+        PlayerPrefs.SetFloat("SoundValue", currentSoundValue);
+
+        // Notifications
+        PlayerPrefs.SetInt("NotificationEnabledPreference", (notifictationToggle.isOn ? 1 : 0));
+        PlayerPrefs.SetInt("LivesReplenishedEnabledPreference", (livesToggle.isOn ? 1 : 0));
+        PlayerPrefs.SetInt("DailyRewardsEnabledPreference", (dailyToggle.isOn ? 1 : 0));
+        PlayerPrefs.SetInt("EventsEnabledPreference", (eventsToggle.isOn ? 1 : 0));
+
+        // Hints
+        PlayerPrefs.SetInt("HintsEnabledPreference", (hintsToggle.isOn ? 1 : 0));
+
+        // Graphics
+        PlayerPrefs.SetInt("QualitySettingPreference", graphicsDropdown.value);
+        PlayerPrefs.SetInt("ColorBlindEnabledPreference", (colorBlindToggle.isOn ? 1 : 0));
+
+        // save
+        PlayerPrefs.Save();
+    }
+
+    public void LoadSettings()
+    {
+        // load sound preferences/default values
+        if (PlayerPrefs.HasKey("MuteVolumePreference"))
+        {
+            muteVolumeToggle.isOn = PlayerPrefs.GetInt("MuteVolumePreference") == 1;
+        }
+        else
+        {
+            muteVolumeToggle.isOn = false;
+        }
+        if (PlayerPrefs.HasKey("MusicVolume") && PlayerPrefs.HasKey("MusicValue"))
+        {
+            currentMusicVolume = PlayerPrefs.GetFloat("MusicVolume");
+            currentMusicValue = PlayerPrefs.GetFloat("MusicValue");
+
+            if (muteVolumeToggle.isOn)
+            {
+                mixer.SetFloat("MusicVolume", -80.0f);
+                musicSlider.interactable = false;
+                musicSlider.value = 0.0001f;
+            }
+            else
+            {
+                mixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+                musicSlider.interactable = true;
+                musicSlider.value = PlayerPrefs.GetFloat("MusicValue");
+            }
+        }
+        else
+        {
+            if (muteVolumeToggle.isOn)
+            {
+                mixer.SetFloat("MusicVolume", -80.0f);
+                musicSlider.interactable = false;
+                musicSlider.value = 0.0001f;
+            }
+            else
+            {
+                mixer.SetFloat("MusicVolume", 0.0f);
+                musicSlider.interactable = true;
+                musicSlider.value = currentMusicValue;
+            }
+            
+        }
+        if (PlayerPrefs.HasKey("SoundVolume") && PlayerPrefs.HasKey("SoundValue"))
+        {
+            currentSoundVolume = PlayerPrefs.GetFloat("SoundVolume");
+            currentSoundValue = PlayerPrefs.GetFloat("SoundValue");
+
+            if (muteVolumeToggle.isOn)
+            {
+                mixer.SetFloat("SoundVolume", -80.0f);
+                soundSlider.interactable = false;
+                soundSlider.value = 0.0001f;
+            }
+            else
+            {
+                mixer.SetFloat("SoundVolume", PlayerPrefs.GetFloat("SoundVolume"));
+                soundSlider.interactable = true;
+                soundSlider.value = PlayerPrefs.GetFloat("SoundValue");
+            }
+        }
+        else
+        {
+            // default
+            if (muteVolumeToggle.isOn)
+            {
+                mixer.SetFloat("SoundVolume", -80.0f);
+                soundSlider.interactable = false;
+                soundSlider.value = 0.0001f;
+            }
+            else
+            {
+                mixer.SetFloat("SoundVolume", 0.0f);
+                soundSlider.interactable = true;
+                soundSlider.value = currentSoundValue;
+            }
+        }
+
+        // notifications
+        if (PlayerPrefs.HasKey("NotificationEnabledPreference"))
+        {
+            notifictationToggle.isOn = PlayerPrefs.GetInt("NotificationEnabledPreference") == 1;
+        }
+        else
+        {
+            notifictationToggle.isOn = true;
+        }
+
+        //
+        EnableNotifications(notifictationToggle.isOn);
+
+        if (PlayerPrefs.HasKey("LivesReplenishedEnabledPreference"))
+        {
+            livesToggle.isOn = PlayerPrefs.GetInt("LivesReplenishedEnabledPreference") == 1;
+        }
+        else
+        {
+            livesToggle.isOn = true;
+        }
+        if (PlayerPrefs.HasKey("DailyRewardsEnabledPreference"))
+        {
+            dailyToggle.isOn = PlayerPrefs.GetInt("DailyRewardsEnabledPreference") == 1;
+        }
+        else
+        {
+            dailyToggle.isOn = true;
+        }
+        if (PlayerPrefs.HasKey("EventsEnabledPreference"))
+        {
+            eventsToggle.isOn = PlayerPrefs.GetInt("EventsEnabledPreference") == 1;
+        }
+        else
+        {
+            eventsToggle.isOn = true;
+        }
+
+
+        // hints
+        if (PlayerPrefs.HasKey("HintsEnabledPreference"))
+        {
+            hintsToggle.isOn = PlayerPrefs.GetInt("HintsEnabledPreference") == 1;
+        }
+        else
+        {
+            hintsToggle.isOn = true;
+        }
+
+
+        // graphics
+        if (PlayerPrefs.HasKey("QualitySettingPreference"))
+        {
+            graphicsDropdown.value = PlayerPrefs.GetInt("QualitySettingPreference");
+        }
+        else
+        {
+            graphicsDropdown.value = 0; // default is high quality
+        }
+
+        if (PlayerPrefs.HasKey("ColorBlindEnabledPreference"))
+        {
+            colorBlindToggle.isOn = PlayerPrefs.GetInt("ColorBlindEnabledPreference") == 1;
+        }
+        else
+        {
+            colorBlindToggle.isOn = false;
+        }
     }
 }
+
