@@ -137,6 +137,7 @@ namespace AdRewards
 						temp.GetComponentInChildren<TMP_Text>().text = String.Format("Rewarded ad granted a reward: {0} {1}", reward.Amount, reward.Type);
 						this.transform.parent.gameObject.SetActive(false);
 					});
+
 				}
 
 				else

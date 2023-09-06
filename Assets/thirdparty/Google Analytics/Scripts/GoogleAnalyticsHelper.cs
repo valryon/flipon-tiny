@@ -178,6 +178,26 @@ public sealed class GoogleAnalyticsHelper
 
         return epochtime;
     }
+
+    // GOOGLE ANALYTICS METHODS: LOG EVENTS
+    public static void AnalyticsLevelStart(string levelName)
+    {
+        Debug.Log("Logging a level start event for " + levelName);
+        FirebaseAnalytics.LogEvent(
+            FirebaseAnalytics.EventLevelStart,
+            new Parameter(FirebaseAnalytics.ParameterLevelName, levelName)
+            );
+    }
+
+    public static void AnalyticsLevelEnd(string levelName)
+    {
+        Debug.Log("Logging a level end event for " + levelName);
+        FirebaseAnalytics.LogEvent(
+            FirebaseAnalytics.EventLevelEnd,
+            new Parameter(FirebaseAnalytics.ParameterLevelName, levelName)
+            );
+    }
+
     public static void AnalyticsLevelUp()
     {
         // Log an event with multiple parameters.
@@ -185,9 +205,10 @@ public sealed class GoogleAnalyticsHelper
         FirebaseAnalytics.LogEvent(
           FirebaseAnalytics.EventLevelUp,
           new Parameter(FirebaseAnalytics.ParameterLevel, 5),
-          new Parameter(FirebaseAnalytics.ParameterCharacter, "mrspoon"),
-          new Parameter("hit_accuracy", 3.14f));
+          new Parameter(FirebaseAnalytics.ParameterCharacter, "mrspoon")
+        );
     }
+
     public static void AnalyticsStorePurchase()
     {
         // Log an event with multiple parameters.
@@ -201,4 +222,12 @@ public sealed class GoogleAnalyticsHelper
         Debug.Log("Purchase Recorded");
     }
 
+    public static void AnalyticsAdImpression()
+    {
+        Debug.Log("Logging an Ad Impression event");
+        FirebaseAnalytics.LogEvent(
+            FirebaseAnalytics.EventAdImpression,
+            new Parameter(FirebaseAnalytics.ParameterAdPlatform, "Google")
+            );
+    }
 }

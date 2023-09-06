@@ -8,6 +8,7 @@ public class MapUIScript : MonoBehaviour
 {  
     // private Button levelOneButton;
     public int numStartingLines;
+    public string currentLevelName;
     GameObject canvas;
 
     public static MapUIScript mapInstance;
@@ -20,9 +21,18 @@ public class MapUIScript : MonoBehaviour
     }
 
     // method that loads the Game Scene on button click and sets a variable for the game settings
-    public void PlayLevel(int startingLines)
+    public void PlayLevel(int levelNum)
     {
-        mapInstance.numStartingLines = startingLines;
+        if (levelNum == 1)
+        {
+            numStartingLines = 1;
+        }
+        else if (levelNum == 2)
+        {
+            numStartingLines = 4;
+        }
+        mapInstance.numStartingLines = numStartingLines;
+        mapInstance.currentLevelName = "Level" + levelNum.ToString();
         SceneManager.LoadSceneAsync("Game");
         Debug.Log("PLAY GAME");
     }

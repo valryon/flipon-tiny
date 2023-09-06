@@ -43,11 +43,16 @@ namespace Pon
 
 		#region Timeline
 
+		string currentLevelName;
 		private void Awake()
 		{
 			instance = this;
 
-			
+			if (MapUIScript.mapInstance != null)
+			{
+				// set game settings based on level
+				currentLevelName = MapUIScript.mapInstance.currentLevelName;
+			}
 		}
 
 		private void Start()
@@ -73,6 +78,10 @@ namespace Pon
 				DOTweenGameObject = new GameObject("[DOTween]");
 				DOTweenGameObject.AddComponent<DOTweenComponent>();
 			}
+
+			GoogleAnalyticsHelper.AnalyticsLevelStart(currentLevelName);
+
+			/*
 			Firebase.Analytics.FirebaseAnalytics.LogEvent(
 			   Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
 			   new Firebase.Analytics.Parameter[] {
@@ -82,6 +91,7 @@ namespace Pon
 			   }
 
 		   );
+			*/
 
 		}
 
@@ -547,7 +557,7 @@ namespace Pon
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
-			
+
 			/*
 		    Firebase.Analytics.FirebaseAnalytics.LogEvent(
 				Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
@@ -558,6 +568,10 @@ namespace Pon
 				}
 			);
 			*/
+
+			// Log Level end (user has won)
+			GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
+
 			// level ends, go back to map scene
 			SceneManager.LoadSceneAsync("Map");
 		}

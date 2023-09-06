@@ -770,12 +770,12 @@ MonoBehaviour:
       - m_Target: {fileID: 1683239928279754825, guid: 9d9f6e5b2557fe444aaee8e11b5fc3e6,
           type: 3}
         m_TargetAssemblyTypeName: MapUIScript, Assembly-CSharp
-        m_MethodName: PlayLevel2
+        m_MethodName: PlayLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
