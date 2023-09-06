@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Canvas
+  - Mute
+  - Notifications
+  - Lives
+  - Daily
+  - Events
   layers:
   - Default
   - TransparentFX

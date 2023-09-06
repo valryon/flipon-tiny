@@ -37,13 +37,6 @@ public class MapUIScript : MonoBehaviour
         Debug.Log("PLAY GAME");
     }
 
-    public void PlayLevel2(int startingLines)
-    {
-        mapInstance.numStartingLines = startingLines;
-        SceneManager.LoadSceneAsync("Game 1");
-        Debug.Log("PLAY GAME");
-    }
-
     public void Awake()
     {
         // levelOneButton = GameObject.Find("PlayLevel1Button").GetComponent<Button>();
