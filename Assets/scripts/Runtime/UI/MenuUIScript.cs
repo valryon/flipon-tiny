@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class MenuUIScript : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class MenuUIScript : MonoBehaviour
     public Toggle DailyToggle;
     public Toggle EventsToggle;
 
+    public AudioMixer mixer;
+
     private void Start()
     {
         // get mute toggle
-        MuteVolumeToggle = GameObject.FindWithTag("Mute").GetComponent<Toggle>();
+        // MuteVolumeToggle = GameObject.FindWithTag("Mute").GetComponent<Toggle>();
         if (MuteVolumeToggle != null)
         {
             MuteVolumeToggle.isOn = false;
@@ -26,16 +29,16 @@ public class MenuUIScript : MonoBehaviour
         }
 
         // get notification toggles
-        NotifictationToggle = GameObject.FindWithTag("Notifications").GetComponent<Toggle>();
+        // NotifictationToggle = GameObject.FindWithTag("Notifications").GetComponent<Toggle>();
         if (NotifictationToggle != null)
         {
             NotifictationToggle.isOn = true;
             NotifictationToggle.onValueChanged.AddListener((bool isOn) => { EnableNotifications(NotifictationToggle.isOn); });
         }
 
-        LivesToggle = GameObject.FindWithTag("Lives").GetComponent<Toggle>();
-        DailyToggle = GameObject.FindWithTag("Daily").GetComponent<Toggle>();
-        EventsToggle = GameObject.FindWithTag("Events").GetComponent<Toggle>();
+        // LivesToggle = GameObject.FindWithTag("Lives").GetComponent<Toggle>();
+        // DailyToggle = GameObject.FindWithTag("Daily").GetComponent<Toggle>();
+        // EventsToggle = GameObject.FindWithTag("Events").GetComponent<Toggle>();
     }
 
 
@@ -74,16 +77,21 @@ public class MenuUIScript : MonoBehaviour
         if (isOn)
         {
             Debug.Log("Notifs enabled");
-            LivesToggle.enabled = true;
-            DailyToggle.enabled = true;
-            EventsToggle.enabled = true;
+            LivesToggle.interactable = true;
+            DailyToggle.interactable = true;
+            EventsToggle.interactable = true;
 }
         else
         {
             Debug.Log("Notifs disabled");
-            LivesToggle.enabled = false;
-            DailyToggle.enabled = false;
-            EventsToggle.enabled = false;
+            LivesToggle.interactable = false;
+            DailyToggle.interactable = false;
+            EventsToggle.interactable = false;
         }
+    }
+
+    public void SetVolumeLevel(float sliderValue)
+    {
+        mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
     }
 }
