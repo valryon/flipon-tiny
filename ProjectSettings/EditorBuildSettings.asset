@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 05ad200e69653451fb74c61837e84505
   - enabled: 1
+    path: Assets/Scenes/Game 1.unity
+    guid: 3d5e90de49a697f4c888cff18caca9d5
+  - enabled: 1
     path: Assets/thirdparty/GoogleAds/Scenes/AdMob.unity
     guid: 1175bf09c51ae454d892916ad2ddf460
   m_configObjects: {}

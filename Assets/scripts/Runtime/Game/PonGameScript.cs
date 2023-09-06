@@ -46,6 +46,8 @@ namespace Pon
 		private void Awake()
 		{
 			instance = this;
+
+			
 		}
 
 		private void Start()
@@ -78,6 +80,7 @@ namespace Pon
 						Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
 
 			   }
+
 		   );
 
 		}
@@ -545,6 +548,7 @@ namespace Pon
 			SetPause(true);
 			isOver = true;
 			
+			/*
 		    Firebase.Analytics.FirebaseAnalytics.LogEvent(
 				Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
 				new Firebase.Analytics.Parameter[] {
@@ -553,6 +557,7 @@ namespace Pon
 
 				}
 			);
+			*/
 			// level ends, go back to map scene
 			SceneManager.LoadSceneAsync("Map");
 		}

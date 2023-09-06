@@ -35,21 +35,45 @@ namespace Pon
     public Objective objective;
     public PlayMode playMode;
 
+    public static GameSettings gameSettingsInstance;
+
     #endregion
 
     #region Timeline
 
     void Awake()
     {
+            /*
+           if (gameSettingsInstance != null)
+           {
+               Destroy(gameObject);
+               return;
+           }
+           else
+           {
+               gameSettingsInstance = this;
+               DontDestroyOnLoad(gameObject);
+           }
+            */
+            gameSettingsInstance = this;
+
+ 
+
             if (MapUIScript.mapInstance != null)
             {
                 // set game settings based on level
                 gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
             }
 
-            DontDestroyOnLoad(gameObject);
-    }
+            if (gameSettingsInstance != null)
+            {
+                Debug.Log(gridSettings.startLines);
+            }
 
+            //DontDestroyOnLoad(gameObject);
+
+
+        }
 
         #endregion
     }
