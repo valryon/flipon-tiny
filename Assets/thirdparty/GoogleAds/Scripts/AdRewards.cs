@@ -19,9 +19,9 @@ namespace AdRewards
 		// These ad units are configured to always serve test ads.
 		// These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-		string adUnitId = "ca-app-pub-4133264752903581~5788723812";
+		string _adUnitId = "ca-app-pub-4133264752903581~5788723812";
 #elif UNITY_IPHONE
-      string adUnitId = "ca-app-pub-4133264752903581/8344688679";
+      string _adUnitId = "ca-app-pub-4133264752903581/8344688679";
 #else
         private const string _adUnitId = "unused";
 #endif
