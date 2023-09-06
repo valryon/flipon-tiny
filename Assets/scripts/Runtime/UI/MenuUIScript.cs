@@ -17,6 +17,8 @@ public class MenuUIScript : MonoBehaviour
     public Toggle EventsToggle;
 
     public AudioMixer mixer;
+    public Slider musicSlider;
+    public Slider soundSlider;
 
     private void Start()
     {
@@ -65,10 +67,14 @@ public class MenuUIScript : MonoBehaviour
         if (isOn)
         {
             Debug.Log("Volume Muted");
+            musicSlider.interactable = false;
+            soundSlider.interactable = false;
         }
         else
         {
             Debug.Log("Volume Unmuted");
+            musicSlider.interactable = true;
+            soundSlider.interactable = true;
         }
     }
 
@@ -90,8 +96,13 @@ public class MenuUIScript : MonoBehaviour
         }
     }
 
-    public void SetVolumeLevel(float sliderValue)
+    public void SetMusicLevel(float sliderValue)
     {
         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+    public void SetSoundLevel(float sliderValue)
+    {
+        mixer.SetFloat("SoundVolume", Mathf.Log10(sliderValue) * 20);
     }
 }
