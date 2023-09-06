@@ -14,7 +14,7 @@ namespace AdRewards
 		/// </summary>
 		public GameObject AdLoadedStatus;
 		public GameObject RewardPopup;
-		public Boolean PurchaseNoAds;
+		public Boolean PurchaseNoAds = false;
 
 		// These ad units are configured to always serve test ads.
 		// These ad units are configured to always serve test ads.
@@ -146,7 +146,7 @@ namespace AdRewards
 				}
 
 				// Inform the UI that the ad is not ready.
-				AdLoadedStatus?.SetActive(false);
+				//AdLoadedStatus?.SetActive(false);
 			}
 		}
 		/// <summary>
