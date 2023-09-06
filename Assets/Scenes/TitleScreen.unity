@@ -2710,7 +2710,7 @@ RectTransform:
   m_GameObject: {fileID: 423715005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.6875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1398508888}
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: High Quality
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5683cd08bb5f5540a7acb3c7d4e0e73, type: 2}
   m_sharedMaterial: {fileID: 1509211534756286421, guid: d5683cd08bb5f5540a7acb3c7d4e0e73,
@@ -2869,7 +2869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &529561614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3460,14 +3460,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bufferLogo: {fileID: 1485004506}
-  MuteVolumeToggle: {fileID: 542500169}
-  NotifictationToggle: {fileID: 672111020}
-  LivesToggle: {fileID: 2028073456}
-  DailyToggle: {fileID: 690667745}
-  EventsToggle: {fileID: 375458613}
+  muteVolumeToggle: {fileID: 542500169}
+  notifictationToggle: {fileID: 672111020}
+  livesToggle: {fileID: 2028073456}
+  dailyToggle: {fileID: 690667745}
+  eventsToggle: {fileID: 375458613}
+  hintsToggle: {fileID: 989378652}
   mixer: {fileID: 24100000, guid: 70d5609f107b1ed49a17c96898a16b1b, type: 2}
   musicSlider: {fileID: 1759940144}
   soundSlider: {fileID: 1120385314}
+  graphicsDropdown: {fileID: 1398508889}
 --- !u!1 &586401676
 GameObject:
   m_ObjectHideFlags: 0
@@ -8195,7 +8197,7 @@ RectTransform:
   m_GameObject: {fileID: 1398508887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0695, y: 2.0695, z: 2.0695}
+  m_LocalScale: {x: 2.0695, y: 3.5698874, z: 2.0695}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 423715006}
@@ -8258,11 +8260,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: High Quality
       m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: Low Quality
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
