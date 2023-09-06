@@ -16,6 +16,7 @@ namespace Pon
 	/// </summary>
 	public class PonGameScript : MonoBehaviour
 	{
+		private static GameObject DOTweenGameObject;
 		static PonGameScript()
 		{
 			UnityLog.Init();
@@ -51,6 +52,7 @@ namespace Pon
 
 		private void Start()
 		{
+			
 			// Threads
 			Loom.Initialize();
 
@@ -62,9 +64,15 @@ namespace Pon
 
 			StartGrids();
 
-			Debug.Log(FindAnyObjectByType<DOTweenComponent>().gameObject.name);
-			// FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(true); //Deactivate DoTween GameObject when moving back to map
-			/*
+			if (DOTweenGameObject == null)
+			{
+				DOTweenGameObject = GameObject.Find("[DOTween]");
+			}
+			else {
+				DestroyImmediate(DOTweenGameObject);
+				DOTweenGameObject = new GameObject("[DOTween]");
+				DOTweenGameObject.AddComponent<DOTweenComponent>();
+			}
 			Firebase.Analytics.FirebaseAnalytics.LogEvent(
 			   Firebase.Analytics.FirebaseAnalytics.EventLevelStart,
 			   new Firebase.Analytics.Parameter[] {
@@ -74,7 +82,7 @@ namespace Pon
 			   }
 
 		   );
-			*/
+
 		}
 
 		private void OnDestroy()
@@ -535,8 +543,7 @@ namespace Pon
 
 		private void TriggerGameOver()
 		{
-			// Destroy(FindAnyObjectByType<DOTweenComponent>().gameObject); //Deactivate DoTween GameObject when moving back to map
-			// FindAnyObjectByType<DOTweenComponent>().gameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
+			DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;

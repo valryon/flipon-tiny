@@ -1,25 +1,26 @@
-﻿using System.Collections;
+﻿using AdRewards;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Purchasing;
 using UnityEngine.UI;
-
 public class myIAPManager : MonoBehaviour {
     private static Text myText;
-    public AdRewards adRewards;
+    public GetAdRewards adRewards;
     // Use this for initialization
     void Start () {
         myText = GameObject.Find("MyText").GetComponent<Text>();
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void myPurchaseSucceed ()
     {
-        adRewards.PurchaseNoAds = true;
-        MyDebug("Purchase Succeeded.");
+        if (PurchaseProcessingResult.Complete == 0)
+        {
+            adRewards.PurchaseNoAds = true;
+            Destroy(GameObject.Find("UIFakeStoreWindow"));
+
+            MyDebug("Purchase Succeeded.");
+        }
     }
 
     public void myPurchaseFail()
