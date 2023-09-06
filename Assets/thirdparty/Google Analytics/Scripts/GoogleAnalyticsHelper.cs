@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using Firebase.Analytics;
 
 /// Google analytics class v 1.0
 /// (c) by Almar Joling
@@ -177,6 +178,27 @@ public sealed class GoogleAnalyticsHelper
 
         return epochtime;
     }
+    public static void AnalyticsLevelUp()
+    {
+        // Log an event with multiple parameters.
+        Debug.Log("Logging a level up event.");
+        FirebaseAnalytics.LogEvent(
+          FirebaseAnalytics.EventLevelUp,
+          new Parameter(FirebaseAnalytics.ParameterLevel, 5),
+          new Parameter(FirebaseAnalytics.ParameterCharacter, "mrspoon"),
+          new Parameter("hit_accuracy", 3.14f));
+    }
+    public static void AnalyticsStorePurchase()
+    {
+        // Log an event with multiple parameters.
+        Debug.Log("Logging a Purchase event.");
+        FirebaseAnalytics.LogEvent(
+          FirebaseAnalytics.EventPurchase,
+          new Parameter(FirebaseAnalytics.ParameterCurrency, "US Dollar"),
+          new Parameter(FirebaseAnalytics.ParameterItemName, "noads"),
+          new Parameter("Purchase Completed", 1));
 
+        Debug.Log("Purchase Recorded");
+    }
 
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.UI;
+
 public class myIAPManager : MonoBehaviour {
     private static Text myText;
     public GetAdRewards adRewards;
@@ -14,11 +15,13 @@ public class myIAPManager : MonoBehaviour {
 	
     public void myPurchaseSucceed ()
     {
+
         if (PurchaseProcessingResult.Complete == 0)
         {
+            Debug.Log("Google Analytics: Purchase Recorded.");
             adRewards.PurchaseNoAds = true;
+            GoogleAnalyticsHelper.AnalyticsStorePurchase();
             Destroy(GameObject.Find("UIFakeStoreWindow"));
-
             MyDebug("Purchase Succeeded.");
         }
     }

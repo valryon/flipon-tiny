@@ -1894,6 +1894,11 @@ PrefabInstance:
       propertyPath: adRewards
       value: 
       objectReference: {fileID: 4726263081830221957}
+    - target: {fileID: 414348943048121608, guid: 9b1526193d4c20940a4af5cacc7ae682,
+        type: 3}
+      propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5351064262758017033, guid: 9b1526193d4c20940a4af5cacc7ae682,
         type: 3}
       propertyPath: m_Name
@@ -2024,7 +2029,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 110368773476278685, guid: 9b1526193d4c20940a4af5cacc7ae682, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8891816435025040680, guid: 9b1526193d4c20940a4af5cacc7ae682, type: 3}
     - {fileID: 5009717732070410113, guid: 9b1526193d4c20940a4af5cacc7ae682, type: 3}
