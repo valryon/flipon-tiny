@@ -15,10 +15,11 @@ public class OpenAdView : MonoBehaviour
 	public void OpenAd()
     {
 		Debug.Log(adRewards);
-		if (adRewards != null){
+		if (adRewards != null)
+		{
 			adRewards.SetActive(true);
 		}
-        Debug.Log(GameObject.Find("AdRewards"));
-        Destroy(this.gameObject);
+      Debug.Log(GameObject.Find("AdRewards"));
+      Destroy(this.gameObject);
     }
 }
