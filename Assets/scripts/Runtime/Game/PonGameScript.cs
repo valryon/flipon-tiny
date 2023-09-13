@@ -8,6 +8,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening.Core;
+using UnityEngine.Audio;
 
 namespace Pon
 {
@@ -38,6 +39,8 @@ namespace Pon
 
     private bool firstGridStarted;
     private int maxStressLevel;
+
+    [SerializeField] private AudioMixer musicMixer;
 
     #endregion
 
@@ -557,6 +560,9 @@ namespace Pon
       Log.Warning("Game is ended.");
       SetPause(true);
       isOver = true;
+
+      // music for winning/losing 
+
 
       /*
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
