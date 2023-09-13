@@ -10,6 +10,8 @@ TagManager:
   - Lives
   - Daily
   - Events
+  - WinMusic
+  - LoseMusic
   layers:
   - Default
   - TransparentFX

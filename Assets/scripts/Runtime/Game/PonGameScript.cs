@@ -40,7 +40,8 @@ namespace Pon
     private bool firstGridStarted;
     private int maxStressLevel;
 
-    [SerializeField] private AudioMixer musicMixer;
+    [SerializeField] private AudioSource winMusicSource;
+    [SerializeField] private AudioSource loseMusicSource;
 
     #endregion
 
@@ -56,6 +57,9 @@ namespace Pon
         // set game settings based on level
         currentLevelName = MapUIScript.mapInstance.currentLevelName;
       }
+
+      winMusicSource = GameObject.FindGameObjectWithTag("WinMusic").GetComponent<AudioSource>();
+      loseMusicSource = GameObject.FindGameObjectWithTag("LoseMusic").GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -155,6 +159,9 @@ namespace Pon
           if (objectives.Succeed(pWinner, pStats))
           {
             Log.Info("Versus with level ended!");
+
+            // WIN MUSIC (need to delay level from ending until music is done)
+            winMusicSource.Play();
             GameOverVersus(pWinner);
 
             break;
@@ -550,12 +557,16 @@ namespace Pon
           }
         }
 
+        // lose music ?
+        loseMusicSource.Play();
+
         DOVirtual.DelayedCall(1f, TriggerGameOver);
       }
     }
 
     private void TriggerGameOver()
     {
+      
       DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
       Log.Warning("Game is ended.");
       SetPause(true);

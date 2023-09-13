@@ -274,26 +274,22 @@ public class MenuUIScript : MonoBehaviour
             currentSoundVolume = PlayerPrefs.GetFloat("SoundVolume");
             currentSoundValue = PlayerPrefs.GetFloat("SoundValue");
 
-            Debug.Log(currentSoundValue);
 
             if (muteVolumeToggle.isOn)
             {
                 mixer.SetFloat("SoundVolume", -80.0f);
                 soundSlider.interactable = false;
                 soundSlider.value = 0.0f;
-                Debug.Log("HERE");
             }
             else
             {
                 mixer.SetFloat("SoundVolume", PlayerPrefs.GetFloat("SoundVolume"));
                 soundSlider.interactable = true;
                 soundSlider.value = PlayerPrefs.GetFloat("SoundValue");
-                Debug.Log("HERE BUT SHOULD BE INTERACTABLE");
             }
         }
         else
         {
-            Debug.Log("HERE BUT no settings");
             // default
             if (muteVolumeToggle.isOn)
             {
