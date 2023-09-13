@@ -1,3 +1,4 @@
+using Firebase.Analytics;
 using GoogleMobileAds.Api;
 using Microsoft.SqlServer.Server;
 using System;
@@ -14,14 +15,13 @@ namespace AdRewards
 		/// </summary>
 		public GameObject AdLoadedStatus;
 		public GameObject RewardPopup;
-		public Boolean PurchaseNoAds;
+		public Boolean PurchaseNoAds = false;
 
 		// These ad units are configured to always serve test ads.
-		// These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-		string _adUnitId = "ca-app-pub-4133264752903581~5788723812";
+		string _adUnitId = "ca-app-pub-4133264752903581~9301992217";
 #elif UNITY_IPHONE
-      string _adUnitId = "ca-app-pub-4133264752903581/8344688679";
+      string _adUnitId = "ca-app-pub-4133264752903581/9701694886";
 #else
         private const string _adUnitId = "unused";
 #endif
@@ -43,8 +43,11 @@ namespace AdRewards
 			PurchaseNoAds = true;
 		}
 		private RewardedAd _rewardedAd;
+
 		public void Awake()
 		{
+			AdRequest request = new AdRequest();
+
 			// Set your test devices.
 			// https://developers.google.com/admob/unity/test-ads
 			RequestConfiguration requestConfiguration = new RequestConfiguration
@@ -146,7 +149,7 @@ namespace AdRewards
 				}
 
 				// Inform the UI that the ad is not ready.
-				AdLoadedStatus?.SetActive(false);
+				//AdLoadedStatus?.SetActive(false);
 			}
 		}
 		/// <summary>
@@ -177,6 +180,10 @@ namespace AdRewards
 			ad.OnAdImpressionRecorded += () =>
 			{
 				Debug.Log("Rewarded ad recorded an impression.");
+				FirebaseAnalytics.LogEvent(
+		  FirebaseAnalytics.EventAdImpression,
+		  new Parameter(FirebaseAnalytics.ParameterAdPlatform, "https://utmobilegamesfall2023-default-rtdb.firebaseio.com/")
+		  );
 			};
 			// Raised when a click is recorded for an ad.
 			ad.OnAdClicked += () =>
