@@ -449,6 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1716068626}
   - component: {fileID: 1716068625}
+  - component: {fileID: 1716068627}
   m_Layer: 0
   m_Name: LoseMusic
   m_TagString: LoseMusic
@@ -568,6 +569,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716068627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716068624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301afdb896ac3a64c8fc7d6f957fa19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1814538268
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932628402}
   - component: {fileID: 1932628401}
+  - component: {fileID: 1932628403}
   m_Layer: 0
   m_Name: WinMusic
   m_TagString: WinMusic
@@ -737,6 +751,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1932628403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932628400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7f90fe4034a6b49bc11c030796d9ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2017043631
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +825,7 @@ MonoBehaviour:
   objective:
     stats:
       score: 0
-      timeReached: 0
+      timeReached: 5
       timeMax: 0
       highestCombo: 0
       totalCombos: 2

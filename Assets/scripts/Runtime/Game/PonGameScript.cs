@@ -3,6 +3,7 @@
 // file 'LICENSE.md', which is part of this source code package.
 
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -48,6 +49,7 @@ namespace Pon
     #region Timeline
 
     string currentLevelName;
+    PlayerScript player;
     private void Awake()
     {
       instance = this;
@@ -120,6 +122,15 @@ namespace Pon
         timeElapsed += Time.deltaTime;
       }
 
+      if (objectives.stats.timeReached <= timeElapsed && objectives.stats.timeReached != 0)
+      {
+        // loseMusicSource.Play();
+        player.grid.SetGameOver();
+        
+        DOVirtual.DelayedCall(3f, TriggerGameOver);
+                
+      }
+
       GameUIScript.SetTime(timeElapsed);
 
       // Update objectives
@@ -162,15 +173,17 @@ namespace Pon
 
             // WIN MUSIC (need to delay level from ending until music is done)
             winMusicSource.Play();
+            // Invoke("test", 10f);
+            // StartCoroutine(MyFunction(5f, pWinner));
             GameOverVersus(pWinner);
-
             break;
           }
         }
       }
     }
 
-    private void GameOverVersus(PlayerScript winner)
+
+        private void GameOverVersus(PlayerScript winner)
     {
       // One player wins
       isOver = true;
@@ -282,7 +295,7 @@ namespace Pon
         var p = basePlayer;
         var po = new GameObject();
 
-        PlayerScript player;
+        
         if (p.type == PlayerType.Local)
         {
           player = po.AddComponent<PlayerScript>();
@@ -560,7 +573,8 @@ namespace Pon
         // lose music ?
         loseMusicSource.Play();
 
-        DOVirtual.DelayedCall(1f, TriggerGameOver);
+
+        DOVirtual.DelayedCall(3f, TriggerGameOver);
       }
     }
 
