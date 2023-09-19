@@ -684,8 +684,8 @@ MonoBehaviour:
   objective:
     stats:
       score: 0
-      timeReached: 5
-      timeMax: 0
+      timeReached: 0
+      timeMax: 5
       highestCombo: 0
       totalCombos: 2
       total4Combos: 0

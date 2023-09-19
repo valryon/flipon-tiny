@@ -45,6 +45,9 @@ namespace Pon
     [SerializeField] private AudioClip winMusic;
     [SerializeField] private AudioClip loseMusic;
 
+        private bool lostByFillingScreen = false;
+        private bool wonGame = false;
+
     #endregion
 
     #region Timeline
@@ -123,14 +126,14 @@ namespace Pon
       }
 
       // player runs out of time (objectives has a time limit set under "Time Reached")
-      if (objectives.stats.timeReached <= timeElapsed && objectives.stats.timeReached != 0)
+      if (objectives.stats.timeMax <= timeElapsed && objectives.stats.timeMax != 0 && lostByFillingScreen == false && wonGame == false)
       {
         musicSource.PlayOneShot(loseMusic);
         player.grid.SetGameOver();
         DOVirtual.DelayedCall(3f, TriggerGameOver);
 
         // prevents Update() from going into this if statement more than once (losemusic will play)
-        objectives.stats.timeReached = 0;
+        objectives.stats.timeMax = 0;
 
         // stops timer
         isOver = true;
@@ -181,6 +184,8 @@ namespace Pon
             // Invoke("test", 10f);
             // StartCoroutine(MyFunction(5f, pWinner));
             GameOverVersus(pWinner);
+            // make sure timer stops when you win
+            wonGame = true;
             break;
           }
         }
@@ -577,8 +582,10 @@ namespace Pon
 
         // lose music ?
         musicSource.PlayOneShot(loseMusic);
-
-
+        // set bool so that multiple sounds don't play
+        lostByFillingScreen = true;
+        // stop timer
+        isOver = true;
         DOVirtual.DelayedCall(3f, TriggerGameOver);
       }
     }
