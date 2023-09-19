@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinMusic : MonoBehaviour
+public class MusicSource : MonoBehaviour
 {
-    public static WinMusic instance;
+    public static MusicSource instance;
 
     private void Awake()
     {

@@ -41,8 +41,9 @@ namespace Pon
     private bool firstGridStarted;
     private int maxStressLevel;
 
-    [SerializeField] private AudioSource winMusicSource;
-    [SerializeField] private AudioSource loseMusicSource;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip winMusic;
+    [SerializeField] private AudioClip loseMusic;
 
     #endregion
 
@@ -60,8 +61,7 @@ namespace Pon
         currentLevelName = MapUIScript.mapInstance.currentLevelName;
       }
 
-      winMusicSource = GameObject.FindGameObjectWithTag("WinMusic").GetComponent<AudioSource>();
-      loseMusicSource = GameObject.FindGameObjectWithTag("LoseMusic").GetComponent<AudioSource>();
+      musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -122,13 +122,18 @@ namespace Pon
         timeElapsed += Time.deltaTime;
       }
 
+      // player runs out of time (objectives has a time limit set under "Time Reached")
       if (objectives.stats.timeReached <= timeElapsed && objectives.stats.timeReached != 0)
       {
-        // loseMusicSource.Play();
+        musicSource.PlayOneShot(loseMusic);
         player.grid.SetGameOver();
-        
         DOVirtual.DelayedCall(3f, TriggerGameOver);
-                
+
+        // prevents Update() from going into this if statement more than once (losemusic will play)
+        objectives.stats.timeReached = 0;
+
+        // stops timer
+        isOver = true;
       }
 
       GameUIScript.SetTime(timeElapsed);
@@ -172,7 +177,7 @@ namespace Pon
             Log.Info("Versus with level ended!");
 
             // WIN MUSIC (need to delay level from ending until music is done)
-            winMusicSource.Play();
+            musicSource.PlayOneShot(winMusic);
             // Invoke("test", 10f);
             // StartCoroutine(MyFunction(5f, pWinner));
             GameOverVersus(pWinner);
@@ -571,7 +576,7 @@ namespace Pon
         }
 
         // lose music ?
-        loseMusicSource.Play();
+        musicSource.PlayOneShot(loseMusic);
 
 
         DOVirtual.DelayedCall(3f, TriggerGameOver);
