@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603d41955a1c97f4987e83f5d718dcb5, type: 3}
+  m_Name: Credit Page
+  m_EditorClassIdentifier: 
+  credits:
+  - teamName: 'Production Team '
+    names:
+    - Name
+    - Name
+    - Name
+  - teamName: 'Design Team '
+    names:
+    - Name
+    - Name
+    - Name
+  - teamName: 'Engineering Team '
+    names:
+    - Name
+    - Name
+    - Name
+  - teamName: 'Art Team '
+    names:
+    - Name
+    - Name
+    - Name
+  - teamName: 'Audio Team '
+    names:
+    - Name
+    - Name
+    - Name
