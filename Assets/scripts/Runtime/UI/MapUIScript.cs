@@ -11,6 +11,13 @@ public class MapUIScript : MonoBehaviour
     public string currentLevelName;
     GameObject canvas;
 
+    // objectives to change
+    public int score;
+    public int combos;
+    public int fourCombos;
+    public int powerUps;
+    // need crystals one 
+
     public static MapUIScript mapInstance;
 
     // method that loads Title Screen Scene on button click 
@@ -23,6 +30,7 @@ public class MapUIScript : MonoBehaviour
     // method that loads the Game Scene on button click and sets a variable for the game settings
     public void PlayLevel(int levelNum)
     {
+        /*
         if (levelNum == 1)
         {
             numStartingLines = 1;
@@ -31,7 +39,8 @@ public class MapUIScript : MonoBehaviour
         {
             numStartingLines = 4;
         }
-        mapInstance.numStartingLines = numStartingLines;
+        */ 
+        // mapInstance.numStartingLines = numStartingLines;
         mapInstance.currentLevelName = "Level" + levelNum.ToString();
         SceneManager.LoadSceneAsync("Game");
         Debug.Log("PLAY GAME");
