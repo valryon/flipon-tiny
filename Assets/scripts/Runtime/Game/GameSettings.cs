@@ -63,6 +63,7 @@ namespace Pon
             {
                 // set game settings based on level
                 gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
+                objective.stats.score = MapUIScript.mapInstance.score;
             }
 
             if (gameSettingsInstance != null)

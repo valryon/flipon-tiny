@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 11416508, guid: 0fabce79a76fba346b9b3d9fa57c56c4, type: 3}
   - {fileID: 11416508, guid: cd015a7ef86dda54aae2fa60938e08fd, type: 3}
   musicSource: {fileID: 1932628401}
-  winMusic: {fileID: 8300000, guid: 194cb5fdafb8ddf4fa861bdf8972c846, type: 3}
-  loseMusic: {fileID: 8300000, guid: 8983efbd7ef76344c9d16538b6bc66e5, type: 3}
+  winMusic: {fileID: 8300000, guid: 66926e54a9f7cdb4fa40432b545822ce, type: 3}
+  loseMusic: {fileID: 8300000, guid: 682d24582a98c0e4c92d479ad1d724e8, type: 3}
 --- !u!4 &562245209
 Transform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932628400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7f90fe4034a6b49bc11c030796d9ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 96793c00f29e4a244b66a79259714424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2017043631
@@ -687,7 +687,7 @@ MonoBehaviour:
       timeReached: 0
       timeMax: 5
       highestCombo: 0
-      totalCombos: 2
+      totalCombos: 0
       total4Combos: 0
       total5Combos: 0
       totalLCombos: 0
