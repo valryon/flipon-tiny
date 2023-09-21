@@ -466,13 +466,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 967843984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8331482277672ef4594511012d3effa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
   timeToSurvive: 0
-  numStartingLines: 1
-  score: 500
+  numStartingLines: 0
+  score: 300
   combos: 0
   fourCombos: 0
   powerUps: 0
@@ -644,13 +644,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1334279891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8331482277672ef4594511012d3effa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
   timeToSurvive: 0
-  numStartingLines: 3
-  score: 0
+  numStartingLines: 0
+  score: 1000
   combos: 0
   fourCombos: 0
   powerUps: 0
@@ -1188,13 +1188,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1514380445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8331482277672ef4594511012d3effa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
   timeToSurvive: 0
-  numStartingLines: 2
-  score: 0
+  numStartingLines: 0
+  score: 500
   combos: 0
   fourCombos: 0
   powerUps: 0
