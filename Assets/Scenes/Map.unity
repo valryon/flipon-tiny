@@ -469,8 +469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLimit: 0
+  timeToSurvive: 0
   numStartingLines: 1
-  score: 0
+  score: 500
   combos: 0
   fourCombos: 0
   powerUps: 0
@@ -645,6 +647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLimit: 0
+  timeToSurvive: 0
   numStartingLines: 3
   score: 0
   combos: 0
@@ -1187,6 +1191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47197db48e5cca41b93cff13347fcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLimit: 0
+  timeToSurvive: 0
   numStartingLines: 2
   score: 0
   combos: 0

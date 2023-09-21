@@ -687,7 +687,7 @@ MonoBehaviour:
       timeReached: 0
       timeMax: 5
       highestCombo: 0
-      totalCombos: 2
+      totalCombos: 0
       total4Combos: 0
       total5Combos: 0
       totalLCombos: 0
