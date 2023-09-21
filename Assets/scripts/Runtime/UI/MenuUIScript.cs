@@ -42,6 +42,12 @@ public class MenuUIScript : MonoBehaviour
             muteVolumeToggle.onValueChanged.AddListener((bool isOn) => { Mute(muteVolumeToggle.isOn); });
         }
 
+        // get slider
+        if (soundSlider != null)
+        {
+            soundSlider.onValueChanged.AddListener((float value) => { SetSoundLevel(soundSlider.value); } );
+        }
+
         // get notification toggles
         if (notifictationToggle != null)
         {
@@ -54,8 +60,7 @@ public class MenuUIScript : MonoBehaviour
             hintsToggle.onValueChanged.AddListener((bool isOn) => { EnableHints(hintsToggle.isOn); });
         }
 
-        // get quality dropdown
-
+        // get quality dropdowns
         if (graphicsDropdown != null)
         {
             graphicsDropdown.onValueChanged.AddListener((int qualityIndex) => { SetQualityLevel(graphicsDropdown.value); }); 
@@ -239,7 +244,7 @@ public class MenuUIScript : MonoBehaviour
             {
                 mixer.SetFloat("MusicVolume", -80.0f);
                 musicSlider.interactable = false;
-                musicSlider.value = 0.0001f;
+                musicSlider.value = 0.0f;
             }
             else
             {
@@ -254,13 +259,13 @@ public class MenuUIScript : MonoBehaviour
             {
                 mixer.SetFloat("MusicVolume", -80.0f);
                 musicSlider.interactable = false;
-                musicSlider.value = 0.0001f;
+                musicSlider.value = 0.0f;
             }
             else
             {
                 mixer.SetFloat("MusicVolume", 0.0f);
                 musicSlider.interactable = true;
-                musicSlider.value = currentMusicValue;
+                musicSlider.value = 1.0f;
             }
             
         }
@@ -269,11 +274,12 @@ public class MenuUIScript : MonoBehaviour
             currentSoundVolume = PlayerPrefs.GetFloat("SoundVolume");
             currentSoundValue = PlayerPrefs.GetFloat("SoundValue");
 
+
             if (muteVolumeToggle.isOn)
             {
                 mixer.SetFloat("SoundVolume", -80.0f);
                 soundSlider.interactable = false;
-                soundSlider.value = 0.0001f;
+                soundSlider.value = 0.0f;
             }
             else
             {
@@ -289,13 +295,13 @@ public class MenuUIScript : MonoBehaviour
             {
                 mixer.SetFloat("SoundVolume", -80.0f);
                 soundSlider.interactable = false;
-                soundSlider.value = 0.0001f;
+                soundSlider.value = 0.0f;
             }
             else
             {
                 mixer.SetFloat("SoundVolume", 0.0f);
                 soundSlider.interactable = true;
-                soundSlider.value = currentSoundValue;
+                soundSlider.value = 1.0f;
             }
         }
 

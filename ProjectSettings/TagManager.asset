@@ -10,6 +10,7 @@ TagManager:
   - Lives
   - Daily
   - Events
+  - MusicSource
   layers:
   - Default
   - TransparentFX
