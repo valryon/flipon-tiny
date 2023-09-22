@@ -121,6 +121,10 @@ namespace Pon
 
     private int totalCombos, total4Combos, total5Combos, total6Combos;
 
+    private int currentBlock1Broken, currentBlock2Broken,
+                currentBlock3Broken, currentBlock4Broken,
+                currentBlock5Broken, currentBlock6Broken;
+
     private float timeBeforeGameOverMax = LAST_CHANCE_DURATION;
     private float timeBeforeGameOverCurrent = LAST_CHANCE_DURATION;
 
@@ -415,6 +419,9 @@ namespace Pon
       int blocksCount = comboBlocks.Count;
       if (blocksCount < 3) return;
 
+      // Update the number of each type of block broken
+      UpdateBlockObjectives(comboBlocks);
+
       bypassFrozen = false;
 
       // Light columns
@@ -502,6 +509,34 @@ namespace Pon
       {
         GameUIScript.DisplayChainWidget(this, chainCount, points, comboBlocks[0].Definition.color, loc);
       }
+    }
+
+    private void UpdateBlockObjectives(List<Block> comboBlocks)
+    {
+      BlockDefinition definition = comboBlocks.PickRandom().Definition;
+      int blocksCount = comboBlocks.Count;
+      int blockId = int.Parse(definition.id.ToString());
+      switch(blockId)
+      {
+        case 1:
+          currentBlock1Broken += blocksCount;
+          break;
+        case 2:
+          currentBlock2Broken += blocksCount;
+          break;
+        case 3:
+          currentBlock3Broken += blocksCount;
+          break;
+        case 4:
+          currentBlock4Broken += blocksCount;
+          break;
+        case 5:
+          currentBlock5Broken += blocksCount;
+          break;
+        case 6:
+          currentBlock6Broken += blocksCount;
+          break;
+      }     
     }
 
     private int GetScore(int blocksCount, bool isChain)
@@ -1193,6 +1228,18 @@ namespace Pon
     public int Chains => chainCount;
 
     public int HighestY => grid != null ? (int) grid.HighestBlock.y : 0;
+
+    public int CurrentBlock1Broken => currentBlock1Broken;
+
+    public int CurrentBlock2Broken => currentBlock2Broken;
+
+    public int CurrentBlock3Broken => currentBlock3Broken;
+
+    public int CurrentBlock4Broken => currentBlock4Broken;
+
+    public int CurrentBlock5Broken => currentBlock5Broken;
+
+    public int CurrentBlock6Broken => currentBlock6Broken;
 
     public int Moves => moves;
 
