@@ -685,7 +685,7 @@ MonoBehaviour:
     stats:
       score: 0
       timeReached: 0
-      timeMax: 5
+      timeMax: 0
       highestCombo: 0
       totalCombos: 0
       total4Combos: 0
@@ -695,6 +695,12 @@ MonoBehaviour:
       highestChain: 0
       totalChains: 0
       digHeight: 0
+      numBlock1Broken: 10
+      numBlock2Broken: 0
+      numBlock3Broken: 0
+      numBlock4Broken: 0
+      numBlock5Broken: 0
+      numBlock6Broken: 0
   playMode: 0
 --- !u!4 &2017043633
 Transform:
