@@ -697,10 +697,10 @@ MonoBehaviour:
       digHeight: 0
       numBlock1Broken: 10
       numBlock2Broken: 0
-      numBlock3Broken: 0
-      numBlock4Broken: 0
+      numBlock3Broken: 10
+      numBlock4Broken: 10
       numBlock5Broken: 0
-      numBlock6Broken: 0
+      numBlock6Broken: 10
   playMode: 0
 --- !u!4 &2017043633
 Transform:
