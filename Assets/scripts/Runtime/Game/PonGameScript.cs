@@ -126,17 +126,20 @@ namespace Pon
       }
 
       // player runs out of time (objectives has a time limit set under "Time Reached")
-      if (objectives.stats.timeMax <= timeElapsed && objectives.stats.timeMax != 0 && lostByFillingScreen == false && wonGame == false)
+      if (objectives != null)
       {
-        musicSource.PlayOneShot(loseMusic);
-        player.grid.SetGameOver();
-        DOVirtual.DelayedCall(3f, TriggerGameOver);
+        if (objectives.stats.timeMax <= timeElapsed && objectives.stats.timeMax != 0 && lostByFillingScreen == false && wonGame == false)
+        {
+          musicSource.PlayOneShot(loseMusic);
+          player.grid.SetGameOver();
+          DOVirtual.DelayedCall(3f, TriggerGameOver);
 
-        // prevents Update() from going into this if statement more than once (losemusic will play)
-        objectives.stats.timeMax = 0;
+          // prevents Update() from going into this if statement more than once (losemusic will play)
+          objectives.stats.timeMax = 0;
 
-        // stops timer
-        isOver = true;
+          // stops timer
+          isOver = true;
+        }
       }
 
       GameUIScript.SetTime(timeElapsed);
