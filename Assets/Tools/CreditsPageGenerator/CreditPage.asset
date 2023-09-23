@@ -9,31 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603d41955a1c97f4987e83f5d718dcb5, type: 3}
-  m_Name: Credit Page
+  m_Script: {fileID: 11500000, guid: 489433ed4fe22ee428e40772174d831b, type: 3}
+  m_Name: CreditPage
   m_EditorClassIdentifier: 
   credits:
-  - teamName: 'Production Team '
+  - teamName: Production Team
     names:
     - Name
     - Name
     - Name
-  - teamName: 'Design Team '
+  - teamName: Design Team
     names:
     - Name
     - Name
     - Name
-  - teamName: 'Engineering Team '
+  - teamName: Engineering Team
     names:
     - Name
     - Name
     - Name
-  - teamName: 'Art Team '
+  - teamName: Art Team
     names:
     - Name
     - Name
     - Name
-  - teamName: 'Audio Team '
+  - teamName: Audio Team
     names:
     - Name
     - Name
