@@ -256,6 +256,42 @@ namespace Pon
         }
       }
 
+      if (type == ObjectiveStatType.NumBlock1Break)
+      {
+        t = Mathf.Max(0, target.numBlock1Broken - (current.numBlock1Broken - start.numBlock1Broken)).ToString();
+        s = ObjectiveData.GetIcon("block1");
+      }
+
+      if (type == ObjectiveStatType.NumBlock2Break)
+      {
+        t = Mathf.Max(0, target.numBlock2Broken - (current.numBlock2Broken - start.numBlock2Broken)).ToString();
+        s = ObjectiveData.GetIcon("block2");
+      }
+
+      if (type == ObjectiveStatType.NumBlock3Break)
+      {
+        t = Mathf.Max(0, target.numBlock3Broken - (current.numBlock3Broken - start.numBlock3Broken)).ToString();
+        s = ObjectiveData.GetIcon("block3");
+      }
+
+      if (type == ObjectiveStatType.NumBlock4Break)
+      {
+        t = Mathf.Max(0, target.numBlock4Broken - (current.numBlock4Broken - start.numBlock4Broken)).ToString();
+        s = ObjectiveData.GetIcon("block4");
+      }
+
+      if (type == ObjectiveStatType.NumBlock5Break)
+      {
+        t = Mathf.Max(0, target.numBlock5Broken - (current.numBlock5Broken - start.numBlock5Broken)).ToString();
+        s = ObjectiveData.GetIcon("block5");
+      }
+
+      if (type == ObjectiveStatType.NumBlock6Break)
+      {
+        t = Mathf.Max(0, target.numBlock6Broken - (current.numBlock6Broken - start.numBlock6Broken)).ToString();
+        s = ObjectiveData.GetIcon("block6");
+      }
+
       if (completed == false)
       {
         if (immediate)
