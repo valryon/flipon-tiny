@@ -125,6 +125,8 @@ namespace Pon
                 currentBlock3Broken, currentBlock4Broken,
                 currentBlock5Broken, currentBlock6Broken;
 
+    private int timesPowerUsed;
+
     private float timeBeforeGameOverMax = LAST_CHANCE_DURATION;
     private float timeBeforeGameOverCurrent = LAST_CHANCE_DURATION;
 
@@ -908,7 +910,8 @@ namespace Pon
       if (PowerCharge >= 1f && playerScript.power.CanUsePower(this, grid))
       {
         playerScript.power.UsePower(this, grid);
-
+        // Track objective
+        timesPowerUsed++;
         // Freeze grid n sec to avoid game over
         grid.Freeze(3f);
       }
@@ -1240,6 +1243,8 @@ namespace Pon
     public int CurrentBlock5Broken => currentBlock5Broken;
 
     public int CurrentBlock6Broken => currentBlock6Broken;
+
+    public int TimesPowerUsed => timesPowerUsed;
 
     public int Moves => moves;
 
