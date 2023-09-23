@@ -3,11 +3,13 @@
 // file 'LICENSE.md', which is part of this source code package.
 
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening.Core;
+using UnityEngine.Audio;
 
 namespace Pon
 {
@@ -39,11 +41,19 @@ namespace Pon
     private bool firstGridStarted;
     private int maxStressLevel;
 
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip winMusic;
+    [SerializeField] private AudioClip loseMusic;
+
+        private bool lostByFillingScreen = false;
+        private bool wonGame = false;
+
     #endregion
 
     #region Timeline
 
     string currentLevelName;
+    PlayerScript player;
     private void Awake()
     {
       instance = this;
@@ -53,6 +63,8 @@ namespace Pon
         // set game settings based on level
         currentLevelName = MapUIScript.mapInstance.currentLevelName;
       }
+
+      musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -113,6 +125,23 @@ namespace Pon
         timeElapsed += Time.deltaTime;
       }
 
+      // player runs out of time (objectives has a time limit set under "Time Reached")
+      if (objectives != null)
+      {
+        if (objectives.stats.timeMax <= timeElapsed && objectives.stats.timeMax != 0 && lostByFillingScreen == false && wonGame == false)
+        {
+          musicSource.PlayOneShot(loseMusic);
+          player.grid.SetGameOver();
+          DOVirtual.DelayedCall(3f, TriggerGameOver);
+
+          // prevents Update() from going into this if statement more than once (losemusic will play)
+          objectives.stats.timeMax = 0;
+
+          // stops timer
+          isOver = true;
+        }
+      }
+
       GameUIScript.SetTime(timeElapsed);
 
       // Update objectives
@@ -152,15 +181,22 @@ namespace Pon
           if (objectives.Succeed(pWinner, pStats))
           {
             Log.Info("Versus with level ended!");
-            GameOverVersus(pWinner);
 
+            // WIN MUSIC (need to delay level from ending until music is done)
+            musicSource.PlayOneShot(winMusic);
+            // Invoke("test", 10f);
+            // StartCoroutine(MyFunction(5f, pWinner));
+            GameOverVersus(pWinner);
+            // make sure timer stops when you win
+            wonGame = true;
             break;
           }
         }
       }
     }
 
-    private void GameOverVersus(PlayerScript winner)
+
+        private void GameOverVersus(PlayerScript winner)
     {
       // One player wins
       isOver = true;
@@ -272,7 +308,7 @@ namespace Pon
         var p = basePlayer;
         var po = new GameObject();
 
-        PlayerScript player;
+        
         if (p.type == PlayerType.Local)
         {
           player = po.AddComponent<PlayerScript>();
@@ -547,16 +583,26 @@ namespace Pon
           }
         }
 
-        DOVirtual.DelayedCall(1f, TriggerGameOver);
+        // lose music ?
+        musicSource.PlayOneShot(loseMusic);
+        // set bool so that multiple sounds don't play
+        lostByFillingScreen = true;
+        // stop timer
+        isOver = true;
+        DOVirtual.DelayedCall(3f, TriggerGameOver);
       }
     }
 
     private void TriggerGameOver()
     {
+      
       DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
       Log.Warning("Game is ended.");
       SetPause(true);
       isOver = true;
+
+      // music for winning/losing 
+
 
       /*
         Firebase.Analytics.FirebaseAnalytics.LogEvent(
