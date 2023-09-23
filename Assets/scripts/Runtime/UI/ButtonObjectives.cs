@@ -12,7 +12,6 @@ public class ButtonObjectives : MonoBehaviour
     public int combos;
     public int fourCombos;
     public int powerUps;
-    // crystal type
 
     // MAP MANAGER (handles current level and sets objectives in game scene)
 
@@ -43,6 +42,24 @@ public class ButtonObjectives : MonoBehaviour
         {
             // default score
             MapUIScript.mapInstance.score = 0;
+        }
+
+        if (combos > 0)
+        {
+            MapUIScript.mapInstance.combos = combos;
+        }
+        else
+        {
+            MapUIScript.mapInstance.combos = 0;
+        }
+
+        if (fourCombos > 0)
+        {
+            MapUIScript.mapInstance.fourCombos = fourCombos;
+        }
+        else
+        {
+            MapUIScript.mapInstance.fourCombos = 0;
         }
     }
 }
