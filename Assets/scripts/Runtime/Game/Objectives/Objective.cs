@@ -23,7 +23,14 @@ namespace Pon
     TotalLCombos,
     HighestChain,
     TotalChains,
-    Height
+    Height,
+    NumBlock1Break,
+    NumBlock2Break,
+    NumBlock3Break,
+    NumBlock4Break,
+    NumBlock5Break,
+    NumBlock6Break,
+    TimesPowerUsed
   }
 
   [Serializable]
@@ -47,17 +54,30 @@ namespace Pon
     public int totalChains;
     public int digHeight; // ⚠ Not working in the tiny project
 
+    public int numBlock1Broken; // Blue 
+    public int numBlock2Broken; // Green?
+    public int numBlock3Broken; // Orange / Red
+    public int numBlock4Broken; // Pink
+    public int numBlock5Broken; // Purple?
+    public int numBlock6Broken; // Yellow
+
+    public int timesPowerUsed;
+
     public ObjectiveStats(PlayerScript p1, float timeElapsed)
       : this(p1.player.Score, p1.grid.SpeedLevel, timeElapsed,
         p1.grid.ComboMultiplier, // Use the current multiplier, not the best
         p1.grid.TotalCombos, p1.grid.Total4Combos, p1.grid.Total5Combos, p1.grid.Total6Combos,
-        p1.grid.TotalChains, p1.grid.Chains, p1.grid.HighestY)
+        p1.grid.TotalChains, p1.grid.Chains, p1.grid.HighestY, p1.grid.CurrentBlock1Broken,
+        p1.grid.CurrentBlock2Broken, p1.grid.CurrentBlock3Broken, p1.grid.CurrentBlock4Broken,
+        p1.grid.CurrentBlock5Broken, p1.grid.CurrentBlock6Broken, p1.grid.TimesPowerUsed)
     {
     }
 
     public ObjectiveStats(long currentScore, int level, float currentTime, int currentHighestCombo,
       int currentTotalCombo, int currentTotal4Combos, int currentTotal5Combos, int currentTotalLCombos,
-      int currentTotalChain, int currentHighestChain, int highestY)
+      int currentTotalChain, int currentHighestChain, int highestY, int currentBlock1Broken, int currentBlock2Broken,
+      int currentBlock3Broken, int currentBlock4Broken, int currentBlock5Broken, int currentBlock6Broken,
+      int currentPowersUsed)
     {
       score = currentScore;
       speedLevel = level;
@@ -71,6 +91,13 @@ namespace Pon
       totalChains = currentTotalChain;
       highestChain = currentHighestChain;
       digHeight = highestY;
+      numBlock1Broken = currentBlock1Broken;
+      numBlock2Broken = currentBlock2Broken;
+      numBlock3Broken = currentBlock3Broken;
+      numBlock4Broken = currentBlock4Broken;
+      numBlock5Broken = currentBlock5Broken;
+      numBlock6Broken = currentBlock6Broken;
+      timesPowerUsed = currentPowersUsed;
     }
   }
 
@@ -146,6 +173,41 @@ namespace Pon
         match &= c < t;
       }
 
+      if (stats.numBlock1Broken > 0)
+      {
+        match &= (current.numBlock1Broken - startStats.numBlock1Broken) >= stats.numBlock1Broken;
+      }
+
+      if (stats.numBlock2Broken > 0)
+      {
+        match &= (current.numBlock2Broken - startStats.numBlock2Broken) >= stats.numBlock2Broken;
+      }
+
+      if (stats.numBlock3Broken > 0)
+      {
+        match &= (current.numBlock3Broken - startStats.numBlock3Broken) >= stats.numBlock3Broken;
+      }
+
+      if (stats.numBlock4Broken > 0)
+      {
+        match &= (current.numBlock4Broken - startStats.numBlock4Broken) >= stats.numBlock4Broken;
+      }
+
+      if (stats.numBlock5Broken > 0)
+      {
+        match &= (current.numBlock5Broken - startStats.numBlock5Broken) >= stats.numBlock5Broken;
+      }
+
+      if (stats.numBlock6Broken > 0)
+      {
+        match &= (current.numBlock6Broken - startStats.numBlock6Broken) >= stats.numBlock6Broken;
+      }
+
+      if (stats.timesPowerUsed > 0)
+      {
+        match &= (current.timesPowerUsed - startStats.timesPowerUsed) >= stats.timesPowerUsed;
+      }
+
       return match;
     }
 
@@ -163,6 +225,13 @@ namespace Pon
       if (stats.totalChains > 0) return (ObjectiveStatType.TotalChains);
       if (stats.highestChain > 0) return (ObjectiveStatType.HighestChain);
       if (stats.digHeight > 0) return (ObjectiveStatType.Height);
+      if (stats.numBlock1Broken > 0) return (ObjectiveStatType.NumBlock1Break);
+      if (stats.numBlock2Broken > 0) return (ObjectiveStatType.NumBlock2Break);
+      if (stats.numBlock3Broken > 0) return (ObjectiveStatType.NumBlock3Break);
+      if (stats.numBlock4Broken > 0) return (ObjectiveStatType.NumBlock4Break);
+      if (stats.numBlock5Broken > 0) return (ObjectiveStatType.NumBlock5Break);
+      if (stats.numBlock6Broken > 0) return (ObjectiveStatType.NumBlock6Break);
+      if (stats.timesPowerUsed > 0) return (ObjectiveStatType.TimesPowerUsed);
 
       return ObjectiveStatType.None;
     }
@@ -187,6 +256,13 @@ namespace Pon
       if (stats.totalChains > 0) types.Add(new ObjectiveStats() {totalChains = stats.totalChains});
       if (stats.highestChain > 0) types.Add(new ObjectiveStats() {highestChain = stats.highestChain});
       if (stats.digHeight > 0) types.Add(new ObjectiveStats() {digHeight = stats.digHeight});
+      if (stats.numBlock1Broken > 0) types.Add(new ObjectiveStats() { numBlock1Broken = stats.numBlock1Broken });
+      if (stats.numBlock2Broken > 0) types.Add(new ObjectiveStats() { numBlock2Broken = stats.numBlock2Broken });
+      if (stats.numBlock3Broken > 0) types.Add(new ObjectiveStats() { numBlock3Broken = stats.numBlock3Broken });
+      if (stats.numBlock4Broken > 0) types.Add(new ObjectiveStats() { numBlock4Broken = stats.numBlock4Broken });
+      if (stats.numBlock5Broken > 0) types.Add(new ObjectiveStats() { numBlock5Broken = stats.numBlock5Broken });
+      if (stats.numBlock6Broken > 0) types.Add(new ObjectiveStats() { numBlock6Broken = stats.numBlock6Broken });
+      if (stats.timesPowerUsed > 0) types.Add(new ObjectiveStats() { timesPowerUsed = stats.timesPowerUsed });
 
       return types;
     }

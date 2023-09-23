@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 11416508, guid: 0fabce79a76fba346b9b3d9fa57c56c4, type: 3}
   - {fileID: 11416508, guid: cd015a7ef86dda54aae2fa60938e08fd, type: 3}
   musicSource: {fileID: 1932628401}
-  winMusic: {fileID: 8300000, guid: 194cb5fdafb8ddf4fa861bdf8972c846, type: 3}
-  loseMusic: {fileID: 8300000, guid: 8983efbd7ef76344c9d16538b6bc66e5, type: 3}
+  winMusic: {fileID: 8300000, guid: 66926e54a9f7cdb4fa40432b545822ce, type: 3}
+  loseMusic: {fileID: 8300000, guid: 682d24582a98c0e4c92d479ad1d724e8, type: 3}
 --- !u!4 &562245209
 Transform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932628400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7f90fe4034a6b49bc11c030796d9ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 96793c00f29e4a244b66a79259714424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2017043631
@@ -685,9 +685,9 @@ MonoBehaviour:
     stats:
       score: 0
       timeReached: 0
-      timeMax: 5
+      timeMax: 0
       highestCombo: 0
-      totalCombos: 2
+      totalCombos: 0
       total4Combos: 0
       total5Combos: 0
       totalLCombos: 0
@@ -695,6 +695,13 @@ MonoBehaviour:
       highestChain: 0
       totalChains: 0
       digHeight: 0
+      numBlock1Broken: 20
+      numBlock2Broken: 0
+      numBlock3Broken: 0
+      numBlock4Broken: 0
+      numBlock5Broken: 0
+      numBlock6Broken: 0
+      timesPowerUsed: 1
   playMode: 0
 --- !u!4 &2017043633
 Transform:
@@ -969,9 +976,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1067,13 +1074,27 @@ MonoBehaviour:
   - name: combo_L
     sprite: {fileID: 21300000, guid: 4614bf85fb4abfa4ab813a6c046c8754, type: 3}
   - name: time
-    sprite: {fileID: 21300000, guid: a283dfcb16d73db44ad6cfcb8d8c2928, type: 3}
+    sprite: {fileID: 21300000, guid: e73fcc694926745daabbb6e40b4148d3, type: 3}
   - name: level
     sprite: {fileID: 21300000, guid: f2965b80cb670c54789170e892453781, type: 3}
   - name: chain
     sprite: {fileID: 21300000, guid: 97040222a0863d8489acac11115b028c, type: 3}
   - name: height
     sprite: {fileID: 21300000, guid: 08e035c6831b1c64a9fe66fda133753f, type: 3}
+  - name: block1
+    sprite: {fileID: 21300000, guid: 783f57ef2ce7ba04a85bf18457d276e1, type: 3}
+  - name: block2
+    sprite: {fileID: 21300000, guid: 8f37731cde027614f9dcc3a2d5b6f5cf, type: 3}
+  - name: block3
+    sprite: {fileID: 21300000, guid: 375166582ab92e4458c590ba5b03707e, type: 3}
+  - name: block4
+    sprite: {fileID: 21300000, guid: af3c3ddf46672d544b11ee81816e8f1f, type: 3}
+  - name: block5
+    sprite: {fileID: 21300000, guid: 2febf61827c22a94d9c13d9ba380419e, type: 3}
+  - name: block6
+    sprite: {fileID: 21300000, guid: 588afc4c059bf7d48b9a7f63b430ee5e, type: 3}
+  - name: powerButton
+    sprite: {fileID: 21300000, guid: 8668ef0af11e4dd41bf9d0544bf8ecfe, type: 3}
 --- !u!224 &3946644321121207858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1187,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f251734c209ba46afec5cf1a53cff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceResolution: {x: 1920, y: 1080}
+  referenceResolution: {x: 720, y: 1280}
   gridRelativePosition: {x: 0, y: 0}
   gridScale: {x: 1, y: 1, z: 1}
   playerUI: {fileID: 114661637201277032, guid: ed4ee0049466b2d40be99e32ff43f483, type: 3}
