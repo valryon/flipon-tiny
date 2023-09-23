@@ -29,7 +29,8 @@ namespace Pon
     NumBlock3Break,
     NumBlock4Break,
     NumBlock5Break,
-    NumBlock6Break
+    NumBlock6Break,
+    TimesPowerUsed
   }
 
   [Serializable]
@@ -60,20 +61,23 @@ namespace Pon
     public int numBlock5Broken; // Purple?
     public int numBlock6Broken; // Yellow
 
+    public int timesPowerUsed;
+
     public ObjectiveStats(PlayerScript p1, float timeElapsed)
       : this(p1.player.Score, p1.grid.SpeedLevel, timeElapsed,
         p1.grid.ComboMultiplier, // Use the current multiplier, not the best
         p1.grid.TotalCombos, p1.grid.Total4Combos, p1.grid.Total5Combos, p1.grid.Total6Combos,
         p1.grid.TotalChains, p1.grid.Chains, p1.grid.HighestY, p1.grid.CurrentBlock1Broken,
         p1.grid.CurrentBlock2Broken, p1.grid.CurrentBlock3Broken, p1.grid.CurrentBlock4Broken,
-        p1.grid.CurrentBlock5Broken, p1.grid.CurrentBlock6Broken)
+        p1.grid.CurrentBlock5Broken, p1.grid.CurrentBlock6Broken, p1.grid.TimesPowerUsed)
     {
     }
 
     public ObjectiveStats(long currentScore, int level, float currentTime, int currentHighestCombo,
       int currentTotalCombo, int currentTotal4Combos, int currentTotal5Combos, int currentTotalLCombos,
       int currentTotalChain, int currentHighestChain, int highestY, int currentBlock1Broken, int currentBlock2Broken,
-      int currentBlock3Broken, int currentBlock4Broken, int currentBlock5Broken, int currentBlock6Broken)
+      int currentBlock3Broken, int currentBlock4Broken, int currentBlock5Broken, int currentBlock6Broken,
+      int currentPowersUsed)
     {
       score = currentScore;
       speedLevel = level;
@@ -93,6 +97,7 @@ namespace Pon
       numBlock4Broken = currentBlock4Broken;
       numBlock5Broken = currentBlock5Broken;
       numBlock6Broken = currentBlock6Broken;
+      timesPowerUsed = currentPowersUsed;
     }
   }
 
@@ -198,6 +203,11 @@ namespace Pon
         match &= (current.numBlock6Broken - startStats.numBlock6Broken) >= stats.numBlock6Broken;
       }
 
+      if (stats.timesPowerUsed > 0)
+      {
+        match &= (current.timesPowerUsed - startStats.timesPowerUsed) >= stats.timesPowerUsed;
+      }
+
       return match;
     }
 
@@ -221,6 +231,7 @@ namespace Pon
       if (stats.numBlock4Broken > 0) return (ObjectiveStatType.NumBlock4Break);
       if (stats.numBlock5Broken > 0) return (ObjectiveStatType.NumBlock5Break);
       if (stats.numBlock6Broken > 0) return (ObjectiveStatType.NumBlock6Break);
+      if (stats.timesPowerUsed > 0) return (ObjectiveStatType.TimesPowerUsed);
 
       return ObjectiveStatType.None;
     }
@@ -251,6 +262,7 @@ namespace Pon
       if (stats.numBlock4Broken > 0) types.Add(new ObjectiveStats() { numBlock4Broken = stats.numBlock4Broken });
       if (stats.numBlock5Broken > 0) types.Add(new ObjectiveStats() { numBlock5Broken = stats.numBlock5Broken });
       if (stats.numBlock6Broken > 0) types.Add(new ObjectiveStats() { numBlock6Broken = stats.numBlock6Broken });
+      if (stats.timesPowerUsed > 0) types.Add(new ObjectiveStats() { timesPowerUsed = stats.timesPowerUsed });
 
       return types;
     }

@@ -292,6 +292,12 @@ namespace Pon
         s = ObjectiveData.GetIcon("block6");
       }
 
+      if (type == ObjectiveStatType.TimesPowerUsed)
+      {
+        t = Mathf.Max(0, target.timesPowerUsed - (current.timesPowerUsed - start.timesPowerUsed)).ToString();
+        s = ObjectiveData.GetIcon("powerButton");
+      }
+
       if (completed == false)
       {
         if (immediate)
