@@ -295,8 +295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.36005, y: -87.00005}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 206.87, y: -111.569984}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41819317
 MonoBehaviour:
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 41819315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -316,7 +316,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &41819318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,8 +614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.00004, y: 85.99996}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 66.49999, y: 4.9800186}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45186415
 MonoBehaviour:
@@ -620,7 +626,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 45186413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -629,7 +635,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &45186416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,8 +1068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.36005, y: -253.00006}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 206.87, y: -223.4}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234249163
 MonoBehaviour:
@@ -1068,7 +1080,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 234249161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -1077,7 +1089,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &234249164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,8 +1512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 420}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 66.49999, y: 230.00002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305847054
 MonoBehaviour:
@@ -1506,7 +1524,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 305847052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -1515,7 +1533,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &305847055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,8 +2103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.36005, y: 85.99996}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 206.87, y: 4.9800186}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463338567
 MonoBehaviour:
@@ -2091,7 +2115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 463338565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -2100,7 +2124,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &463338568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2305,8 +2335,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2527,8 +2557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.99999, y: -87.00005}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -73.630005, y: -111.569984}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614358761
 MonoBehaviour:
@@ -2539,7 +2569,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 614358759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -2548,7 +2578,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &614358762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,8 +2857,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2908,8 +2944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.99999, y: 253.99994}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -73.630005, y: 118.16002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890836744
 MonoBehaviour:
@@ -2920,7 +2956,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 890836742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -2929,7 +2965,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &890836745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,8 +3263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.99999, y: -253.00006}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -73.630005, y: -223.4}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926843880
 MonoBehaviour:
@@ -3233,7 +3275,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 926843878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -3242,7 +3284,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &926843881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3399,8 +3447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.36, y: 419.99994}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -214, y: 230}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967843986
 MonoBehaviour:
@@ -3530,16 +3578,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 967843984}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
+  score: 500
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!1 &988940833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,8 +3631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.00004, y: 253.99997}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 66.49999, y: 118.16002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988940835
 MonoBehaviour:
@@ -3589,7 +3643,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 988940833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -3598,7 +3652,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &988940836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3890,8 +3950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.99999, y: 85.99995}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -73.630005, y: 4.9800186}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130683901
 MonoBehaviour:
@@ -3902,7 +3962,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130683899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -3911,7 +3971,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1130683902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4068,8 +4134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.36, y: 85.99995}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -214, y: 4.9800186}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148865666
 MonoBehaviour:
@@ -4080,7 +4146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148865664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -4088,8 +4154,14 @@ MonoBehaviour:
   numStartingLines: 0
   score: 0
   combos: 0
-  fourCombos: 0
-  powerUps: 0
+  fourCombos: 3
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1148865667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4564,8 +4636,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4651,8 +4723,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.36, y: -253.00006}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -214, y: -223.4}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1278269974
 MonoBehaviour:
@@ -4663,7 +4735,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1278269972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -4672,7 +4744,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 30
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1278269975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4971,8 +5049,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5058,8 +5136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.00004, y: -253.00006}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 66.49999, y: -223.4}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532167081
 MonoBehaviour:
@@ -5070,7 +5148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1532167079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -5079,7 +5157,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1532167082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5236,8 +5320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.36, y: -87.00005}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -214, y: -111.569984}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572829699
 MonoBehaviour:
@@ -5248,7 +5332,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572829697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -5257,7 +5341,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 3
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1572829700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5414,8 +5504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -461}
-  m_SizeDelta: {x: 113.51, y: 50}
+  m_AnchoredPosition: {x: 3.8399963, y: -363.53}
+  m_SizeDelta: {x: 76.47, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595361831
 MonoBehaviour:
@@ -5426,7 +5516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595361829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -5435,7 +5525,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1595361832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5727,8 +5823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.36005, y: 419.99997}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 206.87, y: 230.00002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642874657
 MonoBehaviour:
@@ -5739,7 +5835,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1642874655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -5748,7 +5844,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1642874658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5953,8 +6055,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6040,8 +6142,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.99999, y: 419.99994}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -73.630005, y: 230.00002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656675234
 MonoBehaviour:
@@ -6052,7 +6154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1656675232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -6061,7 +6163,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1656675235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6488,8 +6596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308.36005, y: 253.99997}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 206.87, y: 118.16002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736950641
 MonoBehaviour:
@@ -6500,7 +6608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1736950639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -6509,7 +6617,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1736950642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6741,8 +6855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.36, y: 253.99994}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: -214, y: 118.16002}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840157058
 MonoBehaviour:
@@ -6753,16 +6867,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840157056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
-  combos: 0
+  combos: 10
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1840157059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7054,8 +7174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100.00004, y: -87.00005}
-  m_SizeDelta: {x: 66.42, y: 50}
+  m_AnchoredPosition: {x: 66.49999, y: -111.569984}
+  m_SizeDelta: {x: 44.75, y: 33.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916306846
 MonoBehaviour:
@@ -7066,7 +7186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916306844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60884ca4568dae04fae6dcd7cc7eac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
@@ -7075,7 +7195,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1916306847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7231,8 +7357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176.11, y: 719}
-  m_SizeDelta: {x: 116.81, y: 30}
+  m_AnchoredPosition: {x: -214, y: 413}
+  m_SizeDelta: {x: 80.72, y: 20.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129783087
 MonoBehaviour:
