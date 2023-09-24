@@ -66,6 +66,7 @@ namespace Pon
                 objective.stats.score = MapUIScript.mapInstance.score;
                 objective.stats.totalCombos = MapUIScript.mapInstance.combos;
                 objective.stats.total4Combos = MapUIScript.mapInstance.fourCombos;
+                objective.stats.totalLCombos = MapUIScript.mapInstance.LCombos;
                 objective.stats.timesPowerUsed = MapUIScript.mapInstance.timesPowerUsed;
 
                 objective.stats.numBlock1Broken = MapUIScript.mapInstance.numBlock1Broken;

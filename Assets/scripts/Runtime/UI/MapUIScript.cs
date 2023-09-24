@@ -15,6 +15,7 @@ public class MapUIScript : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
+    public int LCombos;
     public int timesPowerUsed;
     public int numBlock1Broken;
     public int numBlock2Broken;

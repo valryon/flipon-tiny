@@ -41,6 +41,9 @@ public class MapTouchDetection : MonoBehaviour
               MapLvlButton lvlButton = rayTouchPos.transform.GetComponent<MapLvlButton>();
               if (lvlButton.GetUnlocked())
               {
+                // set objectives 
+                lvlButton.GetComponent<ButtonObjectives>().setObjectives();
+                // play level
                 mapManager.PlayLevel(lvlButton.GetLevel());
               }
             }
