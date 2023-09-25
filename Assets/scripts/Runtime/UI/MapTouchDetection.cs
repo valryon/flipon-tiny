@@ -38,6 +38,7 @@ public class MapTouchDetection : MonoBehaviour
           {
             if (rayTouchPos.transform.parent == lvlParent)
             {
+              Debug.Log("LEVEL BUTTON");
               MapLvlButton lvlButton = rayTouchPos.transform.GetComponent<MapLvlButton>();
               if (lvlButton.GetUnlocked())
               {
