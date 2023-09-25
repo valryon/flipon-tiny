@@ -15,12 +15,15 @@ public class MapTouchDetection : MonoBehaviour
   [SerializeField] Transform screenCeil;
 
   [SerializeField] Transform lvlParent;
-  //[SerializeField] Canvas mainCanvas;
-  MapUIScript mapManager;
+    //[SerializeField] Canvas mainCanvas;
+    [SerializeField] MapUIScript mapManager;
 
   private void Awake()
   {
-    mapManager = FindFirstObjectByType<MapUIScript>();
+        if (mapManager == null)
+        {
+            mapManager = FindFirstObjectByType<MapUIScript>();
+        }
   }
 
   void Update()
