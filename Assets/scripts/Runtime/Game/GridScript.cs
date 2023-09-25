@@ -188,29 +188,7 @@ namespace Pon
 
       CreateBackground();
 
-      AdjustGridToScreenWidth();
-
       gameObject.SetActive(true);
-    }
-
-    private void AdjustGridToScreenWidth()
-    {
-      // Blocks are 1 unity wide but for some reason, 1.25f works better
-      float michaelBlockWidth = 1.25f;
-      int gridWidth = settings.width;
-      float totalWidth = gridWidth * michaelBlockWidth;
-      float screenWidth = Camera.main.orthographicSize * 2.0f * Camera.main.aspect;
-      float scaleFactor = screenWidth / totalWidth;
-      transform.localScale = new Vector3(scaleFactor, scaleFactor, 1.0f);
-      var camCenter = gridCam.transform.position;
-
-      // Calculate the grid's width after scaling.
-      float scaledWidth = totalWidth * scaleFactor;
-
-      // Set the grid's x position so that it's centered relative to the camera's center.
-      // This somehow needs to be width/2.5f, michael figured this out
-      float desiredXPosition = camCenter.x - (scaledWidth / 2.5f);
-      transform.position = new Vector3(desiredXPosition, transform.position.y, transform.position.z);
     }
 
     private void ApplyGridSettings()
@@ -740,23 +718,34 @@ namespace Pon
       gridCam.rect = r;
       gridCam.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-      //float preview = Mathf.Abs(settings.previewLines) - (settings.previewLines != 0 ? 0.5f : 0);
-
-      // Display only a bit of the preview
       float preview = (settings.previewLines > 0 ? 0.25f : 0);
+
+      // Calculate the orthographic size based on grid width and screen aspect ratio
+      float targetWidth = settings.width;
+      float requiredOrthoSize = targetWidth / (2 * gridCam.aspect);
+
+      // Ensure the grid height (plus any preview) fits into the camera view
+      float requiredHeight = settings.height + preview;
+      if (requiredHeight > 2 * requiredOrthoSize)
+      {
+        requiredOrthoSize = requiredHeight / 2;
+      }
+
+      // Set the orthographic size
+      gridCam.orthographicSize = requiredOrthoSize;
 
       // Center on screen
       gridCam.transform.position = new Vector3(
-        transform.position.x + (settings.width / 2f),
-        transform.position.y + (settings.height / 2f) + (-preview / 2f),
-        gridCam.transform.position.z
+          transform.position.x + (settings.width / 2f),
+          transform.position.y + (settings.height / 2f) + (-preview / 2f),
+          gridCam.transform.position.z
       );
-      gridCam.orthographicSize = (settings.height + preview) / 2f;
 
       var gui = GameUIScript.GetUI();
       transform.position += new Vector3(0f, gui.gridRelativePosition.y * gridCam.orthographicSize * 2f);
       transform.localScale = gui.gridScale;
     }
+
 
     public void SetSpeedForLevel()
     {

@@ -653,9 +653,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSettings:
     width: 6
-    height: 8
-    previewLines: 2
-    startLines: 3
+    height: 10
+    previewLines: 4
+    startLines: 5
     startLevel: 0
     limitLevel: 0
     speedUpDuration: 0.2
