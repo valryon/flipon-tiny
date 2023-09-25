@@ -19,7 +19,7 @@ namespace Pon
 
     public int height = DEFAULT_HEIGHT;
 
-    [Range(0, 2)]
+    [Range(0, 4)]
     public int previewLines = 2;
 
     [Header("Start")]
