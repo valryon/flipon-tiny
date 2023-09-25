@@ -6,12 +6,8 @@ using UnityEngine.Purchasing;
 using UnityEngine.UI;
 
 public class myIAPManager : MonoBehaviour {
-  private static Text myText;
   public GetAdRewards adRewards;
   // Use this for initialization
-  void Start () {
-    myText = GameObject.Find("MyText").GetComponent<Text>();
-  }
 	
   public void myPurchaseSucceed ()
   {
@@ -44,7 +40,7 @@ public class myIAPManager : MonoBehaviour {
   private void MyDebug(string debug)
   {
     Debug.Log(debug);
-    myText.text += "\r\n" + debug;
+        Debug.LogWarning("\r\n" + debug);
     
   }
 }
