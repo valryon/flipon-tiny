@@ -188,7 +188,29 @@ namespace Pon
 
       CreateBackground();
 
+      AdjustGridToScreenWidth();
+
       gameObject.SetActive(true);
+    }
+
+    private void AdjustGridToScreenWidth()
+    {
+      // Blocks are 1 unity wide but for some reason, 1.25f works better
+      float michaelBlockWidth = 1.25f;
+      int gridWidth = settings.width;
+      float totalWidth = gridWidth * michaelBlockWidth;
+      float screenWidth = Camera.main.orthographicSize * 2.0f * Camera.main.aspect;
+      float scaleFactor = screenWidth / totalWidth;
+      transform.localScale = new Vector3(scaleFactor, scaleFactor, 1.0f);
+      var camCenter = gridCam.transform.position;
+
+      // Calculate the grid's width after scaling.
+      float scaledWidth = totalWidth * scaleFactor;
+
+      // Set the grid's x position so that it's centered relative to the camera's center.
+      // This somehow needs to be width/2.5f, michael figured this out
+      float desiredXPosition = camCenter.x - (scaledWidth / 2.5f);
+      transform.position = new Vector3(desiredXPosition, transform.position.y, transform.position.z);
     }
 
     private void ApplyGridSettings()
