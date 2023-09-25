@@ -1968,7 +1968,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1267888382}
+      - m_Target: {fileID: 529561613}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -9183,7 +9183,7 @@ PrefabInstance:
     - target: {fileID: 2649259200999322353, guid: bb4ad2d262a766c4b8d6691164a370d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12694.925
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2649259200999322353, guid: bb4ad2d262a766c4b8d6691164a370d3,
         type: 3}
@@ -9313,7 +9313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.999756, y: 138}
+  m_AnchoredPosition: {x: -5.9997253, y: 138}
   m_SizeDelta: {x: 665.0392, y: 168.7185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632129392
