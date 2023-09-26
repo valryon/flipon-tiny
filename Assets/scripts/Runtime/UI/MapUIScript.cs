@@ -12,9 +12,12 @@ public class MapUIScript : MonoBehaviour
     GameObject canvas;
 
     // objectives to change
+    public int timeLimit;
+    public int timeToSurvive;
     public int score;
     public int combos;
     public int fourCombos;
+    public int fiveCombos;
     public int LCombos;
     public int timesPowerUsed;
     public int numBlock1Broken;

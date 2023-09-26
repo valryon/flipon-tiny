@@ -11,6 +11,7 @@ public class ButtonObjectives : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
+    public int fiveCombos;
     public int LCombos;
     public int timesPowerUsed;
     public int numBlock1Broken;
@@ -31,6 +32,23 @@ public class ButtonObjectives : MonoBehaviour
     
     public void setObjectives()
     {
+        if (timeLimit > 0)
+        {
+            MapUIScript.mapInstance.timeLimit = timeLimit;
+        }
+        else
+        {
+            MapUIScript.mapInstance.timeLimit = 0;
+        }
+        if (timeToSurvive > 0)
+        {
+            MapUIScript.mapInstance.timeToSurvive = timeToSurvive;
+        }
+        else
+        {
+            MapUIScript.mapInstance.timeToSurvive = 0;
+        }
+
         if (numStartingLines > 0)
         {
             MapUIScript.mapInstance.numStartingLines = numStartingLines;
@@ -66,6 +84,15 @@ public class ButtonObjectives : MonoBehaviour
         else
         {
             MapUIScript.mapInstance.fourCombos = 0;
+        }
+
+        if (fiveCombos > 0)
+        {
+            MapUIScript.mapInstance.fiveCombos = fiveCombos;
+        }
+        else
+        {
+            MapUIScript.mapInstance.fiveCombos = 0;
         }
 
         if (LCombos > 0)
