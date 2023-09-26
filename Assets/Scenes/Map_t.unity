@@ -2514,6 +2514,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &677670494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1683239928279754825, guid: 9d9f6e5b2557fe444aaee8e11b5fc3e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7440033990114499250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f0d76432f0e0b4d827677f4216e794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &683334236
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,6 +6385,7 @@ MonoBehaviour:
   screenFloor: {fileID: 2074238876}
   screenCeil: {fileID: 1459690699}
   lvlParent: {fileID: 1672973309}
+  mapManager: {fileID: 677670494}
 --- !u!61 &1635521911
 BoxCollider2D:
   m_ObjectHideFlags: 0
