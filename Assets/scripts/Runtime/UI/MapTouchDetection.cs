@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class MapTouchDetection : MonoBehaviour
 {
   [SerializeField] Transform backgroundObj;
 
-  RaycastHit2D rayTouchPos;
+  RaycastHit2D[] results;
   bool boolDragging = false;
   Vector2 startPos;
 
@@ -15,15 +16,18 @@ public class MapTouchDetection : MonoBehaviour
   [SerializeField] Transform screenCeil;
 
   [SerializeField] Transform lvlParent;
-    //[SerializeField] Canvas mainCanvas;
-    [SerializeField] MapUIScript mapManager;
+  [SerializeField] MapUIScript mapManager;
+
+  ContactFilter2D conFilter;
 
   private void Awake()
   {
-        if (mapManager == null)
-        {
-            mapManager = FindFirstObjectByType<MapUIScript>();
-        }
+    if (mapManager == null)
+    {
+      mapManager = FindFirstObjectByType<MapUIScript>();
+    }
+
+    conFilter.NoFilter();
   }
 
   void Update()
@@ -35,22 +39,33 @@ public class MapTouchDetection : MonoBehaviour
         // Touch Started
         if (Input.GetTouch(0).phase == TouchPhase.Began)
         {
-          rayTouchPos = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), Vector2.down);
-
-          if (rayTouchPos.transform != null)
+          results = new RaycastHit2D[2];
+          Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), Vector2.zero, conFilter, results);
+          foreach (RaycastHit2D result in results)
           {
-            if (rayTouchPos.transform.parent == lvlParent)
+            if (result.transform != null)
             {
-              MapLvlButton lvlButton = rayTouchPos.transform.GetComponent<MapLvlButton>();
-              if (lvlButton.GetUnlocked())
+              if (result.transform.IsChildOf(lvlParent))
               {
-                // set objectives 
-                lvlButton.GetComponent<ButtonObjectives>().setObjectives();
-                // play level
-                mapManager.PlayLevel(lvlButton.GetLevel());
+                Debug.Log(result.transform.name);
+                MapLvlButton lvlButton = result.transform.GetComponent<MapLvlButton>();
+                if (lvlButton.GetUnlocked())
+                {
+                  // set objectives 
+                  lvlButton.GetComponent<ButtonObjectives>().setObjectives();
+                  // play level
+                  mapManager.PlayLevel(lvlButton.GetLevel());
+                  return;
+                }
+                else
+                {
+                  // level not unlocked
+                  return;
+                }
               }
             }
-            else if (rayTouchPos.transform == backgroundObj)
+          } foreach (RaycastHit2D result in results) {
+            if (result.transform == backgroundObj)
             {
               // Start dragging if touching the background
               boolDragging = true;
@@ -59,7 +74,7 @@ public class MapTouchDetection : MonoBehaviour
           }
         }
 
-        // Touching background or level button AND dragging screen
+        // Touching background AND dragging screen
         else if (Input.GetTouch(0).phase == TouchPhase.Moved && boolDragging)
         {
           Vector2 direction = startPos - (Vector2)Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -71,6 +86,7 @@ public class MapTouchDetection : MonoBehaviour
         }
         else if (Input.GetTouch(0).phase == TouchPhase.Ended)
         {
+          // When touch ended, also end drag
           boolDragging = false;
         }
       }

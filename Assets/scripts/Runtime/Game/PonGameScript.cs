@@ -619,7 +619,7 @@ namespace Pon
       GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
 
       // level ends, go back to map scene
-      SceneManager.LoadSceneAsync("Map");
+      SceneManager.LoadSceneAsync("Map_t");
     }
 
     #endregion
