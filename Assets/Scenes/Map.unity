@@ -193,7 +193,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 5
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 4
   numBlock1Broken: 0
@@ -464,7 +463,6 @@ MonoBehaviour:
   score: 1000
   combos: 12
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -1216,7 +1214,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 2
   numBlock1Broken: 0
@@ -1667,7 +1664,6 @@ MonoBehaviour:
   score: 1250
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -1826,10 +1822,10 @@ RectTransform:
   - {fileID: 488380190}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -1512.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314203656
 MonoBehaviour:
@@ -1846,13 +1842,12 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 7500
-  combos: 0
+  score: 1000
+  combos: 12
   fourCombos: 0
-  fiveCombos: 0
-  LCombos: 3
+  LCombos: 0
   timesPowerUsed: 0
-  numBlock1Broken: 40
+  numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
   numBlock4Broken: 0
@@ -2120,7 +2115,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 5
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 4
   numBlock1Broken: 0
@@ -2400,7 +2394,6 @@ MonoBehaviour:
   score: 0
   combos: 10
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 1
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -2582,7 +2575,6 @@ MonoBehaviour:
   score: 100
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -2828,7 +2820,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -3333,10 +3324,10 @@ RectTransform:
   - {fileID: 2016511379}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -2612.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547104882
 MonoBehaviour:
@@ -3354,9 +3345,8 @@ MonoBehaviour:
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
-  combos: 0
-  fourCombos: 10
-  fiveCombos: 0
+  combos: 7
+  fourCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -3364,7 +3354,7 @@ MonoBehaviour:
   numBlock3Broken: 0
   numBlock4Broken: 0
   numBlock5Broken: 0
-  numBlock6Broken: 40
+  numBlock6Broken: 0
 --- !u!114 &547104883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4369,10 +4359,10 @@ RectTransform:
   - {fileID: 2139464616}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -1787.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762895030
 MonoBehaviour:
@@ -4387,17 +4377,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
-  timeToSurvive: 180
+  timeToSurvive: 0
   numStartingLines: 0
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
   numBlock2Broken: 0
-  numBlock3Broken: 0
+  numBlock3Broken: 24
   numBlock4Broken: 0
   numBlock5Broken: 0
   numBlock6Broken: 0
@@ -4706,10 +4695,10 @@ RectTransform:
   - {fileID: 1217972960}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -2337.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822485020
 MonoBehaviour:
@@ -4723,14 +4712,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 60
+  timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
   combos: 0
-  fourCombos: 0
-  fiveCombos: 0
-  LCombos: 3
+  fourCombos: 3
+  LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
   numBlock2Broken: 0
@@ -5600,7 +5588,6 @@ MonoBehaviour:
   score: 300
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -5784,7 +5771,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 2
   numBlock1Broken: 0
@@ -6253,7 +6239,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 3
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -6333,7 +6318,6 @@ MonoBehaviour:
   score: 1000
   combos: 12
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -6827,10 +6811,10 @@ RectTransform:
   - {fileID: 120718559}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -4262.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224424833
 MonoBehaviour:
@@ -6850,7 +6834,6 @@ MonoBehaviour:
   score: 1000
   combos: 12
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -7121,7 +7104,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 3
   numBlock1Broken: 0
@@ -7721,7 +7703,6 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -8602,10 +8583,10 @@ RectTransform:
   - {fileID: 1496665352}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -137.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472266315
 MonoBehaviour:
@@ -8622,13 +8603,12 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 15000
+  score: 0
   combos: 0
   fourCombos: 5
-  fiveCombos: 2
   LCombos: 0
-  timesPowerUsed: 3
-  numBlock1Broken: 30
+  timesPowerUsed: 4
+  numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
   numBlock4Broken: 0
@@ -9017,7 +8997,6 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -9499,10 +9478,10 @@ RectTransform:
   - {fileID: 279104414}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -962.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526544436
 MonoBehaviour:
@@ -9623,14 +9602,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 600
+  timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 10000
-  combos: 0
+  score: 0
+  combos: 10
   fourCombos: 0
-  fiveCombos: 3
-  LCombos: 0
+  LCombos: 1
   timesPowerUsed: 0
   numBlock1Broken: 0
   numBlock2Broken: 0
@@ -9878,7 +9856,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 3
   numBlock1Broken: 0
@@ -10198,10 +10175,10 @@ RectTransform:
   - {fileID: 693728326}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -1237.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1630106528
 MonoBehaviour:
@@ -10216,14 +10193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
-  timeToSurvive: 240
+  timeToSurvive: 0
   numStartingLines: 0
   score: 0
   combos: 0
-  fourCombos: 10
-  fiveCombos: 0
+  fourCombos: 4
   LCombos: 0
-  timesPowerUsed: 6
+  timesPowerUsed: 3
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -10849,10 +10825,10 @@ RectTransform:
   - {fileID: 1828184842}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -2062.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660760404
 MonoBehaviour:
@@ -10866,15 +10842,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e16fc928df38e48b31b30c5c72ba97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 150
+  timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
-  timesPowerUsed: 6
+  timesPowerUsed: 2
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -11196,7 +11171,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 3
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -11712,7 +11686,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -12031,10 +12004,10 @@ RectTransform:
   - {fileID: 1605718029}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -412.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1862080192
 MonoBehaviour:
@@ -12049,14 +12022,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 0
-  timeToSurvive: 360
+  timeToSurvive: 0
   numStartingLines: 0
-  score: 12000
+  score: 0
   combos: 0
-  fourCombos: 0
-  fiveCombos: 0
-  LCombos: 4
-  timesPowerUsed: 0
+  fourCombos: 5
+  LCombos: 0
+  timesPowerUsed: 4
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -12325,7 +12297,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 5
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 4
   numBlock1Broken: 0
@@ -12570,10 +12541,10 @@ RectTransform:
   - {fileID: 739996553}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -687.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948980417
 MonoBehaviour:
@@ -12590,18 +12561,17 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
+  score: 1250
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
-  numBlock1Broken: 30
-  numBlock2Broken: 0
-  numBlock3Broken: 30
-  numBlock4Broken: 30
+  numBlock1Broken: 0
+  numBlock2Broken: 20
+  numBlock3Broken: 0
+  numBlock4Broken: 20
   numBlock5Broken: 0
-  numBlock6Broken: 30
+  numBlock6Broken: 0
 --- !u!114 &1948980418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12856,7 +12826,6 @@ MonoBehaviour:
   score: 0
   combos: 10
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 1
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -13049,7 +13018,6 @@ MonoBehaviour:
   score: 1250
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -13823,7 +13791,6 @@ MonoBehaviour:
   score: 1000
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -13997,7 +13964,6 @@ MonoBehaviour:
   score: 1500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -14213,7 +14179,6 @@ MonoBehaviour:
   score: 0
   combos: 7
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -14824,7 +14789,6 @@ MonoBehaviour:
   score: 0
   combos: 7
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -15058,7 +15022,6 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -15468,7 +15431,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 3
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -15570,10 +15532,10 @@ RectTransform:
   - {fileID: 143368100}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -5362.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &855129817386183935
 GameObject:
@@ -15606,16 +15568,15 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 3000
-  combos: 0
+  score: 0
+  combos: 10
   fourCombos: 0
-  fiveCombos: 0
-  LCombos: 0
+  LCombos: 1
   timesPowerUsed: 0
   numBlock1Broken: 0
   numBlock2Broken: 0
-  numBlock3Broken: 12
-  numBlock4Broken: 12
+  numBlock3Broken: 0
+  numBlock4Broken: 0
   numBlock5Broken: 0
   numBlock6Broken: 0
 --- !u!222 &937143913933742445
@@ -15766,7 +15727,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -16310,7 +16270,7 @@ MonoBehaviour:
   m_Elasticity: 4
   m_Inertia: 1
   m_DecelerationRate: 1
-  m_ScrollSensitivity: 10
+  m_ScrollSensitivity: 20
   m_Viewport: {fileID: 4171390917532868369}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -16339,7 +16299,6 @@ MonoBehaviour:
   score: 0
   combos: 7
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -16410,10 +16369,10 @@ RectTransform:
   - {fileID: 627393692}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -3437.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2897313452697244564
 RectTransform:
@@ -16432,10 +16391,10 @@ RectTransform:
   - {fileID: 983459797}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -5087.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2979183608355522115
 RectTransform:
@@ -16454,8 +16413,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -24.665108, y: 223.51031}
-  m_SizeDelta: {x: 916.031, y: 1878.9224}
+  m_AnchoredPosition: {x: -24.665108, y: 217.61859}
+  m_SizeDelta: {x: 916.031, y: 1867.1387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3077102947700567662
 RectTransform:
@@ -16790,10 +16749,10 @@ RectTransform:
   - {fileID: 1174299405}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -4537.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4088460383486289169
 MonoBehaviour:
@@ -16943,7 +16902,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 3
   numBlock1Broken: 0
@@ -17185,10 +17143,9 @@ MonoBehaviour:
   numStartingLines: 0
   score: 0
   combos: 0
-  fourCombos: 7
-  fiveCombos: 0
+  fourCombos: 5
   LCombos: 0
-  timesPowerUsed: 3
+  timesPowerUsed: 4
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -17210,10 +17167,10 @@ RectTransform:
   - {fileID: 1740632629}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -2887.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5231215571944359225
 MonoBehaviour:
@@ -17580,7 +17537,6 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 2
   numBlock1Broken: 0
@@ -17682,10 +17638,10 @@ RectTransform:
   - {fileID: 1985549462}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -3712.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6378581905562307351
 MonoBehaviour:
@@ -17794,11 +17750,10 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
-  numBlock2Broken: 0
+  numBlock2Broken: 24
   numBlock3Broken: 0
   numBlock4Broken: 0
   numBlock5Broken: 0
@@ -18237,10 +18192,10 @@ RectTransform:
   - {fileID: 2014963380}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -3987.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7821807474685734635
 MonoBehaviour:
@@ -18257,14 +18212,13 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 5000
+  score: 500
   combos: 0
   fourCombos: 0
-  fiveCombos: 0
   LCombos: 0
-  timesPowerUsed: 4
+  timesPowerUsed: 0
   numBlock1Broken: 0
-  numBlock2Broken: 0
+  numBlock2Broken: 24
   numBlock3Broken: 0
   numBlock4Broken: 0
   numBlock5Broken: 0
@@ -18314,10 +18268,10 @@ RectTransform:
   - {fileID: 420454974}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -3162.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7882502967458159538
 GameObject:
@@ -18450,10 +18404,10 @@ RectTransform:
   - {fileID: 4522580178534825416}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -5637.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8308137581209624968
 CanvasRenderer:
@@ -18478,11 +18432,10 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
-  combos: 15
+  score: 100
+  combos: 0
   fourCombos: 0
-  fiveCombos: 0
-  LCombos: 2
+  LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
   numBlock2Broken: 0
@@ -18524,7 +18477,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 200
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -18586,10 +18539,10 @@ RectTransform:
   - {fileID: 2029781965}
   m_Father: {fileID: 5066488039122854133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 492.5, y: -4812.5}
+  m_SizeDelta: {x: 985, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

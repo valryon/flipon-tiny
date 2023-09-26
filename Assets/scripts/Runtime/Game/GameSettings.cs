@@ -63,13 +63,9 @@ namespace Pon
             {
                 // set game settings based on level
                 gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
-                objective.stats.timeMax = MapUIScript.mapInstance.timeLimit;
-                objective.stats.timeReached = MapUIScript.mapInstance.timeToSurvive;
-
                 objective.stats.score = MapUIScript.mapInstance.score;
                 objective.stats.totalCombos = MapUIScript.mapInstance.combos;
                 objective.stats.total4Combos = MapUIScript.mapInstance.fourCombos;
-                objective.stats.total5Combos = MapUIScript.mapInstance.fiveCombos;
                 objective.stats.totalLCombos = MapUIScript.mapInstance.LCombos;
                 objective.stats.timesPowerUsed = MapUIScript.mapInstance.timesPowerUsed;
 
