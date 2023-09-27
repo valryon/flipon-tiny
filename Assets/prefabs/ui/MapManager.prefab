@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5509252128735577705}
   - component: {fileID: 1683239928279754825}
-  - component: {fileID: -2772514305674388351}
   m_Layer: 0
   m_Name: MapManager
-  m_TagString: GameController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,28 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numStartingLines: 0
-  currentLevelName: 
-  wonLastGame: 0
-  score: 0
-  combos: 0
-  fourCombos: 0
-  LCombos: 0
-  timesPowerUsed: 0
-  numBlock1Broken: 0
-  numBlock2Broken: 0
-  numBlock3Broken: 0
-  numBlock4Broken: 0
-  numBlock5Broken: 0
-  numBlock6Broken: 0
---- !u!114 &-2772514305674388351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928771160081324651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec66038741d373541a809959a14c8c48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

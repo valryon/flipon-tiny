@@ -11,14 +11,8 @@ public class ButtonObjectives : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
-    public int LCombos;
-    public int timesPowerUsed;
-    public int numBlock1Broken;
-    public int numBlock2Broken;
-    public int numBlock3Broken;
-    public int numBlock4Broken;
-    public int numBlock5Broken;
-    public int numBlock6Broken;
+    public int powerUps;
+    // crystal type
 
     // MAP MANAGER (handles current level and sets objectives in game scene)
 
@@ -37,6 +31,7 @@ public class ButtonObjectives : MonoBehaviour
         }
         else
         {
+            // default starting lines
             MapUIScript.mapInstance.numStartingLines = 3;
         }
 
@@ -48,96 +43,6 @@ public class ButtonObjectives : MonoBehaviour
         {
             // default score
             MapUIScript.mapInstance.score = 0;
-        }
-
-        if (combos > 0)
-        {
-            MapUIScript.mapInstance.combos = combos;
-        }
-        else
-        {
-            MapUIScript.mapInstance.combos = 0;
-        }
-
-        if (fourCombos > 0)
-        {
-            MapUIScript.mapInstance.fourCombos = fourCombos;
-        }
-        else
-        {
-            MapUIScript.mapInstance.fourCombos = 0;
-        }
-
-        if (LCombos > 0)
-        {
-            MapUIScript.mapInstance.LCombos = LCombos;
-        }
-        else
-        {
-            MapUIScript.mapInstance.LCombos = 0;
-        }
-
-        if (timesPowerUsed > 0)
-        {
-            MapUIScript.mapInstance.timesPowerUsed = timesPowerUsed;
-        }
-        else
-        {
-            MapUIScript.mapInstance.timesPowerUsed = 0;
-        }
-
-        if (numBlock1Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock1Broken = numBlock1Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock1Broken = 0;
-        }
-
-        if (numBlock2Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock2Broken = numBlock2Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock2Broken = 0;
-        }
-
-        if (numBlock3Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock3Broken = numBlock3Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock3Broken = 0;
-        }
-
-        if (numBlock4Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock4Broken = numBlock4Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock4Broken = 0;
-        }
-
-        if (numBlock5Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock5Broken = numBlock5Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock5Broken = 0;
-        }
-
-        if (numBlock6Broken > 0)
-        {
-            MapUIScript.mapInstance.numBlock6Broken = numBlock6Broken;
-        }
-        else
-        {
-            MapUIScript.mapInstance.numBlock6Broken = 0;
         }
     }
 }
