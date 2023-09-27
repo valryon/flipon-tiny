@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+using System;
 using UnityEngine;
+using Input = UnityEngine.Input;
 
 public class MapTouchDetection : MonoBehaviour
 {
@@ -15,16 +14,72 @@ public class MapTouchDetection : MonoBehaviour
   [SerializeField] Transform screenFloor;
   [SerializeField] Transform screenCeil;
 
-  [SerializeField] Transform lvlParent;
-  [SerializeField] MapUIScript mapManager;
+  public Transform lvlParent;
+
+  MapUIScript mapManager;
+  LvlUnlockContainer lvlUnlocks;
+
+  Transform cameraTransform;
+
+  float t = 0;
+  float SCROLL_SPEED = 3f;
+  float scrollDestination;
+  bool isScrolling = false;
 
   ContactFilter2D conFilter;
 
-  private void Awake()
+
+  private void Start()
   {
-    if (mapManager == null)
+    AssignMapScripts();
+    cameraTransform = Camera.main.transform;
+
+    Debug.Log(mapManager.name + "; " + mapManager.currentLevelName);
+    if (!mapManager.currentLevelName.Equals(""))
     {
-      mapManager = FindFirstObjectByType<MapUIScript>();
+      LoadUnlocks();
+      // prevLvl = Object's assigned level, also equals next level's index; prevLvl - 1 = previous level's index;
+      int prevLvl = Int32.Parse(mapManager.currentLevelName.Remove(0, 5));
+      MapLvlButton prevButton = lvlParent.GetChild(prevLvl - 1).GetComponent<MapLvlButton>();
+      MapLvlButton nextButton = lvlParent.GetChild(prevLvl).GetComponent<MapLvlButton>();
+
+      if (mapManager.wonLastGame && !nextButton.GetUnlocked())
+      {
+        nextButton.SetUnlocked(true);
+
+        LvlUnlockContainer.LvlUnlockStates[prevLvl] = nextButton.GetUnlocked();
+        SaveUnlocks();
+
+        // vv Below handles where camera spawns & scrolls to when scene starts vv
+        if (prevLvl > 2 && prevLvl < lvlParent.childCount - 2)
+        {
+          cameraTransform.position = new Vector3(cameraTransform.position.x, prevButton.transform.position.y, cameraTransform.position.z);
+          t = 0;
+          scrollDestination = nextButton.transform.position.y;
+          isScrolling = true;
+        } else if (prevLvl > lvlParent.childCount - 2)
+        {
+          cameraTransform.position = new Vector3(cameraTransform.position.x, lvlParent.GetChild(lvlParent.childCount - 4).transform.position.y, cameraTransform.position.z);
+        }
+      } else if (!mapManager.wonLastGame || nextButton.GetUnlocked())
+      {
+        if(prevLvl > 2)
+        {
+          if(prevLvl < lvlParent.childCount - 2)
+          {
+            cameraTransform.position = new Vector3(cameraTransform.position.x, prevButton.transform.position.y, cameraTransform.position.z);
+          }
+          else
+          {
+            cameraTransform.position = new Vector3(cameraTransform.position.x, lvlParent.GetChild(lvlParent.childCount - 4).transform.position.y, cameraTransform.position.z);
+          }
+        }
+      }
+    }
+    else
+    {
+      LvlUnlockContainer.LvlUnlockStates = new bool[lvlParent.childCount];
+      SaveUnlocks();
     }
 
     conFilter.NoFilter();
@@ -47,7 +102,6 @@ public class MapTouchDetection : MonoBehaviour
             {
               if (result.transform.IsChildOf(lvlParent))
               {
-                Debug.Log(result.transform.name);
                 MapLvlButton lvlButton = result.transform.GetComponent<MapLvlButton>();
                 if (lvlButton.GetUnlocked())
                 {
@@ -64,7 +118,9 @@ public class MapTouchDetection : MonoBehaviour
                 }
               }
             }
-          } foreach (RaycastHit2D result in results) {
+          }
+          foreach (RaycastHit2D result in results)
+          {
             if (result.transform == backgroundObj)
             {
               // Start dragging if touching the background
@@ -78,10 +134,10 @@ public class MapTouchDetection : MonoBehaviour
         else if (Input.GetTouch(0).phase == TouchPhase.Moved && boolDragging)
         {
           Vector2 direction = startPos - (Vector2)Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-          if ((direction.y < 0 && Camera.main.transform.position.y >= screenFloor.position.y) || (direction.y > 0 && Camera.main.transform.position.y <= screenCeil.position.y))
+          if ((direction.y < 0 && cameraTransform.position.y >= screenFloor.position.y) || (direction.y > 0 && cameraTransform.position.y <= screenCeil.position.y))
           {
             // Only move the camera if the camera is within acceptable ranges
-            Camera.main.transform.position += new Vector3(0, direction.y, 0);
+            cameraTransform.position += new Vector3(0, direction.y, 0);
           }
         }
         else if (Input.GetTouch(0).phase == TouchPhase.Ended)
@@ -91,5 +147,55 @@ public class MapTouchDetection : MonoBehaviour
         }
       }
     }
+
+    if (isScrolling)
+    {
+      ScrollToUnlockedLevel();
+    }
+
+  }
+
+  private void ScrollToUnlockedLevel()
+  {
+    if (t < SCROLL_SPEED)
+    {
+      float cameraYPos = Mathf.Lerp(cameraTransform.position.y, scrollDestination, t / SCROLL_SPEED);
+      cameraTransform.position = new Vector3(cameraTransform.position.x, cameraYPos, cameraTransform.position.z);
+    }
+    else
+    {
+      isScrolling = false;
+    }
+
+    t += Time.deltaTime;
+  }
+
+  private void LoadUnlocks()
+  {
+    //Set Level Values to Array
+    for (int i = 0; i < lvlParent.childCount; i++)
+    {
+      lvlParent.GetChild(i).GetComponent<MapLvlButton>().SetUnlocked(LvlUnlockContainer.LvlUnlockStates[i]);
+    }
+    Debug.Log("Loading Unlocks");
+    lvlUnlocks.PrintArray();
+  }
+
+  public void SaveUnlocks()
+  {
+    //Set Array To Level Values
+    for (int i = 0; i < lvlParent.childCount; i++)
+    {
+      lvlUnlocks.SetupState(i, lvlParent.GetChild(i).GetComponent<MapLvlButton>().GetUnlocked());
+    }
+    Debug.Log("Saving Unlocks");
+    lvlUnlocks.PrintArray();
+  }
+
+  public void AssignMapScripts()
+  {
+    //mapManager = FindFirstObjectByType<MapUIScript>();
+    mapManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<MapUIScript>();
+    lvlUnlocks = mapManager.gameObject.GetComponent<LvlUnlockContainer>();
   }
 }

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 20
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &8341765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 16
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &74722954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 14
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &203935313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 19
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &301712933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 10
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &314902531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 18
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &383209922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,7 +2088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 5
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!1 &460852805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,18 +2514,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &677670494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1683239928279754825, guid: 9d9f6e5b2557fe444aaee8e11b5fc3e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 7440033990114499250}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f0d76432f0e0b4d827677f4216e794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &683334236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 4
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1081980267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3612,8 +3600,8 @@ MonoBehaviour:
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
-  combos: 0
-  fourCombos: 3
+  combos: 8
+  fourCombos: 0
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
@@ -3635,7 +3623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!1 &1155136568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,7 +3817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 6
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!1 &1172494240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,7 +4124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 17
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1279794290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4583,7 +4571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 11
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1312518552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5383,7 +5371,7 @@ MonoBehaviour:
   LCombos: 0
   timesPowerUsed: 0
   numBlock1Broken: 0
-  numBlock2Broken: 24
+  numBlock2Broken: 0
   numBlock3Broken: 0
   numBlock4Broken: 0
   numBlock5Broken: 0
@@ -5969,7 +5957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 7
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1599654873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6385,7 +6373,6 @@ MonoBehaviour:
   screenFloor: {fileID: 2074238876}
   screenCeil: {fileID: 1459690699}
   lvlParent: {fileID: 1672973309}
-  mapManager: {fileID: 677670494}
 --- !u!61 &1635521911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6784,7 +6771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 13
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1692229907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7147,7 +7134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 15
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1755681616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7585,7 +7572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 21
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1901384250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7864,7 +7851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 8
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1983022838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8056,7 +8043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 9
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1985029638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8417,7 +8404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 12
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &2096843396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9067,7 +9054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!1 &2145207635
 GameObject:
   m_ObjectHideFlags: 0
