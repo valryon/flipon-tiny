@@ -64,6 +64,17 @@ namespace Pon
                 // set game settings based on level
                 gridSettings.startLines = MapUIScript.mapInstance.numStartingLines;
                 objective.stats.score = MapUIScript.mapInstance.score;
+                objective.stats.totalCombos = MapUIScript.mapInstance.combos;
+                objective.stats.total4Combos = MapUIScript.mapInstance.fourCombos;
+                objective.stats.totalLCombos = MapUIScript.mapInstance.LCombos;
+                objective.stats.timesPowerUsed = MapUIScript.mapInstance.timesPowerUsed;
+
+                objective.stats.numBlock1Broken = MapUIScript.mapInstance.numBlock1Broken;
+                objective.stats.numBlock2Broken = MapUIScript.mapInstance.numBlock2Broken;
+                objective.stats.numBlock3Broken = MapUIScript.mapInstance.numBlock3Broken;
+                objective.stats.numBlock4Broken = MapUIScript.mapInstance.numBlock4Broken;
+                objective.stats.numBlock5Broken = MapUIScript.mapInstance.numBlock5Broken;
+                objective.stats.numBlock6Broken = MapUIScript.mapInstance.numBlock6Broken;
             }
 
             if (gameSettingsInstance != null)

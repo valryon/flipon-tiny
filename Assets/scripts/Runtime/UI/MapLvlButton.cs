@@ -22,8 +22,19 @@ public class MapLvlButton : MonoBehaviour
     return isUnlocked;
   }
 
+  public void SetUnlocked(bool desValue)
+  {
+    isUnlocked = desValue;
+    ShowLockStatus();
+  }
+
   public void ShowLockStatus()
   {
+    if(spriteRenderer == null)
+    {
+      spriteRenderer = this.GetComponent<SpriteRenderer>();
+    }
+
     if (!isUnlocked)
     {
       spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f);
