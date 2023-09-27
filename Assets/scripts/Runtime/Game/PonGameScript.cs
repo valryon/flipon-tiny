@@ -600,6 +600,7 @@ namespace Pon
       Log.Warning("Game is ended.");
       SetPause(true);
       isOver = true;
+      MapUIScript.mapInstance.wonLastGame = wonGame;
 
       // music for winning/losing 
 
