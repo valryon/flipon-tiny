@@ -600,6 +600,7 @@ namespace Pon
       Log.Warning("Game is ended.");
       SetPause(true);
       isOver = true;
+      MapUIScript.mapInstance.wonLastGame = wonGame;
 
       // music for winning/losing 
 
@@ -619,7 +620,7 @@ namespace Pon
       GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
 
       // level ends, go back to map scene
-      SceneManager.LoadSceneAsync("Map");
+      SceneManager.LoadSceneAsync("Map_t");
     }
 
     #endregion
