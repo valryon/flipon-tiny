@@ -190,11 +190,11 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
+  score: 5000
   combos: 0
   fourCombos: 5
   LCombos: 0
-  timesPowerUsed: 4
+  timesPowerUsed: 2
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -916,14 +916,14 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
+  score: 2500
   combos: 0
   fourCombos: 0
   LCombos: 0
-  timesPowerUsed: 2
-  numBlock1Broken: 0
+  timesPowerUsed: 1
+  numBlock1Broken: 20
   numBlock2Broken: 0
-  numBlock3Broken: 0
+  numBlock3Broken: 10
   numBlock4Broken: 0
   numBlock5Broken: 0
   numBlock6Broken: 0
@@ -1770,7 +1770,7 @@ MonoBehaviour:
   timeLimit: 0
   timeToSurvive: 0
   numStartingLines: 0
-  score: 0
+  score: 4000
   combos: 10
   fourCombos: 0
   LCombos: 1
@@ -3223,13 +3223,13 @@ MonoBehaviour:
   combos: 0
   fourCombos: 0
   LCombos: 0
-  timesPowerUsed: 2
+  timesPowerUsed: 1
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
   numBlock4Broken: 0
   numBlock5Broken: 0
-  numBlock6Broken: 0
+  numBlock6Broken: 13
 --- !u!50 &1081980268
 Rigidbody2D:
   serializedVersion: 4
@@ -4143,8 +4143,8 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  LCombos: 0
-  timesPowerUsed: 3
+  LCombos: 1
+  timesPowerUsed: 2
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -5977,7 +5977,7 @@ MonoBehaviour:
   combos: 0
   fourCombos: 4
   LCombos: 0
-  timesPowerUsed: 3
+  timesPowerUsed: 1
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
@@ -7589,10 +7589,10 @@ MonoBehaviour:
   timeToSurvive: 0
   numStartingLines: 0
   score: 0
-  combos: 0
+  combos: 20
   fourCombos: 5
   LCombos: 0
-  timesPowerUsed: 4
+  timesPowerUsed: 2
   numBlock1Broken: 0
   numBlock2Broken: 0
   numBlock3Broken: 0
