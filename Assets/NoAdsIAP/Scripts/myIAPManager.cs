@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class myIAPManager : MonoBehaviour {
   public GetAdRewards adRewards;
   // Use this for initialization
-	
+
   public void myPurchaseSucceed ()
   {
 
@@ -39,8 +39,7 @@ public class myIAPManager : MonoBehaviour {
 
   private void MyDebug(string debug)
   {
-    Debug.Log(debug);
-        Debug.LogWarning("\r\n" + debug);
+    Debug.Log("\r\n" + debug);
     
   }
 }
