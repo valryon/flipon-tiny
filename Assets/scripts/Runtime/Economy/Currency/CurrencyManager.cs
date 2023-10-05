@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
     private int cUnits; //currency units
+    public TextMeshProUGUI currencyText;
     public delegate void CurrencyChange();
     public event CurrencyChange OnCurrencyChanged;
 
@@ -35,6 +37,7 @@ public class CurrencyManager : MonoBehaviour
         {
             LoadCurrency();
         }
+        UpdateCurrencyDisplay();
     }
 
     void Update()
@@ -42,12 +45,19 @@ public class CurrencyManager : MonoBehaviour
         
     }
 
+    public void UpdateCurrencyDisplay()
+    {
+        currencyText.text = "Currency: " + cUnits.ToString();
+    }
+
+
     public void AddCurrency(int amount)
     {
         LoadCurrency();
         cUnits += amount;
         SaveCurrency();
         OnCurrencyChanged?.Invoke();
+        UpdateCurrencyDisplay();
     }
 
     public bool RemoveCurrency(int amount)
@@ -58,6 +68,7 @@ public class CurrencyManager : MonoBehaviour
             cUnits -= amount;
             SaveCurrency();
             OnCurrencyChanged?.Invoke();
+            UpdateCurrencyDisplay();
             return true;
         }
         else { return false; }
