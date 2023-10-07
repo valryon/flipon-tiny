@@ -8,7 +8,7 @@ public class MapUIScript : MonoBehaviour
 {  
     // private Button levelOneButton;
     public int numStartingLines;
-  public string currentLevelName;
+    public string currentLevelName;
     public bool wonLastGame;
     GameObject canvas;
 
@@ -16,8 +16,13 @@ public class MapUIScript : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
-    public int powerUps;
-    // need crystals one 
+    public int timesPowerUsed;
+    public int numBlock1Broken;
+    public int numBlock2Broken;
+    public int numBlock3Broken;
+    public int numBlock4Broken;
+    public int numBlock5Broken;
+    public int numBlock6Broken;
 
     public static MapUIScript mapInstance;
 
