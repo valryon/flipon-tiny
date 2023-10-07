@@ -36,17 +36,7 @@ public class MapUIScript : MonoBehaviour
 	// method that loads the Game Scene on button click and sets a variable for the game settings
 	public void PlayLevel(int levelNum)
 	{
-		/*
-        if (levelNum == 1)
-        {
-            numStartingLines = 1;
-        }
-        else if (levelNum == 2)
-        {
-            numStartingLines = 4;
-        }
-        */
-		// mapInstance.numStartingLines = numStartingLines;
+		
 		mapInstance.currentLevelName = "Level" + levelNum.ToString();
 		GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
 		SceneManager.LoadSceneAsync("Game");
@@ -55,8 +45,6 @@ public class MapUIScript : MonoBehaviour
 
 	public void Awake()
 	{
-		// levelOneButton = GameObject.Find("PlayLevel1Button").GetComponent<Button>();
-		// levelOneButton.onClick.AddListener(() => PlayLevel(1));
 
 		// get the canvas object so we can reset it to Active when the scene is loaded
 		canvas = GameObject.FindWithTag("Canvas");

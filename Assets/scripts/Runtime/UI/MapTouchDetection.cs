@@ -176,27 +176,7 @@ public class MapTouchDetection : MonoBehaviour
 		t += Time.deltaTime;
 	}
 
-/*	private void LoadUnlocks()
-	{
-		//Set Level Values to Array
-		for (int i = 0; i < lvlParent.childCount; i++)
-		{
-			lvlParent.GetChild(i).GetComponent<MapLvlButton>().SetUnlocked(LvlUnlockContainer.LvlUnlockStates[i]);
-		}
-		Debug.Log("Loading Unlocks");
-		lvlUnlocks.PrintArray();
-	}
 
-	public void SaveUnlocks()
-	{
-		//Set Array To Level Values
-		for (int i = 0; i < lvlParent.childCount; i++)
-		{
-			lvlUnlocks.SetupState(i, lvlParent.GetChild(i).GetComponent<MapLvlButton>().GetUnlocked());
-		}
-		Debug.Log("Saving Unlocks");
-		lvlUnlocks.PrintArray();
-	}*/
 
 	public void AssignMapScripts()
 	{
