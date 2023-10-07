@@ -50,6 +50,11 @@ public class CurrencyManager : MonoBehaviour
         currencyText.text = "Currency: " + cUnits.ToString();
     }
 
+    public void SetCurrencyTextReference(TextMeshProUGUI textRef)
+    {
+        currencyText = textRef;
+        UpdateCurrencyDisplay();
+    }
 
     public void AddCurrency(int amount)
     {

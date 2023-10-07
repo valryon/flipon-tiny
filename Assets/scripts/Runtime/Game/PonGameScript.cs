@@ -601,6 +601,11 @@ namespace Pon
       SetPause(true);
       isOver = true;
       MapUIScript.mapInstance.wonLastGame = wonGame;
+      // When the player wins, award them currency
+      if (wonGame)
+      {
+        CurrencyManager.Instance.AddCurrency(settings.currencyReward);
+      }
 
       // music for winning/losing 
 
@@ -620,7 +625,7 @@ namespace Pon
       GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
 
       // level ends, go back to map scene
-      SceneManager.LoadSceneAsync("Map");
+      SceneManager.LoadSceneAsync("Map_t");
     }
 
     #endregion

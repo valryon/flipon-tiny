@@ -34,6 +34,7 @@ namespace Pon
     public bool enableObjectives;
     public Objective objective;
     public PlayMode playMode;
+    public int currencyReward = 100;
 
     public static GameSettings gameSettingsInstance;
 

@@ -695,13 +695,13 @@ MonoBehaviour:
       highestChain: 0
       totalChains: 0
       digHeight: 0
-      numBlock1Broken: 20
+      numBlock1Broken: 0
       numBlock2Broken: 0
       numBlock3Broken: 0
       numBlock4Broken: 0
       numBlock5Broken: 0
       numBlock6Broken: 0
-      timesPowerUsed: 1
+      timesPowerUsed: 0
   playMode: 0
 --- !u!4 &2017043633
 Transform:

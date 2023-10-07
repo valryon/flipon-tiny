@@ -193,7 +193,13 @@ MonoBehaviour:
   score: 5000
   combos: 0
   fourCombos: 5
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &8341766
 Rigidbody2D:
   serializedVersion: 4
@@ -380,7 +386,13 @@ MonoBehaviour:
   score: 1000
   combos: 12
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &74722955
 Rigidbody2D:
   serializedVersion: 4
@@ -847,6 +859,7 @@ GameObject:
   - component: {fileID: 182304113}
   - component: {fileID: 182304112}
   - component: {fileID: 182304111}
+  - component: {fileID: 182304114}
   m_Layer: 5
   m_Name: CurrentCurrencyText
   m_TagString: Untagged
@@ -971,6 +984,18 @@ RectTransform:
   m_AnchoredPosition: {x: -63, y: -58}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &182304114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182304110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12ce0e5919ef63459afb0d58eb9c4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &203935310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1065,13 @@ MonoBehaviour:
   score: 2500
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &203935314
 Rigidbody2D:
   serializedVersion: 4
@@ -1328,7 +1359,13 @@ MonoBehaviour:
   score: 1250
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &301712934
 Rigidbody2D:
   serializedVersion: 4
@@ -1599,7 +1636,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 5
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &314902532
 Rigidbody2D:
   serializedVersion: 4
@@ -1871,7 +1914,13 @@ MonoBehaviour:
   score: 4000
   combos: 10
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &383209923
 Rigidbody2D:
   serializedVersion: 4
@@ -2043,7 +2092,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &428467465
 Rigidbody2D:
   serializedVersion: 4
@@ -3160,7 +3215,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1081980268
 Rigidbody2D:
   serializedVersion: 4
@@ -3533,7 +3594,13 @@ MonoBehaviour:
   score: 0
   combos: 8
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &1138500826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3605,7 +3672,13 @@ MonoBehaviour:
   score: 1000
   combos: 12
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1155136571
 Rigidbody2D:
   serializedVersion: 4
@@ -4060,7 +4133,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1279794291
 Rigidbody2D:
   serializedVersion: 4
@@ -4500,7 +4579,13 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1312518553
 Rigidbody2D:
   serializedVersion: 4
@@ -5356,7 +5441,13 @@ MonoBehaviour:
   score: 500
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1490468290
 Rigidbody2D:
   serializedVersion: 4
@@ -5811,7 +5902,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 4
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1599654874
 Rigidbody2D:
   serializedVersion: 4
@@ -6526,7 +6623,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 3
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1692229908
 Rigidbody2D:
   serializedVersion: 4
@@ -6882,7 +6985,13 @@ MonoBehaviour:
   score: 0
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1755681617
 Rigidbody2D:
   serializedVersion: 4
@@ -7238,7 +7347,13 @@ MonoBehaviour:
   score: 0
   combos: 20
   fourCombos: 5
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1901384251
 Rigidbody2D:
   serializedVersion: 4
@@ -7510,7 +7625,13 @@ MonoBehaviour:
   score: 0
   combos: 10
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1983022839
 Rigidbody2D:
   serializedVersion: 4
@@ -7695,7 +7816,13 @@ MonoBehaviour:
   score: 1250
   combos: 0
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &1985029639
 Rigidbody2D:
   serializedVersion: 4
@@ -7912,7 +8039,13 @@ MonoBehaviour:
   score: 0
   combos: 7
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!50 &2096843397
 Rigidbody2D:
   serializedVersion: 4
@@ -8515,7 +8648,13 @@ MonoBehaviour:
   score: 0
   combos: 7
   fourCombos: 0
-  powerUps: 0
+  timesPowerUsed: 0
+  numBlock1Broken: 0
+  numBlock2Broken: 0
+  numBlock3Broken: 0
+  numBlock4Broken: 0
+  numBlock5Broken: 0
+  numBlock6Broken: 0
 --- !u!114 &2133890372
 MonoBehaviour:
   m_ObjectHideFlags: 0
