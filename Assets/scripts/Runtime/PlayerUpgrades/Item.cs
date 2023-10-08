@@ -1,34 +1,21 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "NewItem", menuName = "Shop/Item")]
+public class Item : ScriptableObject
 {
     public string itemName;
-    public bool isPurchased;
-    public bool isEnabled;
-
-    public Item(string name)
-    {
-        itemName = name;
-        isPurchased = false;
-        isEnabled = false;
-    }
+    public string description;
+    public int price;
+    public Sprite icon;
+    public bool isPurchased = false;
+    public bool isEnabled = false;
 }
 
-[System.Serializable]
-public class Upgrade : Item
-{
-    public Upgrade(string name) : base(name) { }
-}
+[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Shop/Upgrade")]
+public class Upgrade : Item { }
 
-[System.Serializable]
-public class Power : Item
-{
-    public Power(string name) : base(name) { }
-}
+[CreateAssetMenu(fileName = "NewPower", menuName = "Shop/Power")]
+public class Power : Item { }
 
-[System.Serializable]
-public class Incremental : Item
-{
-    public Incremental(string name) : base(name) { }
-}
+[CreateAssetMenu(fileName = "NewIncremental", menuName = "Shop/Incremental")]
+public class Incremental : Item { }

@@ -48,9 +48,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool AddItemFromShop(string name)
+    public bool AddItemFromShop(Item item)
     {
-        var item = playerInventory.GetItemByName(name);
         if (item != null && !item.isPurchased)
         {
             item.isPurchased = true;
