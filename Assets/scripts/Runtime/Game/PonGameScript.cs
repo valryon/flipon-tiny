@@ -596,14 +596,19 @@ namespace Pon
 			}
 		}
 
-		private void TriggerGameOver()
-		{
-
-			DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
-			Log.Warning("Game is ended.");
-			SetPause(true);
-			isOver = true;
-			MapUIScript.mapInstance.wonLastGame = wonGame;
+    private void TriggerGameOver()
+    {
+      
+      DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
+      Log.Warning("Game is ended.");
+      SetPause(true);
+      isOver = true;
+      MapUIScript.mapInstance.wonLastGame = wonGame;
+      // When the player wins, award them currency
+      if (wonGame)
+      {
+        CurrencyManager.Instance.AddCurrency(settings.currencyReward);
+      }
 
 			// music for winning/losing 
 

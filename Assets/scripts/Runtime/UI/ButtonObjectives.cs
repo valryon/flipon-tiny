@@ -11,7 +11,6 @@ public class ButtonObjectives : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
-    public int LCombos;
     public int timesPowerUsed;
     public int numBlock1Broken;
     public int numBlock2Broken;
@@ -66,15 +65,6 @@ public class ButtonObjectives : MonoBehaviour
         else
         {
             MapUIScript.mapInstance.fourCombos = 0;
-        }
-
-        if (LCombos > 0)
-        {
-            MapUIScript.mapInstance.LCombos = LCombos;
-        }
-        else
-        {
-            MapUIScript.mapInstance.LCombos = 0;
         }
 
         if (timesPowerUsed > 0)
