@@ -37,7 +37,7 @@ public class CurrencyManager : MonoBehaviour
         {
             LoadCurrency();
         }
-        UpdateCurrencyDisplay();
+        //UpdateCurrencyDisplay();
     }
 
     void Update()
