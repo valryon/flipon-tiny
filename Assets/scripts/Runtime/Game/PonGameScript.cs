@@ -596,19 +596,22 @@ namespace Pon
 			}
 		}
 
-    private void TriggerGameOver()
-    {
-      
-      DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
-      Log.Warning("Game is ended.");
-      SetPause(true);
-      isOver = true;
-      MapUIScript.mapInstance.wonLastGame = wonGame;
-      // When the player wins, award them currency
-      if (wonGame)
-      {
-        CurrencyManager.Instance.AddCurrency(settings.currencyReward);
-      }
+		private void TriggerGameOver()
+		{
+
+			DOTweenGameObject.SetActive(false); //Deactivate DoTween GameObject when moving back to map
+			Log.Warning("Game is ended.");
+			SetPause(true);
+			isOver = true;
+			MapUIScript.mapInstance.wonLastGame = wonGame;
+			// When the player wins, award them currency
+			if (wonGame)
+			{
+				CurrencyManager.Instance.AddCurrency(settings.currencyReward);
+				int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+				level++;
+				GameManager.gameManager.SaveLevel("Level " + level);
+			}
 
 			// music for winning/losing 
 
@@ -626,10 +629,8 @@ namespace Pon
 
 			// Log Level end (user has won)
 			//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
-			
-			int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-			level++;
-			GameManager.gameManager.SaveLevel("Level " + level);
+
+
 			// level ends, go back to map scene
 			SceneManager.LoadSceneAsync("Map_t");
 		}
