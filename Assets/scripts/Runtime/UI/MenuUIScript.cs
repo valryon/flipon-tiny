@@ -73,8 +73,13 @@ public class MenuUIScript : MonoBehaviour
         }
     }
 
-    // load the game
-    public void StartLoad(){
+	private void FixedUpdate()
+	{
+        SaveSettings();
+    }
+
+	// load the game
+	public void StartLoad(){
         StartCoroutine(AsyncLoadIntoGame());
     }
 
