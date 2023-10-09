@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public List<Item> availableItems;  // Assign this list in the editor with the ScriptableObjects you've created
+    public ShopDatabase shopDatabase;
     public static ShopManager Instance { get; private set; }
 
     private void Awake()

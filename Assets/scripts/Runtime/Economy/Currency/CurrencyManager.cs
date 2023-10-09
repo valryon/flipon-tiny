@@ -37,7 +37,7 @@ public class CurrencyManager : MonoBehaviour
         {
             LoadCurrency();
         }
-        //UpdateCurrencyDisplay();
+        UpdateCurrencyDisplay();
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class CurrencyManager : MonoBehaviour
 
     public void UpdateCurrencyDisplay()
     {
-        currencyText.text = "Currency: " + cUnits.ToString();
+        currencyText.text = cUnits.ToString();
     }
 
     public void SetCurrencyTextReference(TextMeshProUGUI textRef)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewItem", menuName = "Shop/Item")]
+[CreateAssetMenu(menuName = "Shop/Item")]
 public class Item : ScriptableObject
 {
     public string itemName;
@@ -11,11 +11,11 @@ public class Item : ScriptableObject
     public bool isEnabled = false;
 }
 
-[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Shop/Upgrade")]
+[CreateAssetMenu(menuName = "Shop/Upgrade")]
 public class Upgrade : Item { }
 
-[CreateAssetMenu(fileName = "NewPower", menuName = "Shop/Power")]
+[CreateAssetMenu(menuName = "Shop/Power")]
 public class Power : Item { }
 
-[CreateAssetMenu(fileName = "NewIncremental", menuName = "Shop/Incremental")]
+[CreateAssetMenu(menuName = "Shop/Incremental")]
 public class Incremental : Item { }
