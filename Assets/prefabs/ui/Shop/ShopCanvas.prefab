@@ -1682,6 +1682,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1475165547269415971}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8142301787412450045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7243920609684238046, guid: a1c2cf05f421a1d4fa24fdd85e2c3921,
+    type: 3}
+  m_PrefabInstance: {fileID: 1475165547269415971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1814394179452649865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2682,6 +2688,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5875760480615921758}
     m_Modifications:
+    - target: {fileID: 2496958551598881569, guid: 8e2150efab171834e80af1985d7c201e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8142301787412450045}
     - target: {fileID: 6063865234188165019, guid: 8e2150efab171834e80af1985d7c201e,
         type: 3}
       propertyPath: m_Name
