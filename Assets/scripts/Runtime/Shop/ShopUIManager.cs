@@ -7,6 +7,10 @@ public class ShopUIManager : MonoBehaviour
     public GameObject shopItemPrefab;  // This prefab will represent each item in the shop UI
     public Transform shopContainer;    // The parent object where all items will be displayed
 
+    public Transform upgradesRowTransform;
+    public Transform powersRowTransform;
+    public Transform incrementalsRowTransform;
+
     private void Start()
     {
         PopulateShop();
@@ -16,7 +20,20 @@ public class ShopUIManager : MonoBehaviour
     {
         foreach (var item in shopDatabase.shopItems)
         {
-            GameObject itemUI = Instantiate(shopItemPrefab, shopContainer);
+            GameObject itemUI;
+
+            if (item is Upgrade)
+            {
+                itemUI = Instantiate(shopItemPrefab, upgradesRowTransform);
+            }
+            else if (item is Power)
+            {
+                itemUI = Instantiate(shopItemPrefab, powersRowTransform);
+            }
+            else // Assumes item is Incremental or any other type
+            {
+                itemUI = Instantiate(shopItemPrefab, incrementalsRowTransform);
+            }
             itemUI.transform.Find("Name").GetComponent<Text>().text = item.itemName;
             itemUI.transform.Find("Price").GetComponent<Text>().text = item.price.ToString();
             itemUI.transform.Find("Description").GetComponent<Text>().text = item.description;
