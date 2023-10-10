@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 11416508, guid: 0fabce79a76fba346b9b3d9fa57c56c4, type: 3}
   - {fileID: 11416508, guid: cd015a7ef86dda54aae2fa60938e08fd, type: 3}
   musicSource: {fileID: 1932628401}
-  winMusic: {fileID: 8300000, guid: 66926e54a9f7cdb4fa40432b545822ce, type: 3}
-  loseMusic: {fileID: 8300000, guid: 682d24582a98c0e4c92d479ad1d724e8, type: 3}
+  winMusic: {fileID: 8300000, guid: 8720751d2d6d48e41a946dcdbe105f91, type: 3}
+  loseMusic: {fileID: 8300000, guid: 42f031f2fd5e83f479d64a1368a60071, type: 3}
 --- !u!4 &562245209
 Transform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932628400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96793c00f29e4a244b66a79259714424, type: 3}
+  m_Script: {fileID: 11500000, guid: b5ca4ec9543bbaf48a1186936c6b9462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2017043631
@@ -695,13 +695,13 @@ MonoBehaviour:
       highestChain: 0
       totalChains: 0
       digHeight: 0
-      numBlock1Broken: 20
+      numBlock1Broken: 0
       numBlock2Broken: 0
       numBlock3Broken: 0
       numBlock4Broken: 0
       numBlock5Broken: 0
       numBlock6Broken: 0
-      timesPowerUsed: 1
+      timesPowerUsed: 0
   playMode: 0
 --- !u!4 &2017043633
 Transform:

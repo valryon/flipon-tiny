@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class LvlUnlockContainer : MonoBehaviour
 {
-  public static bool[] LvlUnlockStates;
+	public bool[] LvlUnlockStates;
 
-  public void SetupState(int index, bool isUnlocked)
-  {
-    LvlUnlockStates[index] = isUnlocked;
-  }
+	public void SetupState(int index, bool isUnlocked)
+	{
+		LvlUnlockStates[index] = isUnlocked;
+	}
 
-  // Print Level Unlock States for Testing/Debugging
-  public void PrintArray()
-  {
-    Debug.Log($"[{string.Join(",", LvlUnlockStates)}]");
-  }
+	// Print Level Unlock States for Testing/Debugging
+	public void PrintArray()
+	{
+		Debug.Log($"[{string.Join(",", LvlUnlockStates)}]");
+	}
 }

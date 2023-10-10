@@ -73,13 +73,18 @@ public class MenuUIScript : MonoBehaviour
         }
     }
 
-    // load the game
-    public void StartLoad(){
+	private void FixedUpdate()
+	{
+        SaveSettings();
+    }
+
+	// load the game
+	public void StartLoad(){
         StartCoroutine(AsyncLoadIntoGame());
     }
 
     private IEnumerator AsyncLoadIntoGame(){
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map_t");
         
         while(!asyncLoad.isDone){
             if(loadingTimer <= 0.75f){
