@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 94
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 748.8
+    x: 1007.2
     y: 0
-    width: 787.2
+    width: 528.8
     height: 722.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -92,7 +92,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 341.6
+    width: 455.2
     height: 519.2
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -118,7 +118,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 519.2
-    width: 748.8
+    width: 1007.2
     height: 203.59998
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -219,12 +219,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 748.8
+    width: 1007.2
     height: 722.8
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 40
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,12 +244,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 748.8
+    width: 1007.2
     height: 519.2
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 41
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 341.6
+    x: 455.2
     y: 0
-    width: 407.19998
+    width: 552
     height: 519.2
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -298,9 +298,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 341.6
+    x: 455.2
     y: 73.6
-    width: 405.19998
+    width: 550
     height: 498.2
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -336,8 +336,8 @@ MonoBehaviour:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     pluginStates:
     - '{}'
-    scale: 17
-    fitToScreenEnabled: 1
+    scale: 27
+    fitToScreenEnabled: 0
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
     friendlyName: Apple iPhone 12
@@ -550,7 +550,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 592.8
-    width: 747.8
+    width: 1006.2
     height: 182.59998
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Shop/Items/Incrementals
+    - Assets/prefabs/ui/Shop
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -581,16 +581,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Shop/Items/Incrementals
+  - Assets/prefabs/ui/Shop
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\johnm\Documents\GitHub\flipon-tiny-UTMobileGames2023
+  m_LastProjectPath: C:\Users\bukol\Box\School\flipon-tiny-UTMobileGames2023
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 493.40002}
-    m_SelectedIDs: 36850000
-    m_LastClickedID: 34102
-    m_ExpandedIDs: 00000000fa5700001a58000020580000245800004e580000845b00007e84000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 300}
+    m_SelectedIDs: ce150000
+    m_LastClickedID: 5582
+    m_ExpandedIDs: 000000003a5b00003c5b00003e5b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +618,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa570000
+    m_ExpandedIDs: 000000003a5b00003c5b00003e5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -695,9 +695,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 748.8
+    x: 1007.2
     y: 73.6
-    width: 786.2
+    width: 527.8
     height: 701.8
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 340.6
+    width: 454.2
     height: 498.2
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -760,9 +760,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 90b7ffff
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0071ffffa682ffff90dcffffa0dcffff60e0ffff70e0ffffaeedffff06faffff10faffff18faffff1cfaffff3efaffffc4faffff28fbfffff4ffffff0053000008540000
+      m_SelectedIDs: c0600000
+      m_LastClickedID: 24768
+      m_ExpandedIDs: 22eeffffbc600000c0600000d6600000de600000e6600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -807,9 +807,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 341.6
+    x: 455.2
     y: 73.6
-    width: 405.19998
+    width: 550
     height: 498.2
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1122,17 +1122,17 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
-  m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 1
+  m_OverrideSceneCullingMask: 0
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 451.58505, y: 1017.3917, z: -1.7281604}
+    m_Target: {x: 741.4643, y: 1371.5659, z: 0.47776818}
     speed: 2
-    m_Value: {x: 451.58505, y: 1017.3917, z: -1.7281604}
+    m_Value: {x: 741.4643, y: 1371.5659, z: 0.47776818}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -1182,9 +1182,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 341.85178
+    m_Target: 1362.7242
     speed: 2
-    m_Value: 341.85178
+    m_Value: 1362.7242
   m_Ortho:
     m_Target: 1
     speed: 2
