@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,11 @@ public class ShopManager : MonoBehaviour
 
     public bool PurchaseItem(Item item)
     {
+        if(item == null)
+        {
+            Debug.Log("item is null");
+        }
+        
         if (CurrencyManager.Instance.CanAfford(item.price) && !item.isPurchased)
         {
             CurrencyManager.Instance.RemoveCurrency(item.price);

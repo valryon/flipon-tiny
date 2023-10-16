@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: TestUpgrade1
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  itemName: 
-  description: 
-  price: 0
-  icon: {fileID: 0}
+  itemName: TestUpgrade1
+  description: This is the test upgrade
+  price: 1000
+  icon: {fileID: 21300000, guid: 783f57ef2ce7ba04a85bf18457d276e1, type: 3}
   isPurchased: 0
   isEnabled: 0

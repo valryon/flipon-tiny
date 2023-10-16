@@ -9,13 +9,18 @@ public class ItemModal : MonoBehaviour
     public TextMeshProUGUI itemDescription;
     public Button purchaseButton;
     public TextMeshProUGUI priceText;
+    GameObject itemUI;
 
-    public void Populate(Item item)
+    private Item currentItem;
+    public GameObject purchaseConfirmationPopup;
+    public void Populate(Item item, GameObject openingItemUI)
     {
+        currentItem = item;
         itemIcon.sprite = item.icon;
         itemName.text = item.itemName;
         itemDescription.text = item.description;
         priceText.text = item.price.ToString();
+        itemUI = openingItemUI;
     }
 
     public void ShowModal()
@@ -26,5 +31,10 @@ public class ItemModal : MonoBehaviour
     public void HideModal()
     {
         this.gameObject.SetActive(false);
+    }
+
+    public void Purchase()
+    {
+        ShopUIManager.Instance.Purchase(currentItem, itemUI);
     }
 }

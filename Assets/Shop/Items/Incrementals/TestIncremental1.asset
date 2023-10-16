@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: TestIncremental1
   m_EditorClassIdentifier: Assembly-CSharp::Incremental
-  itemName: 
-  description: 
-  price: 0
-  icon: {fileID: 0}
-  isPurchased: 0
+  itemName: TestInc1
+  description: This is a test Incremental
+  price: 1000
+  icon: {fileID: 21300000, guid: fba6b8a94b41ae241a0bcc2ab3f2104f, type: 3}
+  isPurchased: 1
   isEnabled: 0
