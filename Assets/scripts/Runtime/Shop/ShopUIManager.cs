@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,17 +35,16 @@ public class ShopUIManager : MonoBehaviour
             {
                 itemUI = Instantiate(shopItemPrefab, incrementalsRowTransform);
             }
-            //itemUI.transform.Find("Name").GetComponent<Text>().text = item.itemName;
-            //itemUI.transform.Find("PriceText").GetComponent<Text>().text = item.price.ToString();
-            //itemUI.transform.Find("Description").GetComponent<Text>().text = item.description;
-            //itemUI.transform.Find("Icon").GetComponent<Image>().sprite = item.icon;
+            itemUI.transform.Find("TextContainer/PriceText").GetComponent<TextMeshProUGUI>().text = item.price.ToString();
+
+            itemUI.transform.Find("Icon").GetComponent<Image>().sprite = item.icon;
+
 
             //Button purchaseButton = itemUI.transform.Find("PurchaseButton").GetComponent<Button>();
             //purchaseButton.onClick.AddListener(() => ShopManager.Instance.PurchaseItem(item));
 
             if (item.isPurchased)
             {
-                // Optionally, update the UI to reflect that the item is purchased
                 //purchaseButton.interactable = false;
             }
         }
