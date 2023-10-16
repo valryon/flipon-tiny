@@ -10,9 +10,7 @@ public class ItemModal : MonoBehaviour
     public Button purchaseButton;
     public TextMeshProUGUI priceText;
     GameObject itemUI;
-
     private Item currentItem;
-    public GameObject purchaseConfirmationPopup;
     public void Populate(Item item, GameObject openingItemUI)
     {
         currentItem = item;

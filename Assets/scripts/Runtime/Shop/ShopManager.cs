@@ -33,7 +33,6 @@ public class ShopManager : MonoBehaviour
         {
             CurrencyManager.Instance.RemoveCurrency(item.price);
             item.isPurchased = true;
-            // Here, you could also add the item to the player's inventory
             InventoryManager.Instance.AddItemFromShop(item);
             return true;  // Successful purchase
         }
