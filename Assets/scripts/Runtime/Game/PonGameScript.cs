@@ -612,32 +612,40 @@ namespace Pon
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
-			MapUIScript.mapInstance.wonLastGame = wonGame;
-
-			// music for winning/losing 
-
-
-			/*
-              Firebase.Analytics.FirebaseAnalytics.LogEvent(
-              Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
-              new Firebase.Analytics.Parameter[] {
-                new Firebase.Analytics.Parameter(
-                  Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
-
-              }
-            );
-            */
-
-			// Log Level end (user has won)
-			//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
-			if (wonGame)
+			if (!isTutorial)
 			{
-				int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-				level++;
-				GameManager.gameManager.SaveLevel("Level " + level);
+				MapUIScript.mapInstance.wonLastGame = wonGame;
+
+				// music for winning/losing 
+
+
+				/*
+								Firebase.Analytics.FirebaseAnalytics.LogEvent(
+								Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
+								new Firebase.Analytics.Parameter[] {
+									new Firebase.Analytics.Parameter(
+										Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
+
+								}
+							);
+							*/
+
+				// Log Level end (user has won)
+				//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
+				if (wonGame)
+				{
+					int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+					level++;
+					GameManager.gameManager.SaveLevel("Level " + level);
+				}
+				// level ends, go back to map scene
+				SceneManager.LoadSceneAsync("Map_t");
 			}
-			// level ends, go back to map scene
-			SceneManager.LoadSceneAsync("Map_t");
+			else
+			{
+				SceneManager.LoadSceneAsync("Tutorial_Entry");
+				StageTracker.ResetTutorial();
+			}
 		}
 
 		#endregion

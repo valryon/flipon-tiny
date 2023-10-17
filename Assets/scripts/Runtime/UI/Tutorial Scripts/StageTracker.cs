@@ -9,7 +9,7 @@ public class StageTracker : MonoBehaviour
   public static StageTracker stageTracker;
   [SerializeField] GameObject dialoguePrefab;
   GameObject currDiaBox;
-  float currTutorialStage = 0f;
+  static float currTutorialStage = 0f;
   static int comboValue = 0;
   static bool wasPowerUsed = false;
   static GridScript currGrid;
@@ -35,10 +35,13 @@ public class StageTracker : MonoBehaviour
     {
       case 0f:
         // start of tutorial
-        Debug.Log("Displaying Narrative Tutorial Dialogue");
-        currTutorialStage += 0.5f;
-        CreateDialogueBox();
-        SetActiveDialogueBox(true);
+        if (SceneManager.GetActiveScene().name == "Tutorial_Entry")
+        {
+          Debug.Log("Displaying Narrative Tutorial Dialogue");
+          CreateDialogueBox();
+          SetActiveDialogueBox(true);
+          currTutorialStage += 0.5f;
+        }
         break;
       case 0.5f:
         //Waiting for player to click through Dialogue
@@ -359,4 +362,10 @@ public class StageTracker : MonoBehaviour
     wasPowerUsed = powerUseStatus;
   }
 
+  static public void ResetTutorial()
+  {
+    comboValue = 0;
+    wasPowerUsed = false;
+    currTutorialStage = 0;
+  }
 }
