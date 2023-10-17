@@ -49,6 +49,7 @@ namespace Pon
 
 		private bool lostByFillingScreen = false;
 		private bool wonGame = false;
+		public bool isTutorial = false;
 
 		#endregion
 
@@ -431,6 +432,10 @@ namespace Pon
 
 		public void OnPowerUsed(Power power, PowerUseParams param)
 		{
+			if (isTutorial)
+			{
+        StageTracker.GetPowerUsed(true);
+      }
 			// Dispatch to other players
 			foreach (var p in players)
 			{
@@ -471,6 +476,10 @@ namespace Pon
 		private void Combo(GridScript g, ComboData c)
 		{
 			// Send blocks!
+			if(isTutorial)
+			{
+				StageTracker.GetCombo(g, c.blockCount);
+			}
 			if (players.Count > 1) GenerateGarbage(g, c);
 		}
 

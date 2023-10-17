@@ -1,14 +1,20 @@
-using DG.Tweening.Core.Easing;
+using Pon;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StageTracker : MonoBehaviour
 {
+  // All canvases used by this script to create the dialogue box should match the names in the CreateDialogueBox() function
   public static StageTracker stageTracker;
+  [SerializeField] GameObject dialoguePrefab;
+  GameObject currDiaBox;
   float currTutorialStage = 0f;
-  int FINAL_STEP; // Set this value when tutorial steps decided on
+  static int comboValue = 0;
+  static bool wasPowerUsed = false;
+  static GridScript currGrid;
+
+  PonGameScript gameScript;
 
   private void Awake()
   {
@@ -31,9 +37,11 @@ public class StageTracker : MonoBehaviour
         // start of tutorial
         Debug.Log("Displaying Narrative Tutorial Dialogue");
         currTutorialStage += 0.5f;
+        CreateDialogueBox();
+        SetActiveDialogueBox(true);
         break;
       case 0.5f:
-        //Debug.Log("Waiting for press 0.5");
+        //Waiting for player to click through Dialogue
         CheckTouch();
         break;
       case 1f:
@@ -42,7 +50,7 @@ public class StageTracker : MonoBehaviour
         currTutorialStage += 0.5f;
         break;
       case 1.5f:
-        //Debug.Log("Waiting for press 1.5");
+        //Waiting for player to click through Dialogue
         CheckTouch();
         break;
       case 2f:
@@ -51,7 +59,7 @@ public class StageTracker : MonoBehaviour
         currTutorialStage += 0.5f;
         break;
       case 2.5f:
-        //Debug.Log("Waiting for press 2.5");
+        //Waiting for player to click through Dialogue
         CheckTouch();
         break;
       case 3f:
@@ -63,12 +71,17 @@ public class StageTracker : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Tutorial_Game")
         {
           currTutorialStage += 0.5f;
+          CreateDialogueBox();
+          gameScript = PonGameScript.instance;
+          gameScript.isTutorial = true;
+          gameScript.SetPause(true);
         }
         break;
       case 4f:
         // game loaded, game start dialogue
         Debug.Log("Displaying Game Tutorial Dialogue");
         currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
         break;
       case 4.5f:
         //Waiting for player to click through Dialogue
@@ -77,16 +90,24 @@ public class StageTracker : MonoBehaviour
       case 5f:
         Debug.Log("Unpausing and starting first task");
         currTutorialStage += 0.5f;
+        SetActiveDialogueBox(false);
+        gameScript.SetPause(false);
         break;
       case 5.5f:
         // player does task
-        //Debug.Log("Waiting for player task complete");
-        CheckTouch();
+        //Debug.Log("Waiting for player to finish first task");
+        if(comboValue == 3)
+        {
+          currTutorialStage += 0.5f;
+          comboValue = 0;
+        }
         break;
       case 6f:
         // second task dialogue
         Debug.Log("Displaying Second Task Dialogue");
         currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
+        gameScript.SetPause(true);
         break;
       case 6.5f:
         //Waiting for player to click through dialogue
@@ -96,47 +117,137 @@ public class StageTracker : MonoBehaviour
         //Unpause game
         Debug.Log("Unpausing and starting second task");
         currTutorialStage += 0.5f;
+        SetActiveDialogueBox(false);
+        gameScript.SetPause(false);
         break;
       case 7.5f:
         //player does task
         //Debug.Log("Waiting for player to finish second task");
-        CheckTouch();
+        if (comboValue == 4)
+        {
+          currTutorialStage += 0.5f;
+          comboValue = 0;
+        }
         break;
       case 8f:
-        // end of tutorial dialogue
-        Debug.Log("Displaying End Game Tutorial Dialogue");
+        // second task dialogue
+        Debug.Log("Displaying Third Task Dialogue");
         currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
+        gameScript.SetPause(true);
         break;
       case 8.5f:
-        //Debug.Log("Waiting for press 6.5");
+        //Waiting for player to click through dialogue
         CheckTouch();
         break;
       case 9f:
+        //Unpause game
+        Debug.Log("Unpausing and starting third task");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(false);
+        gameScript.SetPause(false);
+        break;
+      case 9.5f:
+        //player does task
+        //Debug.Log("Waiting for player to finish third task");
+        if (comboValue == 5)
+        {
+          currTutorialStage += 0.5f;
+          comboValue = 0;
+        }
+        break;
+      case 10f:
+        // second task dialogue
+        Debug.Log("Displaying Fourth Task Dialogue");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
+        gameScript.SetPause(true);
+        break;
+      case 10.5f:
+        //Waiting for player to click through dialogue
+        CheckTouch();
+        break;
+      case 11f:
+        //Unpause game
+        Debug.Log("Unpausing and starting fourth task");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(false);
+        gameScript.SetPause(false);
+        break;
+      case 11.5f:
+        //player does task
+        //Debug.Log("Waiting for player to finish fourth task");
+        if (comboValue == 6)
+        {
+          currTutorialStage += 0.5f;
+          comboValue = 0;
+        }
+        break;
+      case 12f:
+        // second task dialogue
+        Debug.Log("Displaying Fifth Task Dialogue");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
+        gameScript.SetPause(true);
+        break;
+      case 12.5f:
+        //Waiting for player to click through dialogue
+        CheckTouch();
+        break;
+      case 13f:
+        //Unpause game
+        Debug.Log("Unpausing and starting fifth task");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(false);
+        currGrid.PowerCharge = 1f;
+        gameScript.SetPause(false);
+        break;
+      case 13.5f:
+        //player does task
+        //Debug.Log("Waiting for player to finish fifth task");
+        if (wasPowerUsed)
+        {
+          currTutorialStage += 0.5f;
+          wasPowerUsed = false;
+        }
+        break;
+      case 14f:
+        // end of tutorial dialogue
+        Debug.Log("Displaying End Game Tutorial Dialogue");
+        currTutorialStage += 0.5f;
+        SetActiveDialogueBox(true);
+        gameScript.SetPause(true);
+        break;
+      case 14.5f:
+        CheckTouch();
+        break;
+      case 15f:
         // load map
         currTutorialStage += 0.5f;
         StartLoad(0);
         break;
-      case 9.5f:
+      case 15.5f:
         if (SceneManager.GetActiveScene().name == "Tutorial_Entry")
         {
           currTutorialStage += 0.5f;
         }
         break;
-      case 10f:
+      case 16f:
         Debug.Log("Displaying Send Off Dialogue");
         currTutorialStage += 0.5f;
+        CreateDialogueBox();
+        SetActiveDialogueBox(true);
         break;
-      case 10.5f:
-        // end send off dialogue
-        //Debug.Log("Waiting for press 8.5");
+      case 16.5f:
+        //Waiting for player to click through Send-Off Dialogue
         CheckTouch();
         break;
-      case 11f:
+      case 17f:
         // load game
         currTutorialStage += 0.5f;
         StartLoad(2);
         break;
-      case 11.5f:
+      case 17.5f:
         // destroy self
         if (SceneManager.GetActiveScene().name == "Map_t")
         {
@@ -210,6 +321,42 @@ public class StageTracker : MonoBehaviour
         }
       }
     }
+  }
+
+  private void SetActiveDialogueBox(bool desActive)
+  {
+    for (int i = 0; i < currDiaBox.transform.childCount; i++)
+    {
+      currDiaBox.transform.GetChild(i).gameObject.SetActive(desActive);
+    }
+  }
+
+  private void CreateDialogueBox()
+  {
+    GameObject desCanvas = GameObject.Find("Tut_UI");
+    if (desCanvas != null)
+    {
+      currDiaBox = Instantiate(dialoguePrefab, desCanvas.transform);
+      currDiaBox.transform.SetSiblingIndex(0);
+    } else
+    {
+      desCanvas = GameObject.Find("Player UI");
+      if (desCanvas != null)
+      {
+        currDiaBox = Instantiate(dialoguePrefab, desCanvas.transform);
+      }
+    }
+  }
+
+  static public void GetCombo(GridScript grid, int blockCount)
+  {
+    currGrid = grid;
+    comboValue = blockCount;
+  }
+
+  static public void GetPowerUsed(bool powerUseStatus)
+  {
+    wasPowerUsed = powerUseStatus;
   }
 
 }
