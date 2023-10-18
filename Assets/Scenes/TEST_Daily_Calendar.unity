@@ -744,7 +744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -98}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &353596245
@@ -2405,15 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ebc653758858642a5b73d700f18d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTimePlaying: 1
-  rewardButtons:
-  - {fileID: 1205294040}
-  - {fileID: 1412868219}
-  - {fileID: 1054003196}
-  - {fileID: 1075540548}
-  - {fileID: 1794061240}
-  - {fileID: 935044783}
-  - {fileID: 1281772093}
+  firstTimePlaying: 0
 --- !u!4 &1181672046
 Transform:
   m_ObjectHideFlags: 0
@@ -2512,19 +2504,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1205294041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1181672045}
-        m_TargetAssemblyTypeName: DailyRewards, Assembly-CSharp
-        m_MethodName: ClaimReward
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1205294041
 MonoBehaviour:
   m_ObjectHideFlags: 0

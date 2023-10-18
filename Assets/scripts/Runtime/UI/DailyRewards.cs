@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DailyRewards : MonoBehaviour
 {
@@ -18,8 +17,6 @@ public class DailyRewards : MonoBehaviour
     private string currentTimeInGame;
     // private string timeGameClosed;
 
-    // buttons
-    public Button[] rewardButtons = new Button[7];
 
     // Start is called before the first frame update
     void Start()
@@ -30,102 +27,55 @@ public class DailyRewards : MonoBehaviour
         if (firstTimePlaying)
         {
             currentDay = 1;
-            // set rewards
-            rewardButtons[0].interactable = true;
-            for (int i = 1; i < rewardButtons.Length; i++)
-            {
-                rewardButtons[i].interactable = false;
-            }
-
-            // no longer first time playing
-            // firstTimePlaying = false;
-            claimedReward = false;
-            isNewDay = false;
         }
         // if not first time opening, proceed as normal
         else
         {
             // get current time 
             timeGameOpened = DateTime.Now.ToString("HH:mm");
-
-            // get time that the player last opened the game
-
-            // check if new day when game is reopened
-
+            // check if new day
             // if (timeGameOpened[:2])
         }
 
         // reset time is midnight
         // resetTime = 
 
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // time in game (military time 00:00 - 23:59)
         currentTimeInGame = DateTime.Now.ToString("HH");
         // print(currentTimeInGame);
 
-        // just the hour
         int currHour = int.Parse(currentTimeInGame);
 
         // if the hour has passed 00:00 and was not tracked that it is a new day, it is now a new day
-        if (currHour >= 0 && isNewDay)
+        if (currHour >= 0 && !isNewDay)
         {
-            if (firstTimePlaying)
+            isNewDay = true;
+
+            // new reward needs to unlock 
+            if (currentDay == 7)
             {
-                firstTimePlaying = false;
+                currentDay = 1;
             }
             else
             {
-                isNewDay = false;
-
-                // new reward needs to unlock 
-                if (currentDay == 7)
-                {
-                    currentDay = 1;
-                }
-                else
-                {
-                    currentDay++;
-                }
-
-                UnlockReward(currentDay);
+                currentDay++;
             }
+            
+            UnlockReward(currentDay);
         }
         // otherwise, we are still in the same day 
-        
     }
 
     // runs when user clicks on button
-    public void ClaimReward(int rewardAmount)
+    public void ClaimReward()
     {
         // check if user is able to claim reward
         // check if user already claimed reward
         // check if user is on the correct reward 
-
-        // current button
-        // Button currButton = rewardButtons[currentDay - 1];
-
-        if (!claimedReward)
-        {
-            // gain currency
-            print(rewardAmount);
-
-            print(currentDay);
-            // make button no longer interactable 
-            rewardButtons[currentDay - 1].interactable = false;
-
-            // change image of button
-            // currButton.GetComponent<Image>() = 
-
-            // make sure color is normal?
-
-            claimedReward = true;
-        }
     }
 
     public void UnlockReward(int currentDay)
@@ -140,11 +90,4 @@ public class DailyRewards : MonoBehaviour
 
         // set all buttons to uninteractable except first one
     }
-
-    /*
-    private void OnApplicationQuit()
-    {
-        firstTimePlaying = false; // ?
-    }
-    */
 }
