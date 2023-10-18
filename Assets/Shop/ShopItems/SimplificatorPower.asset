@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Simplificator
-  m_EditorClassIdentifier: Assembly-CSharp::Power
-  itemName: Simplificator
-  description: Power that reduces the number of colors in the grid by 1
-  price: 1000
+  m_Script: {fileID: 11500000, guid: b612ebd13a93d924facd58105c72b71d, type: 3}
+  m_Name: SimplificatorPower
+  m_EditorClassIdentifier: 
+  itemName: I Like it Simple
+  description: This Power reduces the number of colored gems on the board by 1!
+  price: 12500
   icon: {fileID: 21300000, guid: 84ed111e6072141098bbf1d0a4dd03d2, type: 3}
-  isPurchased: 1
-  isEnabled: 1
+  isPurchased: 0
+  isEnabled: 0
+  itemType: 1

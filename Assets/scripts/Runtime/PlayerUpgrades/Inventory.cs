@@ -23,29 +23,8 @@ public class Inventory
         return items.FirstOrDefault(i => i.itemName == name);
     }
 
-    public List<Upgrade> GetUpgrades()
-    {
-        return items.OfType<Upgrade>().ToList();
-    }
-
-    public List<Power> GetPowers()
-    {
-        return items.OfType<Power>().ToList();
-    }
-
-    public List<Incremental> GetIncrementals()
-    {
-        return items.OfType<Incremental>().ToList();
-    }
-
     public bool HasItem(string name)
     {
         return items.Any(i => i.itemName == name);
     }
-
-    public bool HasItem<T>() where T : Item
-    {
-        return items.OfType<T>().Any();
-    }
-
 }

@@ -29,15 +29,15 @@ public class ShopUIManager : MonoBehaviour
 
     public void PopulateShop()
     {
-        foreach (var item in shopDatabase.GetAllItems())
+        foreach (var item in shopDatabase.shopItems)
         {
             GameObject itemUI;
 
-            if (item is Upgrade)
+            if (item.itemType == ItemType.Upgrade)
             {
                 itemUI = Instantiate(shopItemPrefab, upgradesRowTransform);
             }
-            else if (item is Power)
+            else if (item.itemType == ItemType.Power)
             {
                 itemUI = Instantiate(shopItemPrefab, powersRowTransform);
             }
@@ -71,8 +71,6 @@ public class ShopUIManager : MonoBehaviour
                 itemModal.Populate(item, itemUI);
                 itemModal.ShowModal();
             }
-
-
         }
     }
 

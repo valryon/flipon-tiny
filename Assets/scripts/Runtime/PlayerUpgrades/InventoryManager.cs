@@ -83,11 +83,6 @@ public class InventoryManager : MonoBehaviour
         return playerInventory.HasItem(name);
     }
 
-    public bool HasItem<T>() where T : Item
-    {
-        return playerInventory.HasItem<T>();
-    }
-
     public void PopulateInventoryUI()
     {
         Debug.Log("Populating inventory UI.");

@@ -13,22 +13,26 @@ public class CurrencyManagerEditor : Editor
         if (GUILayout.Button("Add 10000 Currency"))
         {
             myScript.AddCurrency(10000);
+            Debug.Log("Now you have " + myScript.GetCurrentCurrency() + " currency.");
         }
 
         if (GUILayout.Button("Add 1000 Currency"))
         {
-            myScript.AddCurrency(1000); 
+            myScript.AddCurrency(1000);
+            Debug.Log("Now you have " + myScript.GetCurrentCurrency() + " currency.");
         }
 
         if (GUILayout.Button("Remove 100 Currency"))
         {
-            myScript.RemoveCurrency(100); 
+            myScript.RemoveCurrency(100);
+            Debug.Log("Now you have " + myScript.GetCurrentCurrency() + " currency.");
         }
 
         if (GUILayout.Button("Set Currency to 0"))
         {
             int curr = myScript.GetCurrentCurrency();
             myScript.RemoveCurrency(curr);
+            Debug.Log("Now you have " + myScript.GetCurrentCurrency() + " currency.");
         }
     }
 }

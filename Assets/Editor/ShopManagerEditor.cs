@@ -17,7 +17,7 @@ public class ShopManagerEditor : Editor
 
     private void UnsellAllItems(ShopManager manager)
     {
-        foreach (var item in manager.shopDatabase.GetAllItems())
+        foreach (var item in manager.shopDatabase.shopItems)
         {
             item.isPurchased = false;
             item.isEnabled = false;

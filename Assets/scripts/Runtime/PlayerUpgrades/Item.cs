@@ -1,4 +1,10 @@
 using UnityEngine;
+public enum ItemType
+{
+    Upgrade,
+    Power,
+    Incremental
+}
 
 [CreateAssetMenu(menuName = "Shop/Item")]
 public class Item : ScriptableObject
@@ -9,13 +15,6 @@ public class Item : ScriptableObject
     public Sprite icon;
     public bool isPurchased = false;
     public bool isEnabled = false;
+    public ItemType itemType;
 }
 
-[CreateAssetMenu(menuName = "Shop/Upgrade")]
-public class Upgrade : Item { }
-
-[CreateAssetMenu(menuName = "Shop/Power")]
-public class Power : Item { }
-
-[CreateAssetMenu(menuName = "Shop/Incremental")]
-public class Incremental : Item { }
