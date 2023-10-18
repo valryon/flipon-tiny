@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class CurrencyManager : MonoBehaviour
     public TextMeshProUGUI currencyText;
     public delegate void CurrencyChange();
     public event CurrencyChange OnCurrencyChanged;
+
+    private const string CURRENCY_FILENAME = "currency.dat";
 
     public static CurrencyManager Instance;
 
@@ -92,14 +95,24 @@ public class CurrencyManager : MonoBehaviour
 
     void SaveCurrency()
     {
-        PlayerPrefs.SetInt("cUnits", cUnits);
+        string path = Path.Combine(Application.persistentDataPath, CURRENCY_FILENAME);
+        File.WriteAllText(path, cUnits.ToString());
     }
 
     void LoadCurrency()
     {
-        if (PlayerPrefs.HasKey("cUnits"))
+        string path = Path.Combine(Application.persistentDataPath, CURRENCY_FILENAME);
+        if (File.Exists(path))
         {
-            cUnits = PlayerPrefs.GetInt("cUnits");
+            string content = File.ReadAllText(path);
+            if (int.TryParse(content, out int loadedCurrency))
+            {
+                cUnits = loadedCurrency;
+            }
+            else
+            {
+                Debug.LogError("Failed to parse saved currency data.");
+            }
         }
     }
 }

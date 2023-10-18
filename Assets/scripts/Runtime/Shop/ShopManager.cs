@@ -32,8 +32,8 @@ public class ShopManager : MonoBehaviour
         if (CurrencyManager.Instance.CanAfford(item.price) && !item.isPurchased)
         {
             CurrencyManager.Instance.RemoveCurrency(item.price);
-            item.isPurchased = true;
             InventoryManager.Instance.AddItemFromShop(item);
+            item.isPurchased = true;
             return true;  // Successful purchase
         }
         return false;  // Failed to purchase

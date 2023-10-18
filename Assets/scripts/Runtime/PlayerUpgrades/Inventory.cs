@@ -3,12 +3,13 @@ using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
-public class Inventory : MonoBehaviour
+public class Inventory
 {
     public List<Item> items = new List<Item>();
 
     public void AddItem(Item item)
     {
+        Debug.Log($"Item {item.itemName} added to player inventory. Total items: {items.Count}");
         items.Add(item);
     }
 
