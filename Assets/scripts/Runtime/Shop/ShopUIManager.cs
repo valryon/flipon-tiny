@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 public class ShopUIManager : MonoBehaviour
 {
     public ShopDatabase shopDatabase;
+    public ShopManager shopManager;
     public GameObject shopItemPrefab;  // This prefab will represent each item in the shop UI
     public Transform shopContainer;    // The parent object where all items will be displayed
     public ItemModal itemModal;
@@ -15,21 +17,9 @@ public class ShopUIManager : MonoBehaviour
     public Transform incrementalsRowTransform;
     public GameObject purchaseConfirmationPopup;
 
-    public static ShopUIManager Instance { get; private set; }
-
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        
     }
 
     private void Start()
@@ -39,7 +29,7 @@ public class ShopUIManager : MonoBehaviour
 
     public void PopulateShop()
     {
-        foreach (var item in shopDatabase.shopItems)
+        foreach (var item in shopDatabase.GetAllItems())
         {
             GameObject itemUI;
 
@@ -88,7 +78,12 @@ public class ShopUIManager : MonoBehaviour
 
     public void Purchase(Item item, GameObject itemUI)
     {
-        if (ShopManager.Instance.PurchaseItem(item)) // Check if purchase is successful
+        if(shopManager == null) 
+        {
+            Debug.Log("Shop manager is null ):");
+            return;
+        }
+        if (shopManager.PurchaseItem(item)) // Check if purchase is successful
         {
             // If the purchase was successful, set the SoldScrim to active and disable the purchase button
             GameObject soldScrim = itemUI.transform.Find("SoldScrim").gameObject;

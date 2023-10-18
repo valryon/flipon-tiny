@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f454cd84bf3fe724b86293412633fdee, type: 3}
   m_Name: MainShopDatabase
   m_EditorClassIdentifier: 
-  shopItems:
+  powers:
+  - {fileID: 11400000, guid: 293d100f83da4e040a26363e28e8a462, type: 2}
   - {fileID: 11400000, guid: 263dd375d571bbf418224c759af969c9, type: 2}
   - {fileID: 11400000, guid: f663ee11fc7d29745b411ec897913e21, type: 2}
-  - {fileID: 11400000, guid: 293d100f83da4e040a26363e28e8a462, type: 2}
+  upgrades:
   - {fileID: 11400000, guid: 0b4700b82255ce543bf355c78c389cd2, type: 2}
-  - {fileID: 11400000, guid: bd2b6fd0bc49a934aa8acb50072dde68, type: 2}
+  incrementals:
+  - {fileID: 11400000, guid: 2f424b8ea44e194499925afe756117ea, type: 2}

@@ -5,7 +5,6 @@ using System.IO;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance { get; private set; }
 
     public Inventory playerInventory;
 
@@ -15,23 +14,11 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         LoadInventory();
         PopulateInventoryUI();
     }
 
-    private const string INVENTORY_FILENAME = "inventory.json";
+    public const string INVENTORY_FILENAME = "inventory.json";
 
     public void SaveInventory()
     {

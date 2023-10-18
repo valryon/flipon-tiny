@@ -5,21 +5,11 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public ShopDatabase shopDatabase;
-    public static ShopManager Instance { get; private set; }
+    public InventoryManager inventoryManager;
 
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+
     }
 
     public bool PurchaseItem(Item item)
@@ -32,7 +22,7 @@ public class ShopManager : MonoBehaviour
         if (CurrencyManager.Instance.CanAfford(item.price) && !item.isPurchased)
         {
             CurrencyManager.Instance.RemoveCurrency(item.price);
-            InventoryManager.Instance.AddItemFromShop(item);
+            inventoryManager.AddItemFromShop(item);
             item.isPurchased = true;
             return true;  // Successful purchase
         }

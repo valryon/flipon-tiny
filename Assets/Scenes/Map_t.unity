@@ -3434,6 +3434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopDatabase: {fileID: 11400000, guid: 2e73afcb8210bc84f9c18f79775e5cab, type: 2}
+  inventoryManager: {fileID: 1418944788}
 --- !u!4 &1025720796
 Transform:
   m_ObjectHideFlags: 0
@@ -6187,11 +6188,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopDatabase: {fileID: 11400000, guid: 2e73afcb8210bc84f9c18f79775e5cab, type: 2}
+  shopManager: {fileID: 1025720795}
   shopItemPrefab: {fileID: 6063865234188165019, guid: 8e2150efab171834e80af1985d7c201e,
     type: 3}
   shopContainer: {fileID: 335448670}
   itemModal: {fileID: 1014744676}
-  PurchaseConfirmation: {fileID: 0}
+  PurchaseConfirmation: {fileID: 1781965864}
   upgradesRowTransform: {fileID: 1573421395}
   powersRowTransform: {fileID: 1514995254}
   incrementalsRowTransform: {fileID: 1389193883}
@@ -8589,6 +8591,12 @@ SpriteRenderer:
 --- !u!1 &1781965863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4850468245079998403, guid: aec3d460129853442a52fbcbfd144688,
+    type: 3}
+  m_PrefabInstance: {fileID: 3404573501291786865}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1781965864 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9059447927030081368, guid: aec3d460129853442a52fbcbfd144688,
     type: 3}
   m_PrefabInstance: {fileID: 3404573501291786865}
   m_PrefabAsset: {fileID: 0}
@@ -11083,6 +11091,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -245.10733
       objectReference: {fileID: 0}
+    - target: {fileID: 3971967952103656254, guid: aec3d460129853442a52fbcbfd144688,
+        type: 3}
+      propertyPath: shopUIManager
+      value: 
+      objectReference: {fileID: 1476988480}
     - target: {fileID: 4130472764894784623, guid: aec3d460129853442a52fbcbfd144688,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

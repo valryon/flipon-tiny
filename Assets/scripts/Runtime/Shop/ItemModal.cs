@@ -11,6 +11,7 @@ public class ItemModal : MonoBehaviour
     public TextMeshProUGUI priceText;
     GameObject itemUI;
     private Item currentItem;
+    public ShopUIManager shopUIManager;
     public void Populate(Item item, GameObject openingItemUI)
     {
         currentItem = item;
@@ -33,6 +34,6 @@ public class ItemModal : MonoBehaviour
 
     public void Purchase()
     {
-        ShopUIManager.Instance.Purchase(currentItem, itemUI);
+        shopUIManager.Purchase(currentItem, itemUI);
     }
 }
