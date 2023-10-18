@@ -84,16 +84,33 @@ public class MenuUIScript : MonoBehaviour
     }
 
     private IEnumerator AsyncLoadIntoGame(){
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map_t");
-        
-        while(!asyncLoad.isDone){
-            if(loadingTimer <= 0.75f){
-                loadingTimer += Time.deltaTime;
-            }else{
-                bufferLogo.SetActive(true);
-                bufferLogo.transform.GetChild(0).GetComponent<ConstantForce2D>().torque = 15;
+        if(SceneManagerHelper.Instance == null) 
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map_t");
+
+            while (!asyncLoad.isDone)
+            {
+                if (loadingTimer <= 0.75f)
+                {
+                    loadingTimer += Time.deltaTime;
+                }
+                else
+                {
+                    bufferLogo.SetActive(true);
+                    bufferLogo.transform.GetChild(0).GetComponent<ConstantForce2D>().torque = 15;
+                }
+                yield return null;
             }
-            yield return null;
+        }
+            
+
+        // Unload the Game scene
+        SceneManager.UnloadSceneAsync("TitleScreen");
+
+        // Enable previously disabled GameObjects from the Map_t scene
+        if (SceneManagerHelper.Instance != null)
+        {
+            SceneManagerHelper.Instance.EnablePreviouslyDisabledGameObjects();
         }
     }
 

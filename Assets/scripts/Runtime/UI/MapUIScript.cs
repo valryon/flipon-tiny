@@ -26,10 +26,16 @@ public class MapUIScript : MonoBehaviour
 
 	public static MapUIScript mapInstance;
 
-	// method that loads Title Screen Scene on button click 
-	public void BackToMenu()
+    // method that loads Title Screen Scene on button click 
+    public void BackToMenu()
 	{
-		SceneManager.LoadSceneAsync("TitleScreen");
+        if (SceneManagerHelper.Instance != null)
+        {
+            SceneManagerHelper.Instance.DisableAllRootGameObjectsInScene();
+        }
+
+        // Load the Game scene additively
+        SceneManager.LoadSceneAsync("TitleScreen", LoadSceneMode.Additive);
 		Debug.Log("GO TO MAIN MENU");
 	}
 
@@ -39,8 +45,14 @@ public class MapUIScript : MonoBehaviour
 		
 		mapInstance.currentLevelName = "Level" + levelNum.ToString();
 		GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
-		SceneManager.LoadSceneAsync("Game");
-		Debug.Log("PLAY GAME");
+        if (SceneManagerHelper.Instance != null)
+        {
+            SceneManagerHelper.Instance.DisableAllRootGameObjectsInScene();
+        }
+
+        // Load the Game scene additively
+        SceneManager.LoadSceneAsync("Game", LoadSceneMode.Additive);
+        Debug.Log("PLAY GAME");
 	}
 
 	public void Awake()

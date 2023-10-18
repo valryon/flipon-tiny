@@ -613,10 +613,10 @@ namespace Pon
 				GameManager.gameManager.SaveLevel("Level " + level);
 			}
 
-			// music for winning/losing 
+            // music for winning/losing 
 
 
-			/*
+            /*
               Firebase.Analytics.FirebaseAnalytics.LogEvent(
               Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
               new Firebase.Analytics.Parameter[] {
@@ -627,19 +627,25 @@ namespace Pon
             );
             */
 
-			// Log Level end (user has won)
-			//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
+            // Log Level end (user has won)
+            //GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
 
 
-			// level ends, go back to map scene
-			SceneManager.LoadSceneAsync("Map_t");
-		}
+            // Unload the Game scene
+            SceneManager.UnloadSceneAsync("Game");
 
-		#endregion
+            // Enable previously disabled GameObjects from the Map_t scene
+            if (SceneManagerHelper.Instance != null)
+            {
+                SceneManagerHelper.Instance.EnablePreviouslyDisabledGameObjects();
+            }
+        }
 
-		#region Properties
+        #endregion
 
-		public GameSettings Settings => settings;
+        #region Properties
+
+        public GameSettings Settings => settings;
 
 		public List<PlayerScript> Players => players;
 
