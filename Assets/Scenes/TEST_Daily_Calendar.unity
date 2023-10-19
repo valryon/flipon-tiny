@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ebc653758858642a5b73d700f18d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstTimePlaying: 1
+  firstTimePlaying: 0
   rewardButtons:
   - {fileID: 1205294040}
   - {fileID: 1412868219}
