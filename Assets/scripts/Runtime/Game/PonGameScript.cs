@@ -643,9 +643,15 @@ namespace Pon
 			}
 			else
 			{
-				SceneManager.LoadSceneAsync("Tutorial_Entry");
-				StageTracker.ResetTutorial();
-			}
+				
+				if (!wonGame)
+				{
+					StageTracker.ResetTutorial();
+				} else {
+					StageTracker.SetTutorialStage(15.5f);
+				}
+        SceneManager.LoadSceneAsync("Tutorial_Entry");
+      }
 		}
 
 		#endregion

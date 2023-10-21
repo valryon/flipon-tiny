@@ -1,19 +1,25 @@
 using Pon;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StageTracker : MonoBehaviour
 {
   // All canvases used by this script to create the dialogue box should match the names in the CreateDialogueBox() function
   public static StageTracker stageTracker;
+  DialogueController dialogueControl;
+  [SerializeField] MultiDialogueData dialogueDataSO;
+
   [SerializeField] GameObject dialoguePrefab;
   GameObject currDiaBox;
+
   static float currTutorialStage = 0f;
   static int comboValue = 0;
   static bool wasPowerUsed = false;
-  static GridScript currGrid;
 
+  static GridScript currGrid;
   PonGameScript gameScript;
 
   private void Awake()
@@ -27,6 +33,8 @@ public class StageTracker : MonoBehaviour
       Destroy(this.gameObject);
     }
     DontDestroyOnLoad(this.gameObject);
+
+    dialogueControl = this.GetComponent<DialogueController>();
   }
 
     private void Update()
@@ -40,6 +48,8 @@ public class StageTracker : MonoBehaviour
           Debug.Log("Displaying Narrative Tutorial Dialogue");
           CreateDialogueBox();
           SetActiveDialogueBox(true);
+          SetDialogueObjects();
+          dialogueControl.StartMultiDialogue(dialogueDataSO);
           currTutorialStage += 0.5f;
         }
         break;
@@ -50,6 +60,7 @@ public class StageTracker : MonoBehaviour
       case 1f:
         // dialogue 1
         Debug.Log("Displaying Dialogue 1");
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
       case 1.5f:
@@ -59,6 +70,7 @@ public class StageTracker : MonoBehaviour
       case 2f:
         // dialogue 2
         Debug.Log("Displaying Dialogue 2");
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
       case 2.5f:
@@ -75,6 +87,7 @@ public class StageTracker : MonoBehaviour
         {
           currTutorialStage += 0.5f;
           CreateDialogueBox();
+          SetDialogueObjects();
           gameScript = PonGameScript.instance;
           gameScript.isTutorial = true;
           gameScript.SetPause(true);
@@ -84,6 +97,7 @@ public class StageTracker : MonoBehaviour
         // game loaded, game start dialogue
         Debug.Log("Displaying Game Tutorial Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         break;
       case 4.5f:
@@ -109,6 +123,7 @@ public class StageTracker : MonoBehaviour
         // second task dialogue
         Debug.Log("Displaying Second Task Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
@@ -136,6 +151,7 @@ public class StageTracker : MonoBehaviour
         // second task dialogue
         Debug.Log("Displaying Third Task Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
@@ -163,6 +179,7 @@ public class StageTracker : MonoBehaviour
         // second task dialogue
         Debug.Log("Displaying Fourth Task Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
@@ -190,6 +207,7 @@ public class StageTracker : MonoBehaviour
         // second task dialogue
         Debug.Log("Displaying Fifth Task Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
@@ -218,6 +236,7 @@ public class StageTracker : MonoBehaviour
         // end of tutorial dialogue
         Debug.Log("Displaying End Game Tutorial Dialogue");
         currTutorialStage += 0.5f;
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
@@ -239,6 +258,8 @@ public class StageTracker : MonoBehaviour
         Debug.Log("Displaying Send Off Dialogue");
         currTutorialStage += 0.5f;
         CreateDialogueBox();
+        SetDialogueObjects();
+        dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         break;
       case 16.5f:
@@ -248,6 +269,7 @@ public class StageTracker : MonoBehaviour
       case 17f:
         // load game
         currTutorialStage += 0.5f;
+        dialogueControl.enabled = false;
         StartLoad(2);
         break;
       case 17.5f:
@@ -367,5 +389,36 @@ public class StageTracker : MonoBehaviour
     comboValue = 0;
     wasPowerUsed = false;
     currTutorialStage = 0;
+  }
+
+  static public void SetTutorialStage(float desStage)
+  {
+    currTutorialStage = desStage;
+  }
+
+  private void SetDialogueObjects()
+  {
+    dialogueControl.DialoguePanel = currDiaBox;
+    Image[] diaImgs = currDiaBox.GetComponentsInChildren<Image>();
+    foreach (Image child in diaImgs)
+    {
+      if (child.name == "Character Image")
+      {
+        dialogueControl.characterImage = child;
+        break;
+      }
+    }
+    TMP_Text[] diaText = currDiaBox.GetComponentsInChildren<TMP_Text>();
+    foreach (TMP_Text child in diaText)
+    {
+      if (child.name == "Name")
+      {
+        dialogueControl.characterName = child;
+      }
+      else if (child.name == "Dialogue")
+      {
+        dialogueControl.dialogueText = child;
+      }
+    }
   }
 }

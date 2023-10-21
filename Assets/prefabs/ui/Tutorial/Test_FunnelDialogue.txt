@@ -1,0 +1,11 @@
+CharacterName, Sentence
+Cloud King, Oh no! the Lord of Storms is here!
+Lord of Storms, Mwahaha I'm so evil!
+Cloud King, Quick! use the crystals to stop him!
+Cloud King, Do a 3 combo.
+Cloud King, Do a 4 combo.
+Cloud King, Do a 5 combo.
+Cloud King, Do an L combo.
+Cloud King, Use a power up to finish him off!
+Cloud King, He escaped! Let's go back to the map to see where he went.
+Cloud King, Drat... looks like he retreated to his castle. You must traverse through the regions and defeat each guardian to reach him. Good luck!

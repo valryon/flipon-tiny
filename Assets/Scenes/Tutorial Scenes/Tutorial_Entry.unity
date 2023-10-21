@@ -5587,6 +5587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1617674593}
   - component: {fileID: 1617674592}
+  - component: {fileID: 1617674594}
   m_Layer: 0
   m_Name: Stage Tracker
   m_TagString: Untagged
@@ -5606,6 +5607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382f6721bb47d4e43b0f508039d31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueDataSO: {fileID: 11400000, guid: 820aa1b8f773009459282f28788e8317, type: 2}
   dialoguePrefab: {fileID: 8051211993476148297, guid: 04a52c55d17a45c44865004e96fa03d2,
     type: 3}
 --- !u!4 &1617674593
@@ -5623,6 +5625,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617674594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617674591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47284f35b588b149be44e55fe9d2524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialoguePanel: {fileID: 0}
+  characterName: {fileID: 0}
+  dialogueText: {fileID: 0}
+  characterImage: {fileID: 0}
 --- !u!1 &1630892913
 GameObject:
   m_ObjectHideFlags: 0
