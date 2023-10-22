@@ -5607,7 +5607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382f6721bb47d4e43b0f508039d31620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueDataSO: {fileID: 11400000, guid: 820aa1b8f773009459282f28788e8317, type: 2}
+  dialogueDataSO: {fileID: 11400000, guid: b3247a59b80a38a49a6e5de795dfbaf8, type: 2}
   dialoguePrefab: {fileID: 8051211993476148297, guid: 04a52c55d17a45c44865004e96fa03d2,
     type: 3}
 --- !u!4 &1617674593
