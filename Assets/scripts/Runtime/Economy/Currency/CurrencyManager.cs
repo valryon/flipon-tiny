@@ -59,6 +59,23 @@ public class CurrencyManager : MonoBehaviour
         UpdateCurrencyDisplay();
     }
 
+    public void AddCurrencyWithLimit(int amount)
+    {
+        if (DailyBonusManager.Instance.CanEarnPoints(amount))
+        {
+            LoadCurrency();
+            cUnits += amount;
+            DailyBonusManager.Instance.AddPoints(amount); // keep track of daily points
+            SaveCurrency();
+            OnCurrencyChanged?.Invoke();
+            UpdateCurrencyDisplay();
+        }
+        else
+        {
+            Debug.Log("Daily limit reached.");
+        }
+    }
+
     public void AddCurrency(int amount)
     {
         LoadCurrency();

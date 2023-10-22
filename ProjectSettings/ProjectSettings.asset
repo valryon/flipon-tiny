@@ -1035,7 +1035,7 @@ PlayerSettings:
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
-    Purchasing: 1
+    Purchasing: 0
     UNet: 1
     Unity_Ads: 0
   luminIcon:

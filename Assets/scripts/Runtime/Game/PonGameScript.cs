@@ -607,8 +607,13 @@ namespace Pon
 			// When the player wins, award them currency
 			if (wonGame)
 			{
-				CurrencyManager.Instance.AddCurrency(settings.currencyReward);
-				int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+                // Daily Bonus checks if its first time playing
+                DailyBonusManager.Instance.AwardDailyBonus();
+
+                // Award them the standard currency for winning
+                CurrencyManager.Instance.AddCurrency(settings.currencyReward);
+
+                int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
 				level++;
 				GameManager.gameManager.SaveLevel("Level " + level);
 			}

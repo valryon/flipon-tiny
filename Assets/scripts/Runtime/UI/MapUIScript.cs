@@ -36,7 +36,7 @@ public class MapUIScript : MonoBehaviour
 	// method that loads the Game Scene on button click and sets a variable for the game settings
 	public void PlayLevel(int levelNum)
 	{
-		if(levelNum == -1)
+		if(levelNum == -1) // endless mode
 		{
             SceneManager.LoadSceneAsync("Game");
             Debug.Log("ENDLESS MODE");
