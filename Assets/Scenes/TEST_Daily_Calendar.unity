@@ -2406,6 +2406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstTimePlaying: 0
+  currentDate: 21
   rewardButtons:
   - {fileID: 1205294040}
   - {fileID: 1412868219}
