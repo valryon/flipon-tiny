@@ -21,17 +21,19 @@ public class DailyRewards : MonoBehaviour
 
     private bool isNewDay;
     private float currentTime;
-    private float resetTime;
 
-    public bool firstTimePlaying; // local bool to track if it's still the player's first time playing/seeing rewards
+    private bool firstTimePlaying; // local bool to track if it's still the player's first time playing/seeing rewards
     private int currentDay;
     private int daysRemaining;
     private bool claimedReward;
 
     private string timeGameOpened;
-    public string currentDate;
+    private string currentDate; 
     private string currentTimeInGame;
     // private string timeGameClosed;
+
+
+    public string testDate; // date that can be changed for testing
 
     // buttons
     public Button[] rewardButtons = new Button[7];
@@ -45,33 +47,28 @@ public class DailyRewards : MonoBehaviour
     {
         // create a save path for data file (data has not been saved yet)
         savePath = Path.Combine(Application.persistentDataPath, "loginData.dat");
-        print(savePath);
 
-        firstTimePlaying = CheckFirstTimePlaying(); // returns boolean from login data
-        // firstTimePlaying = true;
+        // returns boolean from login data
+        firstTimePlaying = CheckFirstTimePlaying();
 
-        // DateTime start = DateTime.UtcNow; // use for first time playing ? ? ? ?
+        // test time
+        DateTime testDateTime =  DateTime.Parse(testDate);
 
         // check if user's first time opening game (need to track this in the title screen, store it/set boolean, check data here)
         if (firstTimePlaying)
         {
-            print("HEREEEEEEEEHASFKJSDKF");
             // save some inital data here
             LoginData firstDayData = new LoginData();
-            // track that it is currently the player's first time playing, this will change when they collect their reward
             firstDayData.firstTimePlaying = true;
-            // at this point, they have not collected anything 
             firstDayData.claimedReward = false;
             // current date is stored ? to track when they have opened the game. Might need to do this at the end of gameplay 
             firstDayData.dateLastOpened = DateTime.Now.ToString("d");
-            // current day is DAY 1 for reward (first day)
             firstDayData.dayLastOpened = 1;
-            // days remaining for the whole week (includes today)
             firstDayData.daysRemaining = 7;
 
             // DATA IS SAVED
             SaveLoginData(firstDayData);
-            print("DATA SAVED");
+            print("LOGIN DATA SAVED");
 
             // set 1st day rewards (should replace this with reset rewards)
             ResetRewards();
@@ -81,6 +78,7 @@ public class DailyRewards : MonoBehaviour
         {
             // get current date when game is opened 
             currentDate = DateTime.Now.ToString("d");
+            DateTime currDateTime = DateTime.Now;
 
             // load data to get the date that the game was last opened on 
             LoginData data = LoadLoginData();
@@ -88,10 +86,15 @@ public class DailyRewards : MonoBehaviour
             if (data != null) // check that save file exists
             {
                 // check if the days are different (one or more days have passed)
-                if (data.dateLastOpened != currentDate)
+                // CHANGE TESTDATE BACK TO DATA.DATELASTOPENED
+                if (testDate != currentDate)
                 {
+                    // test time
+                    DateTime dateLastOpenedData = DateTime.Parse(data.dateLastOpened);
+
                     // NOTE FOR LATER - NEED TO SAVE WHOLE DATE (WITH MONTH ETC.) TO BE ABLE TO CALCULATE TIMESPAN LATER NOT JUST THE DAY
-                    int daysPassed = CalculateDateChange(currentDate, data.dateLastOpened); // how many days have passed
+                    // CHANGE TESTDATE BACK TO DATELASTOPENEDDATA
+                    int daysPassed = CalculateDateChange(currDateTime, testDateTime); // how many days have passed
 
                     // check if claimed reward
                     claimedReward = data.claimedReward;
@@ -99,16 +102,31 @@ public class DailyRewards : MonoBehaviour
                     // if only one day has passed, WE ARE GOOD YAY
                     if (daysPassed == 1)
                     {
+                        print("ONE DAY PASSED");
                         if (claimedReward)
                         {
-                            currentDay = data.dayLastOpened++; // current day is updated 
+                            // reward was already claimed last time, just load the next day reward
+                            currentDay = ++data.dayLastOpened; // current day is updated 
+                            print("CURRENT REWARD DAY IS");
+                            print(currentDay);
                             if (currentDay > 7)
                             {
                                 currentDay = 1;
+                                daysRemaining = 7;
                             }
-                            UnlockReward(currentDay); // only unlock the NEXT day IF they have already claimed the reward, otherwise keep the original day unlocked
+                            else
+                            {
+                                daysRemaining = 8 - currentDay;
+                            }
+                            claimedReward = UnlockReward(currentDay); // only unlock the NEXT day IF they have already claimed the reward, otherwise keep the original day unlocked
+                            // change it in the data too and save
+                            
                         }
-                        daysRemaining = 7 - currentDay;
+                        else
+                        {
+                            // have not yet claimed reward, keep last day's reward unlocked only and decrement days remaining
+                        }
+                        
                     }
                     // if MORE THAN ONE DAY has passed, calculate days remaining in the week OR reset
                     else if (daysPassed > 1)
@@ -127,9 +145,8 @@ public class DailyRewards : MonoBehaviour
                     {
                         // red notification needs to be enabled
                         print("Your reward was already claimed for today!");
-                        
                     }
-                    LoadRewards(data.claimedReward, data.dayLastOpened); // WORKS YAY
+                    LoadRewards(); // WORKS YAY
                 }
             }
         }
@@ -165,7 +182,7 @@ public class DailyRewards : MonoBehaviour
                     currentDay++;
                 }
 
-                UnlockReward(currentDay);
+                // UnlockReward(currentDay);
             }
                 
         }
@@ -214,8 +231,9 @@ public class DailyRewards : MonoBehaviour
         }
     }
 
-    public void UnlockReward(int currentDay)
+    public bool UnlockReward(int currentDay)
     {
+        print(currentDay);
         // get button and set it to interactable 
         if (currentDay == 1)
         {
@@ -223,13 +241,30 @@ public class DailyRewards : MonoBehaviour
         }
         else
         {
+            for (int i = 0; i < rewardButtons.Length; i++)
+            {
+                rewardButtons[i].interactable = false;
+            }
             rewardButtons[currentDay - 1].interactable = true;
         }
+
+        // load data, update it, and save
+        LoginData data = LoadLoginData();
+        data.claimedReward = false;
+        SaveLoginData(data);
+
+        // update data, reward is no longer claimed bc it just unlocked
+        return false;
     }
 
+
     // NOTE FOR LATER: NEED TO EDIT ICONS IN THIS FUNCTION, DIFFERENT THAN JUST UNLOCKING I THINK IDK
-    public void LoadRewards(bool claimedReward, int currentDay)
+    public void LoadRewards() // WANT TO LOAD EACH TIME THE BUTTON IS PRESSED AGH
     {
+        LoginData loadedData = LoadLoginData();
+        claimedReward = loadedData.claimedReward;
+        currentDay = loadedData.dayLastOpened;
+
         // if claimed reward, everything is not interactable but some buttons need a different icon
         if (claimedReward)
         {
@@ -242,6 +277,7 @@ public class DailyRewards : MonoBehaviour
 
                 }
             }
+            
         }
         // if not claimed reward, only unlock the current day reward and make sure icons are correct 
         else
@@ -255,7 +291,10 @@ public class DailyRewards : MonoBehaviour
                 }
             }
             UnlockReward(currentDay); // unlock the current day
+            
         }
+
+        
     }
 
     // runs when past the 7th day
@@ -275,19 +314,20 @@ public class DailyRewards : MonoBehaviour
         LoginData data = LoadLoginData();
         if (data != null)
         {
-            print("HERE RETURNING DATA FROM LOADED FILE HERE HER HERE RHEHEHR");
             return data.firstTimePlaying;
         }
         else
         {
-            print("RETURNING TRUE: FIRSTTIMEPLAYING");
             return true; // probably have to fix later, but for now we assume that if there's no data saved then it IS the first time they are playing
         }
     }
 
-    public int CalculateDateChange(string currentDate, string previousDate)
+    public int CalculateDateChange(DateTime currentDate, DateTime previousDate)
     {
-        return 0;
+        TimeSpan interval = currentDate - previousDate;
+        print("Days passed");
+        print(interval.Days);
+        return interval.Days;
     }
 
     // data saving and loading (taken from GameManager script)

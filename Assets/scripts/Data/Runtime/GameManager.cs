@@ -35,7 +35,10 @@ public class GameManager : MonoBehaviour
 		savePath = Path.Combine(Application.persistentDataPath, "playerData.dat");
 		lvlUnlocks.LvlUnlockStates = new bool[lvlParent.childCount];
 
-		MapUIScript.mapInstance.currentLevelName = LoadLevel();
+		if (MapUIScript.mapInstance != null)
+        {
+			MapUIScript.mapInstance.currentLevelName = LoadLevel();
+		}
 
 	}
 
