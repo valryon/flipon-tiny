@@ -158,6 +158,7 @@ MonoBehaviour:
   musicSource: {fileID: 1932628401}
   winMusic: {fileID: 8300000, guid: 8720751d2d6d48e41a946dcdbe105f91, type: 3}
   loseMusic: {fileID: 8300000, guid: 42f031f2fd5e83f479d64a1368a60071, type: 3}
+  isTutorial: 0
 --- !u!4 &562245209
 Transform:
   m_ObjectHideFlags: 0
@@ -695,11 +696,11 @@ MonoBehaviour:
       highestChain: 0
       totalChains: 0
       digHeight: 0
-      numBlock1Broken: 20
+      numBlock1Broken: 0
       numBlock2Broken: 0
       numBlock3Broken: 0
       numBlock4Broken: 0
-      numBlock5Broken: 0
+      numBlock5Broken: 20
       numBlock6Broken: 0
       timesPowerUsed: 1
   playMode: 0

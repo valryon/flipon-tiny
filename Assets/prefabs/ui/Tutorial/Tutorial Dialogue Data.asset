@@ -12,6 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110a27467b6c8ec4ab8de9241b63a5a0, type: 3}
   m_Name: Tutorial Dialogue Data
   m_EditorClassIdentifier: 
-  dialogueEntries: []
-  csvDelimiter: 2
-  csvFile: {fileID: 0}
+  dialogueEntries:
+  - characterName: Cloud King
+    sentence: "Oh no! the Lord of Storms is here!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Lord of Storms
+    sentence: "Mwahaha I'm so evil!\r"
+    characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
+  - characterName: Cloud King
+    sentence: "Quick! use the crystals to stop him!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Do a 3 combo.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Do a 4 combo.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Do a 5 combo.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Do an L combo.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Use a power up to finish him off!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "He escaped! Let's go back to the map to see where he went.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: Drat... looks like he retreated to his castle. You must traverse through
+      the regions and defeat each guardian to reach him. Good luck!
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  csvDelimiter: 0
+  csvFile: {fileID: 4900000, guid: d9fa5e005d7089642af97338f2546670, type: 3}

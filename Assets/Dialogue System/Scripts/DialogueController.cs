@@ -11,15 +11,16 @@ public class DialogueController : MonoBehaviour
 	public TMP_Text dialogueText;
 	public Image characterImage;
 
-	private Queue<string> sentences;
-	private Queue<string> names;
-	private Queue<Sprite> sprites;
+	private List<string> sentences;
+	private List<string> names;
+	private List<Sprite> sprites;
 	private bool isMulti = false;
+	private int currentIndex;
 	void Start()
 	{
-		sentences = new Queue<string>();
-		names = new Queue<string>();
-		sprites = new Queue<Sprite>();
+		sentences = new List<string>();
+		names = new List<string>();
+		sprites = new List<Sprite>();
 
 	}
 
@@ -33,9 +34,9 @@ public class DialogueController : MonoBehaviour
 
 		foreach (string sentence in dialogueData.sentences)
 		{
-			sentences.Enqueue(sentence);
+			sentences.Add(sentence);
 		}
-
+		currentIndex = 0;
 		DisplayNextSentenceSingleCharacter();
 	}
 
@@ -63,24 +64,25 @@ public class DialogueController : MonoBehaviour
 		{
 			characterName.text = entry.characterName;
 			characterImage.sprite = entry.characterSprite;
-			sentences.Enqueue(entry.sentence);
-			names.Enqueue(entry.characterName);
-			sprites.Enqueue(entry.characterSprite);
+			sentences.Add(entry.sentence);
+			names.Add(entry.characterName);
+			sprites.Add(entry.characterSprite);
 
 		}
-
+		currentIndex = 0;
 		DisplayNextSentenceMultiCharacters();
 	}
-    
-    public void DisplayNextSentenceSingleCharacter()
+
+	public void DisplayNextSentenceSingleCharacter()
 	{
+		currentIndex++;
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
 			return;
 		}
 
-		string sentence = sentences.Dequeue();
+		string sentence = sentences[currentIndex];
 		dialogueText.text = sentence;
 	}
 	public void DisplayNextSentenceMultiCharacters()
@@ -90,13 +92,22 @@ public class DialogueController : MonoBehaviour
 			EndDialogue();
 			return;
 		}
-
-		string sentence = sentences.Dequeue();
-		dialogueText.text = sentence;
-		string name = names.Dequeue();
-		characterName.text = name;
-		Sprite sprite = sprites.Dequeue();
-		characterImage.sprite = sprite;
+		currentIndex++;
+		if (currentIndex < sentences.Count)
+		{
+			DisplayCurrentEntry();
+		}
+		else
+		{
+			EndDialogue();
+			return;
+		}
+	}
+	private void DisplayCurrentEntry()
+	{
+		characterName.text = names[currentIndex];
+		dialogueText.text = sentences[currentIndex];
+		characterImage.sprite = sprites[currentIndex];
 	}
 	private void Update()
 	{
