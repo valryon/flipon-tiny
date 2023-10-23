@@ -611,7 +611,7 @@ namespace Pon
                 DailyBonusManager.Instance.AwardDailyBonus();
 
                 // Award them the standard currency for winning
-                CurrencyManager.Instance.AddCurrency(settings.currencyReward);
+                CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
 
                 int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
 				level++;
