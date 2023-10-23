@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,7 +9,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     private int cUnits; //currency units
-    public TextMeshProUGUI currencyText;
+    private TextMeshProUGUI currencyText;
     public delegate void CurrencyChange();
     public event CurrencyChange OnCurrencyChanged;
 
@@ -57,6 +58,24 @@ public class CurrencyManager : MonoBehaviour
     {
         currencyText = textRef;
         UpdateCurrencyDisplay();
+    }
+
+    public void AddCurrencyWithLimit(int amount)
+    {
+        int amountToAdd = Math.Min(amount, DailyBonusManager.Instance.DailyLimit - DailyBonusManager.Instance.DailyPointsEarned);
+        if (amountToAdd > 0)
+        {
+            LoadCurrency();
+            cUnits += amountToAdd;
+            DailyBonusManager.Instance.AddPoints(amountToAdd);
+            SaveCurrency();
+            OnCurrencyChanged?.Invoke();
+            UpdateCurrencyDisplay();
+        }
+        else
+        {
+            Debug.Log("Daily limit of " + DailyBonusManager.Instance.DailyPointsEarned + " reached.");
+        }
     }
 
     public void AddCurrency(int amount)

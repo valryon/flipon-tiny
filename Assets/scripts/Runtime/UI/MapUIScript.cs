@@ -36,11 +36,18 @@ public class MapUIScript : MonoBehaviour
 	// method that loads the Game Scene on button click and sets a variable for the game settings
 	public void PlayLevel(int levelNum)
 	{
-		
-		mapInstance.currentLevelName = "Level" + levelNum.ToString();
-		GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
-		SceneManager.LoadSceneAsync("Game");
-		Debug.Log("PLAY GAME");
+		if(levelNum == -1) // endless mode
+		{
+            SceneManager.LoadSceneAsync("Game");
+            Debug.Log("ENDLESS MODE");
+        }
+		else 
+		{
+            mapInstance.currentLevelName = "Level" + levelNum.ToString();
+            GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
+            SceneManager.LoadSceneAsync("Game");
+            Debug.Log("PLAY GAME");
+        }
 	}
 
 	public void Awake()
