@@ -16,5 +16,8 @@ public class Item : ScriptableObject
     public bool isPurchased = false;
     public bool isEnabled = false;
     public ItemType itemType;
+    public string itemCodeName;
+    public int incLevel;
+    public int incMaxLevel;
 }
 

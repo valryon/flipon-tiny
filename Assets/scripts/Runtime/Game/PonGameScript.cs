@@ -20,7 +20,11 @@ namespace Pon
 	/// </summary>
 	public class PonGameScript : MonoBehaviour
 	{
-		private static GameObject DOTweenGameObject;
+		[Header("Inventory")]
+		public InGameInventory inGameInventory;
+		private List<Item> inventoryItems;
+
+        private static GameObject DOTweenGameObject;
 		static PonGameScript()
 		{
 			UnityLog.Init();
@@ -47,7 +51,7 @@ namespace Pon
 		[SerializeField] private AudioClip winMusic;
 		[SerializeField] private AudioClip loseMusic;
 
-		private bool lostByFillingScreen = false;
+        private bool lostByFillingScreen = false;
 		private bool wonGame = false;
 
 		#endregion
@@ -65,11 +69,23 @@ namespace Pon
 				// set game settings based on level
 				currentLevelName = MapUIScript.mapInstance.currentLevelName;
 			}
+			
+			if(InGameInventory.Instance != null)
+			{
+				inGameInventory = InGameInventory.Instance;
+				inGameInventory.LoadInventory();
+                inventoryItems = inGameInventory.GetItems();
+                ApplyItemEffects(inventoryItems);
+			}
+			else
+			{
+				Debug.Log("Inventory is null :(");
+			}
 
 			musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
 		}
 
-		private void Start()
+        private void Start()
 		{
 
 			// Threads
@@ -409,11 +425,57 @@ namespace Pon
 			}
 		}
 
-		#endregion
+        private void ApplyItemEffects(List<Item> itemList)
+        {
+            foreach(Item item in itemList)
+			{
+				switch (item.itemCodeName)
+				{
+					case "ComboFreezeIncre":
+						if (item.isEnabled)
+						{
 
-		#region Public methods
+						}
+						break;
+					case "ExpandBoardUpgrade":
+                        if (item.isEnabled)
+                        {
 
-		public void SetPause(bool paused)
+                        }
+                        break;
+					case "HardModeUpgrade":
+                        if (item.isEnabled)
+                        {
+
+                        }
+                        break;
+					case "PowerFillSpeedIncre":
+                        if (item.isEnabled)
+                        {
+
+                        }
+                        break;
+					case "SimplificatorPower":
+                        if (item.isEnabled)
+                        {
+
+                        }
+                        break;
+					case "TimeFreezePower":
+                        if (item.isEnabled)
+                        {
+
+                        }
+                        break;
+                }
+			}
+        }
+
+        #endregion
+
+        #region Public methods
+
+        public void SetPause(bool paused)
 		{
 			if (paused == false && isOver) return;
 
