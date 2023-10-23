@@ -604,6 +604,19 @@ namespace Pon
 			SetPause(true);
 			isOver = true;
 			MapUIScript.mapInstance.wonLastGame = wonGame;
+			// When the player wins, award them currency
+			if (wonGame)
+			{
+                // Daily Bonus checks if its first time playing
+                DailyBonusManager.Instance.AwardDailyBonus();
+
+                // Award them the standard currency for winning
+                CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
+
+                int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+				level++;
+				GameManager.gameManager.SaveLevel("Level " + level);
+			}
 
 			// music for winning/losing 
 
