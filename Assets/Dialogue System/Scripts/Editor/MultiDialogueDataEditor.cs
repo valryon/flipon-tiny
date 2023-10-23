@@ -35,6 +35,7 @@ public class MultiDialogueDataEditor : Editor
 		if (GUILayout.Button("Populate Sentences"))
 		{
 			dialogueData.PopulateSentencesFromCSV();
+			EditorUtility.SetDirty(dialogueData);
 		}
 
 		GUILayout.EndHorizontal();

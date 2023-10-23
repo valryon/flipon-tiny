@@ -1,5 +1,6 @@
 using Pon;
 using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,8 +20,13 @@ public class StageTracker : MonoBehaviour
   static int comboValue = 0;
   static bool wasPowerUsed = false;
 
+  float finalTutorialStage = 17.5f; // Change this value to match last case in tutorial switch statement if dialogue and tutorial steps change
+  float startGameTutorialStage = 3.5f;
+
   static GridScript currGrid;
   PonGameScript gameScript;
+
+  private string TUTORIAL_FILENAME = "tutorialData.dat";
 
   private void Awake()
   {
@@ -276,6 +282,8 @@ public class StageTracker : MonoBehaviour
         // destroy self
         if (SceneManager.GetActiveScene().name == "Map_t")
         {
+          string path = Path.Combine(Application.persistentDataPath, TUTORIAL_FILENAME);
+          File.WriteAllText(path, true.ToString());
           Destroy(this.gameObject);
         }
         break;
@@ -389,6 +397,12 @@ public class StageTracker : MonoBehaviour
     comboValue = 0;
     wasPowerUsed = false;
     currTutorialStage = 0;
+  }
+
+  public void SkipTutorial()
+  {
+    SetTutorialStage(finalTutorialStage);
+    StartLoad(2);
   }
 
   static public void SetTutorialStage(float desStage)
