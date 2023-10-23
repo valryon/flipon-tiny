@@ -70,17 +70,6 @@ namespace Pon
 				currentLevelName = MapUIScript.mapInstance.currentLevelName;
 			}
 			
-			if(InGameInventory.Instance != null)
-			{
-				inGameInventory = InGameInventory.Instance;
-				inGameInventory.LoadInventory();
-                inventoryItems = inGameInventory.GetItems();
-                ApplyItemEffects(inventoryItems);
-			}
-			else
-			{
-				Debug.Log("Inventory is null :(");
-			}
 
 			musicSource = GameObject.FindGameObjectWithTag("MusicSource").GetComponent<AudioSource>();
 		}
@@ -93,7 +82,19 @@ namespace Pon
 
 			GetSettings();
 
-			PrepareUI();
+            if (InGameInventory.Instance != null)
+            {
+                inGameInventory = InGameInventory.Instance;
+                inGameInventory.LoadInventory();
+                inventoryItems = inGameInventory.GetItems();
+                ApplyItemEffects(inventoryItems);
+            }
+            else
+            {
+                Debug.Log("Inventory is null :(");
+            }
+
+            PrepareUI();
 
 			CreatePlayersAndGrids();
 
@@ -438,9 +439,16 @@ namespace Pon
 						}
 						break;
 					case "ExpandBoardUpgrade":
-                        if (item.isEnabled)
-                        {
-
+						if (item.isEnabled)
+						{
+							if (settings == null)
+							{
+								Debug.Log("settings is null :(");
+								break;
+							}
+							
+							//Debug.Log("increasing width from " + settings.gridSettings.width + " to " + settings.gridSettings.width + 1);
+							settings.gridSettings.width++;
                         }
                         break;
 					case "HardModeUpgrade":
