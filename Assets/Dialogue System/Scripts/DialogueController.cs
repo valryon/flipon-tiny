@@ -75,7 +75,6 @@ public class DialogueController : MonoBehaviour
 
 	public void DisplayNextSentenceSingleCharacter()
 	{
-		currentIndex++;
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
@@ -84,7 +83,8 @@ public class DialogueController : MonoBehaviour
 
 		string sentence = sentences[currentIndex];
 		dialogueText.text = sentence;
-	}
+    currentIndex++;
+  }
 	public void DisplayNextSentenceMultiCharacters()
 	{
 		if (sentences.Count == 0)
@@ -92,7 +92,7 @@ public class DialogueController : MonoBehaviour
 			EndDialogue();
 			return;
 		}
-		currentIndex++;
+
 		if (currentIndex < sentences.Count)
 		{
 			DisplayCurrentEntry();
@@ -102,7 +102,8 @@ public class DialogueController : MonoBehaviour
 			EndDialogue();
 			return;
 		}
-	}
+    currentIndex++;
+  }
 	private void DisplayCurrentEntry()
 	{
 		characterName.text = names[currentIndex];

@@ -203,7 +203,7 @@ public class StageTracker : MonoBehaviour
       case 11.5f:
         //player does task
         //Debug.Log("Waiting for player to finish fourth task");
-        if (comboValue == 6)
+        if (comboValue >= 6)
         {
           currTutorialStage += 0.5f;
           comboValue = 0;
@@ -228,6 +228,7 @@ public class StageTracker : MonoBehaviour
         SetActiveDialogueBox(false);
         currGrid.PowerCharge = 1f;
         gameScript.SetPause(false);
+        wasPowerUsed = false;
         break;
       case 13.5f:
         //player does task
