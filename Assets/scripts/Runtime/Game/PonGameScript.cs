@@ -454,7 +454,10 @@ namespace Pon
 					case "HardModeUpgrade":
                         if (item.isEnabled)
                         {
-
+							settings.gridSettings.width--;
+							settings.gridSettings.previewLines--;
+							settings.gridSettings.speedUpDuration = 0.4f;
+							settings.currencyReward = (int) Math.Round(settings.currencyReward * 1.5f);
                         }
                         break;
 					case "PowerFillSpeedIncre":
