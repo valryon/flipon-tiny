@@ -466,13 +466,13 @@ namespace Pon
 					case "SimplificatorPower":
                         if (item.isEnabled)
                         {
-
+                            settings.players[0].power = PowerType.Simplificator;
                         }
                         break;
 					case "TimeFreezePower":
                         if (item.isEnabled)
                         {
-
+                            settings.players[0].power = PowerType.TimeFreeze;
                         }
                         break;
                 }
