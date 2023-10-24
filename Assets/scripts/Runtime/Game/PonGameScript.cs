@@ -648,7 +648,7 @@ namespace Pon
 				{
 					StageTracker.ResetTutorial();
 				} else {
-					StageTracker.SetTutorialStage(15.5f);
+					StageTracker.SetTutorialStage(StageTracker.finalTutorialStage - 2f);
 				}
         SceneManager.LoadSceneAsync("Tutorial_Entry");
       }

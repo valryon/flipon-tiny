@@ -20,8 +20,13 @@ public class StageTracker : MonoBehaviour
   static int comboValue = 0;
   static bool wasPowerUsed = false;
 
-  float finalTutorialStage = 17.5f; // Change this value to match last case in tutorial switch statement if dialogue and tutorial steps change
-  float startGameTutorialStage = 3.5f;
+  static public float finalTutorialStage = 17.5f; // Change this value to match last case in tutorial switch statement if dialogue and tutorial steps change
+  static float startGameTutorialStage = 3f; // Change this value to match case where gameplay is started
+  static int startGameDialogue = 3;  // Change this value to the index value of the gameplay start dialogue line
+
+  float[] tutorialActionCases = new float[] { startGameTutorialStage, 6f, 8f, 10f, 12f }; // Change this value to each of the starting cases of each game tutorial step, e.g. 3 combo, 4 combo, 5 combo, etc.
+  int[] tutorialDialogueIndex = new int[] { startGameDialogue, 4, 5, 6, 7 };
+  int passedTutorialAction = 0;
 
   static GridScript currGrid;
   PonGameScript gameScript;
@@ -97,6 +102,11 @@ public class StageTracker : MonoBehaviour
           gameScript = PonGameScript.instance;
           gameScript.isTutorial = true;
           gameScript.SetPause(true);
+          if (passedTutorialAction != 0)
+          {
+            currTutorialStage = tutorialActionCases[passedTutorialAction];
+            SetDialogueIndex(tutorialDialogueIndex[passedTutorialAction]);
+          }
         }
         break;
       case 4f:
@@ -123,6 +133,7 @@ public class StageTracker : MonoBehaviour
         {
           currTutorialStage += 0.5f;
           comboValue = 0;
+          passedTutorialAction = 1;
         }
         break;
       case 6f:
@@ -151,6 +162,7 @@ public class StageTracker : MonoBehaviour
         {
           currTutorialStage += 0.5f;
           comboValue = 0;
+          passedTutorialAction = 2;
         }
         break;
       case 8f:
@@ -179,6 +191,7 @@ public class StageTracker : MonoBehaviour
         {
           currTutorialStage += 0.5f;
           comboValue = 0;
+          passedTutorialAction = 3;
         }
         break;
       case 10f:
@@ -207,6 +220,7 @@ public class StageTracker : MonoBehaviour
         {
           currTutorialStage += 0.5f;
           comboValue = 0;
+          passedTutorialAction = 4;
         }
         break;
       case 12f:
@@ -397,7 +411,8 @@ public class StageTracker : MonoBehaviour
   {
     comboValue = 0;
     wasPowerUsed = false;
-    currTutorialStage = 0;
+    stageTracker.SetDialogueIndex(startGameDialogue);
+    currTutorialStage = startGameTutorialStage;
   }
 
   public void SkipTutorial()
@@ -409,6 +424,11 @@ public class StageTracker : MonoBehaviour
   static public void SetTutorialStage(float desStage)
   {
     currTutorialStage = desStage;
+  }
+
+  private void SetDialogueIndex(int desIndex)
+  {
+    dialogueControl.SetDialogueIndex(desIndex);
   }
 
   private void SetDialogueObjects()

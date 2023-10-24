@@ -130,4 +130,9 @@ public class DialogueController : MonoBehaviour
 	{
 		DialoguePanel.SetActive(false);
 	}
+
+  public void SetDialogueIndex(int desIndex)
+  {
+		currentIndex = desIndex;
+	}
 }
