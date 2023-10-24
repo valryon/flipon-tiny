@@ -688,10 +688,10 @@ MonoBehaviour:
       timeReached: 0
       timeMax: 0
       highestCombo: 0
-      totalCombos: 0
-      total4Combos: 0
-      total5Combos: 0
-      totalLCombos: 0
+      totalCombos: 1
+      total4Combos: 1
+      total5Combos: 1
+      totalLCombos: 1
       speedLevel: 0
       highestChain: 0
       totalChains: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
       numBlock2Broken: 0
       numBlock3Broken: 0
       numBlock4Broken: 0
-      numBlock5Broken: 20
+      numBlock5Broken: 99
       numBlock6Broken: 0
       timesPowerUsed: 1
   playMode: 0
