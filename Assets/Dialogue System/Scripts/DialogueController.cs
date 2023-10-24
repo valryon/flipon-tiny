@@ -117,7 +117,7 @@ public class DialogueController : MonoBehaviour
 		{
 			if (isMulti)
 			{
-				DisplayNextSentenceMultiCharacters();
+				//DisplayNextSentenceMultiCharacters();
 			}
 			else
 			{
