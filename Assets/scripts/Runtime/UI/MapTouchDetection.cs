@@ -34,51 +34,55 @@ public class MapTouchDetection : MonoBehaviour
 		AssignMapScripts();
 		cameraTransform = Camera.main.transform;
 
-		Debug.Log(mapManager.name + "; " + mapManager.currentLevelName);
+
 		if (!mapManager.currentLevelName.Equals(""))
 		{
 			GameManager.gameManager.LoadUnlocks();
 			lvlUnlocks = GameManager.gameManager.lvlUnlocks;
 			// prevLvl = Object's assigned level, also equals next level's index; prevLvl - 1 = previous level's index;
 			int prevLvl = int.Parse(mapManager.currentLevelName.Remove(0, 5));
-			if (prevLvl > 1)
+			if (prevLvl > 1 && prevLvl <= lvlParent.childCount - 2)
 			{
-				prevLvl = prevLvl - 1;
-			}
+        prevLvl = prevLvl - 1;
+      } else if (prevLvl >= lvlParent.childCount)
+			{
+        prevLvl = lvlParent.childCount - 1;
+      }
 			MapLvlButton prevButton = lvlParent.GetChild(prevLvl - 1).GetComponent<MapLvlButton>();
 			MapLvlButton nextButton = lvlParent.GetChild(prevLvl).GetComponent<MapLvlButton>();
-			
-			if (mapManager.wonLastGame && !nextButton.GetUnlocked())
+      //Debug.Log("Button To Unlock: " + nextButton.name + "; Previously Played Level: " + prevButton.name);
+
+      if (mapManager.wonLastGame && !nextButton.GetUnlocked() && prevLvl < lvlParent.childCount)
 			{
-				nextButton.SetUnlocked(true);
+        nextButton.SetUnlocked(true);
 
 				GameManager.gameManager.lvlUnlocks.LvlUnlockStates[prevLvl] = nextButton.GetUnlocked();
 				GameManager.gameManager.SaveUnlocks();
 
 				// vv Below handles where camera spawns & scrolls to when scene starts vv
-				if (prevLvl > 2 && prevLvl < lvlParent.childCount - 2)
+				if (prevLvl > 2 && prevLvl < lvlParent.childCount - 1)
 				{
 					cameraTransform.position = new Vector3(cameraTransform.position.x, prevButton.transform.position.y, cameraTransform.position.z);
 					t = 0;
 					scrollDestination = nextButton.transform.position.y;
 					isScrolling = true;
 				}
-				else if (prevLvl > lvlParent.childCount - 2)
+				else if (prevLvl >= lvlParent.childCount - 1)
 				{
-					cameraTransform.position = new Vector3(cameraTransform.position.x, lvlParent.GetChild(lvlParent.childCount - 4).transform.position.y, cameraTransform.position.z);
+					cameraTransform.position = new Vector3(cameraTransform.position.x, screenCeil.position.y, cameraTransform.position.z);
 				}
 			}
 			else if (!mapManager.wonLastGame || nextButton.GetUnlocked())
 			{
 				if (prevLvl > 2)
 				{
-					if (prevLvl < lvlParent.childCount - 2)
+					if (prevLvl < lvlParent.childCount - 1)
 					{
 						cameraTransform.position = new Vector3(cameraTransform.position.x, prevButton.transform.position.y, cameraTransform.position.z);
 					}
 					else
 					{
-						cameraTransform.position = new Vector3(cameraTransform.position.x, lvlParent.GetChild(lvlParent.childCount - 4).transform.position.y, cameraTransform.position.z);
+						cameraTransform.position = new Vector3(cameraTransform.position.x, screenCeil.position.y, cameraTransform.position.z);
 					}
 				}
 			}

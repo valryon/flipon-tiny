@@ -49,7 +49,6 @@ namespace Pon
 
 		private bool lostByFillingScreen = false;
 		private bool wonGame = false;
-		public bool isTutorial = false;
 
 		#endregion
 
@@ -432,10 +431,6 @@ namespace Pon
 
 		public void OnPowerUsed(Power power, PowerUseParams param)
 		{
-			if (isTutorial)
-			{
-        StageTracker.GetPowerUsed(true);
-      }
 			// Dispatch to other players
 			foreach (var p in players)
 			{
@@ -476,10 +471,6 @@ namespace Pon
 		private void Combo(GridScript g, ComboData c)
 		{
 			// Send blocks!
-			if(isTutorial)
-			{
-				StageTracker.GetCombo(g, c.blockCount);
-			}
 			if (players.Count > 1) GenerateGarbage(g, c);
 		}
 
@@ -612,48 +603,45 @@ namespace Pon
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
-			if (!isTutorial)
+			MapUIScript.mapInstance.wonLastGame = wonGame;
+			// When the player wins, award them currency
+			if (wonGame)
 			{
-				MapUIScript.mapInstance.wonLastGame = wonGame;
+                // Daily Bonus checks if its first time playing
+                DailyBonusManager.Instance.AwardDailyBonus();
 
-				// music for winning/losing 
+                // Award them the standard currency for winning
+                CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
 
-
-				/*
-								Firebase.Analytics.FirebaseAnalytics.LogEvent(
-								Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
-								new Firebase.Analytics.Parameter[] {
-									new Firebase.Analytics.Parameter(
-										Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
-
-								}
-							);
-							*/
-
-				// Log Level end (user has won)
-				//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
-				if (wonGame)
-				{
-					int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-					level++;
-					GameManager.gameManager.SaveLevel("Level " + level);
-				}
-				// level ends, go back to map scene
-				SceneManager.LoadSceneAsync("Map_t");
+                int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+				level++;
+				GameManager.gameManager.SaveLevel("Level " + level);
 			}
-			else
+
+			// music for winning/losing 
+
+
+			/*
+              Firebase.Analytics.FirebaseAnalytics.LogEvent(
+              Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
+              new Firebase.Analytics.Parameter[] {
+                new Firebase.Analytics.Parameter(
+                  Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
+
+              }
+            );
+            */
+
+			// Log Level end (user has won)
+			//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
+			if (wonGame)
 			{
-				
-				if (!wonGame)
-				{
-					StageTracker.ResetTutorial();
-          SceneManager.LoadSceneAsync("Tutorial_Game");
-        } else {
-					StageTracker.SetTutorialStage(StageTracker.finalTutorialStage - 2f);
-          SceneManager.LoadSceneAsync("Tutorial_Entry");
-        }
-        
-      }
+				int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+				level++;
+				GameManager.gameManager.SaveLevel("Level " + level);
+			}
+			// level ends, go back to map scene
+			SceneManager.LoadSceneAsync("Map_t");
 		}
 
 		#endregion
