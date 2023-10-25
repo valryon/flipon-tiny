@@ -54,11 +54,13 @@ namespace Pon
         private bool lostByFillingScreen = false;
 		private bool wonGame = false;
 
-		#endregion
+		private bool incPowerFillSpeed = false;
+		private float incPowerFillSpeedPerc = 0;
+        #endregion
 
-		#region Timeline
+        #region Timeline
 
-		string currentLevelName;
+        string currentLevelName;
 		PlayerScript player;
 		private void Awake()
 		{
@@ -100,7 +102,7 @@ namespace Pon
 
 			StartGrids();
 
-			if (DOTweenGameObject == null)
+            if (DOTweenGameObject == null)
 			{
 				DOTweenGameObject = GameObject.Find("[DOTween]");
 			}
@@ -356,7 +358,13 @@ namespace Pon
 				player.cursorPrefabs = cursorPrefabs;
 				player.cam = GetCamera(player);
 				player.grid = CreateGrid(player, player.cam);
-				players.Add(player);
+
+				if (incPowerFillSpeed)
+				{
+					player.grid.IncreasePowerFillSpeed(incPowerFillSpeedPerc);
+                }
+
+                players.Add(player);
 
 				// Init UI with player
 				player.grid.ui = GameUIScript.SetPlayer(player, settings.players.Length);
@@ -415,7 +423,7 @@ namespace Pon
 			grid.OnLevelChanged += OnLevelChanged;
 			grid.OnMultiplierChange += OnMultiplierChange;
 
-			return grid;
+            return grid;
 		}
 
 		public void StartGrids()
@@ -435,8 +443,8 @@ namespace Pon
 					case "ComboFreezeIncre":
 						if (item.isEnabled)
 						{
-
-						}
+							Debug.Log("Not implemented :( sorry ");
+                        }
 						break;
 					case "ExpandBoardUpgrade":
 						if (item.isEnabled)
@@ -463,7 +471,9 @@ namespace Pon
 					case "PowerFillSpeedIncre":
                         if (item.isEnabled)
                         {
-
+							int amount = /*item.incLevel * 10*/ 30;
+							incPowerFillSpeed = true;
+							incPowerFillSpeedPerc = amount / 100;
                         }
                         break;
 					case "SimplificatorPower":
