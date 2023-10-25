@@ -647,10 +647,12 @@ namespace Pon
 				if (!wonGame)
 				{
 					StageTracker.ResetTutorial();
-				} else {
+          SceneManager.LoadSceneAsync("Tutorial_Game");
+        } else {
 					StageTracker.SetTutorialStage(StageTracker.finalTutorialStage - 2f);
-				}
-        SceneManager.LoadSceneAsync("Tutorial_Entry");
+          SceneManager.LoadSceneAsync("Tutorial_Entry");
+        }
+        
       }
 		}
 

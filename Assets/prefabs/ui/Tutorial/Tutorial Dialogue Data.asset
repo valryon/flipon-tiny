@@ -14,26 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueEntries:
   - characterName: Cloud King
-    sentence: "Ah, new Crystal Keeper, there you are! Welcome to the Cloudy Kingdom!
-      Allow me to explain what your new job entails.\r"
+    sentence: "Ah, new Crystal Keeper, there you are! Welcome to the Cloudy Kingdom!\r"
     characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
   - characterName: Cloud King
+    sentence: "Allow me to explain what your new job entails.\r"
+    characterSprite: {fileID: 21300000, guid: 381fca6370777fc489089d617c35a4b1, type: 3}
+  - characterName: Cloud King
     sentence: "The Cloudy Kingdom has four central regions that you're in charge
-      of maintaining: the sunny region, the snowy region, the windy region, and the
-      rainy region.\r"
+      of maintaining.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "These are the regions of sunny, snowy, windy, and rainy weather.\r"
     characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
   - characterName: Cloud King
     sentence: "Each region has a Guardian who helps protect the Kingdom from adversaries
       -- such as my brother.\r"
     characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
   - characterName: Cloud King
-    sentence: Banished years ago, my brother is now known as the fearsome Lord of
-      Storms, an evil wizard who tried to take over the Kingdom --
+    sentence: "Banished years ago, my brother is now known as the fearsome Lord of
+      Storms...\r"
     characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
-  - characterName: ' '
+  - characterName: Cloud King
+    sentence: "He was an evil wizard who tried to take over the Kingdom, an absolute
+      terror to us all--\r"
+    characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
+  - characterName: 
     sentence: "Suddenly, dark clouds loom overhead\u2026\r"
     characterSprite: {fileID: 0}
-  - characterName: ' '
+  - characterName: 
     sentence: "Thunder booms and lightning strikes as The Lord of Storms appears.
       \r"
     characterSprite: {fileID: 21300000, guid: 3e0d03cd3fe055645a79c638a8d5845c, type: 3}
@@ -46,13 +54,16 @@ MonoBehaviour:
     characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
   - characterName: Lord of Storms
     sentence: "And don\u2019t worry about your lovely Guardians. They\u2019re now
-      under my watchful eye, and I think you\u2019ll appreciate the changes I\u2019ve
-      made to them and their lands.\r"
-    characterSprite: {fileID: 21300000, guid: 3e0d03cd3fe055645a79c638a8d5845c, type: 3}
+      under my watchful eye.\r"
+    characterSprite: {fileID: 21300000, guid: c99c629e46c473a48b8fa13d8e087165, type: 3}
+  - characterName: Lord of Storms
+    sentence: "I think you\u2019ll appreciate the changes I\u2019ve made to them
+      and their lands.\r"
+    characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
   - characterName: Lord of Storms
     sentence: "Now, it's time to take my fitting place on the throne!\r"
     characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
-  - characterName: ' '
+  - characterName: 
     sentence: "The Lord of Storms laughs manically, disappearing in a sudden puff
       of smoke...\r"
     characterSprite: {fileID: 0}
@@ -76,9 +87,11 @@ MonoBehaviour:
     sentence: "Let me teach you how it's done!\r"
     characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
   - characterName: Cloud King
-    sentence: "Swipe to connect Crystals and gain points! If you align three crystals
-      horizontally or vertically of the same type, you'll make a 3 combo. Give it
-      a try!\r"
+    sentence: "Swipe left or right to connect Crystals and gain points!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Align three crystals of the same type horizontally or vertically to
+      make a 3 combo. Give it a try!\r"
     characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
   - characterName: Cloud King
     sentence: "You're a natural! As expected of our Crystal Keeper.\r"
@@ -118,4 +131,4 @@ MonoBehaviour:
     sentence: The kingdom's fate rests in your hands.
     characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
   csvDelimiter: 0
-  csvFile: {fileID: 4900000, guid: 193b3fe10cefd874296203053b5171f8, type: 3}
+  csvFile: {fileID: 4900000, guid: c5291fa3a15dc6042af32953bfd6cbab, type: 3}

@@ -20,12 +20,12 @@ public class StageTracker : MonoBehaviour
   static int comboValue = 0;
   static bool wasPowerUsed = false;
 
-  static public float finalTutorialStage = 34.5f; // Change this value to match last case in tutorial switch statement if dialogue and tutorial steps change
-  static float startGameTutorialStage = 16f; // Change this value to match case where gameplay is started
-  static int startGameDialogue = 16;  // Change this value to the index value of the gameplay start dialogue line
+  static public float finalTutorialStage = 39.5f; // Change this value to match last case in tutorial switch statement if dialogue and tutorial steps change
+  static float startGameTutorialStage = 20.5f; // Change this value to match case where gameplay is started
+  static int startGameDialogue = 20;  // Change this value to the index value of the gameplay start dialogue line
 
-  float[] tutorialActionCases = new float[] { startGameTutorialStage, 20f, 23f, 26f, 28f }; // Change this value to each of the starting cases of each game tutorial step, e.g. 3 combo, 4 combo, 5 combo, etc.
-  int[] tutorialDialogueIndex = new int[] { startGameDialogue, 18, 20, 22, 23 };
+  float[] tutorialActionCases = new float[] { startGameTutorialStage, 25f, 28f, 31f, 33f }; // Change this value to each of the starting cases of each game tutorial step, e.g. 3 combo, 4 combo, 5 combo, etc.
+  int[] tutorialDialogueIndex = new int[] { startGameDialogue, 23, 25, 27, 28 };
   int passedTutorialAction = 0;
 
   static GridScript currGrid;
@@ -97,9 +97,8 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 4f:
-        // Dark Clouds
+        // CK 6
         dialogueControl.DisplayNextSentenceMultiCharacters();
-        charImg.enabled = false;
         currTutorialStage += 0.5f;
         break;
       case 4.5f:
@@ -107,8 +106,7 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 5f:
-        // LOS appears
-        charImg.enabled = true;
+        // CK 7
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -117,7 +115,7 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 6f:
-        // LOS 8
+        // CK 8
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -126,8 +124,9 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 7f:
-        // LOS 9
+        // Dark Clouds
         dialogueControl.DisplayNextSentenceMultiCharacters();
+        charImg.enabled = false;
         currTutorialStage += 0.5f;
         break;
       case 7.5f:
@@ -135,7 +134,8 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 8f:
-        // LOS 10
+        // LOS appears
+        charImg.enabled = true;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -153,9 +153,8 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 10f:
-        // LOS disappear
+        // LOS 12
         dialogueControl.DisplayNextSentenceMultiCharacters();
-        charImg.enabled = false;
         currTutorialStage += 0.5f;
         break;
       case 10.5f:
@@ -163,8 +162,7 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 11f:
-        // CK 13
-        charImg.enabled = true;
+        // LOS 13
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -173,7 +171,7 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 12f:
-        // CK 14
+        // LOS 14
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -182,7 +180,7 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 13f:
-        // CK 15
+        // LOS 15
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -191,8 +189,9 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 14f:
-        // CK 16
+        // LOS disappear
         dialogueControl.DisplayNextSentenceMultiCharacters();
+        charImg.enabled = false;
         currTutorialStage += 0.5f;
         break;
       case 14.5f:
@@ -201,6 +200,7 @@ public class StageTracker : MonoBehaviour
         break;
       case 15f:
         // CK 17
+        charImg.enabled = true;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
@@ -209,17 +209,54 @@ public class StageTracker : MonoBehaviour
         CheckTouch();
         break;
       case 16f:
-        // enter game, used to be 3
+        // CK 18
+        dialogueControl.DisplayNextSentenceMultiCharacters();
+        currTutorialStage += 0.5f;
+        break;
+      case 16.5f:
+        //Waiting for player to click through Dialogue
+        CheckTouch();
+        break;
+      case 17f:
+        // CK 19
+        dialogueControl.DisplayNextSentenceMultiCharacters();
+        currTutorialStage += 0.5f;
+        break;
+      case 17.5f:
+        //Waiting for player to click through Dialogue
+        CheckTouch();
+        break;
+      case 18f:
+        // CK 20
+        dialogueControl.DisplayNextSentenceMultiCharacters();
+        currTutorialStage += 0.5f;
+        break;
+      case 18.5f:
+        //Waiting for player to click through Dialogue
+        CheckTouch();
+        break;
+      case 19f:
+        // CK 21
+        dialogueControl.DisplayNextSentenceMultiCharacters();
+        currTutorialStage += 0.5f;
+        break;
+      case 19.5f:
+        //Waiting for player to click through Dialogue
+        CheckTouch();
+        break;
+      case 20f:
+        // load game
         currTutorialStage += 0.5f;
         StartLoad(1);
         break;
-      case 16.5f:
-        if (SceneManager.GetActiveScene().name == "Tutorial_Game")
+      case 20.5f:
+        gameScript = PonGameScript.instance;
+        if (SceneManager.GetActiveScene().name == "Tutorial_Game" && gameScript.isTutorial == false)
         {
           currTutorialStage += 0.5f;
           CreateDialogueBox();
           SetDialogueObjects();
-          gameScript = PonGameScript.instance;
+          SetActiveDialogueBox(false);
           gameScript.isTutorial = true;
           gameScript.SetPause(true);
           if (passedTutorialAction != 0)
@@ -229,24 +266,33 @@ public class StageTracker : MonoBehaviour
           }
         }
         break;
-      case 17f:
+      case 21f:
         // game loaded, game start dialogue
         // 3 Combo
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         break;
-      case 17.5f:
+      case 21.5f:
         //Waiting for player to click through Dialogue
         CheckTouch();
         break;
-      case 18f:
+      case 22f:
+        // 3 Combo Pt 2
+        dialogueControl.DisplayNextSentenceMultiCharacters();
+        currTutorialStage += 0.5f;
+        break;
+      case 22.5f:
+        //Waiting for player to click through Dialogue
+        CheckTouch();
+        break;
+      case 23f:
         //Unpausing and starting first task
         currTutorialStage += 0.5f;
         SetActiveDialogueBox(false);
         gameScript.SetPause(false);
         break;
-      case 18.5f:
+      case 23.5f:
         // player does task
         //Waiting for player to finish first task
         if(comboValue == 3)
@@ -256,34 +302,35 @@ public class StageTracker : MonoBehaviour
           passedTutorialAction = 1;
         }
         break;
-      case 19f:
+      case 24f:
         // 3 Combo Congrats
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
-      case 19.5f:
+      case 24.5f:
         //Waiting for player to click through dialogue
         CheckTouch();
         break;
-      case 20f:
+      case 25f:
         // 4 Combo
         dialogueControl.DisplayNextSentenceMultiCharacters();
+        SetActiveDialogueBox(true);
         currTutorialStage += 0.5f;
         break;
-      case 20.5f:
+      case 25.5f:
         //Waiting for player to click through Dialogue
         CheckTouch();
         break;
-      case 21f:
+      case 26f:
         //Unpause game
         //Unpausing and starting second task
         currTutorialStage += 0.5f;
         SetActiveDialogueBox(false);
         gameScript.SetPause(false);
         break;
-      case 21.5f:
+      case 26.5f:
         //player does task
         //Waiting for player to finish second task
         if (comboValue == 4)
@@ -293,34 +340,35 @@ public class StageTracker : MonoBehaviour
           passedTutorialAction = 2;
         }
         break;
-      case 22f:
+      case 27f:
         // 4 Combo Congrats
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
-      case 22.5f:
+      case 27.5f:
         //Waiting for player to click through dialogue
         CheckTouch();
         break;
-      case 23f:
+      case 28f:
         // 5 Combo
         dialogueControl.DisplayNextSentenceMultiCharacters();
+        SetActiveDialogueBox(true);
         currTutorialStage += 0.5f;
         break;
-      case 23.5f:
+      case 28.5f:
         //Waiting for player to click through Dialogue
         CheckTouch();
         break;
-      case 24f:
+      case 29f:
         //Unpause game
         //Unpausing and starting third task
         currTutorialStage += 0.5f;
         SetActiveDialogueBox(false);
         gameScript.SetPause(false);
         break;
-      case 24.5f:
+      case 29.5f:
         //player does task
         //Waiting for player to finish third task
         if (comboValue == 5)
@@ -330,34 +378,35 @@ public class StageTracker : MonoBehaviour
           passedTutorialAction = 3;
         }
         break;
-      case 25f:
+      case 30f:
         // 5 Combo Congrats
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
-      case 25.5f:
+      case 30.5f:
         //Waiting for player to click through dialogue
         CheckTouch();
         break;
-      case 26f:
+      case 31f:
         // L Combo
         dialogueControl.DisplayNextSentenceMultiCharacters();
+        SetActiveDialogueBox(true);
         currTutorialStage += 0.5f;
         break;
-      case 26.5f:
+      case 31.5f:
         //Waiting for player to click through Dialogue
         CheckTouch();
         break;
-      case 27f:
+      case 32f:
         //Unpause game
         //Unpausing and starting fourth task
         currTutorialStage += 0.5f;
         SetActiveDialogueBox(false);
         gameScript.SetPause(false);
         break;
-      case 27.5f:
+      case 32.5f:
         //player does task
         //Waiting for player to finish fourth task
         if (comboValue >= 6)
@@ -367,18 +416,18 @@ public class StageTracker : MonoBehaviour
           passedTutorialAction = 4;
         }
         break;
-      case 28f:
+      case 33f:
         // Bomb
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
-      case 28.5f:
+      case 33.5f:
         //Waiting for player to click through dialogue
         CheckTouch();
         break;
-      case 29f:
+      case 34f:
         //Unpause game
         //Unpausing and starting fifth task
         currTutorialStage += 0.5f;
@@ -387,7 +436,7 @@ public class StageTracker : MonoBehaviour
         gameScript.SetPause(false);
         wasPowerUsed = false;
         break;
-      case 29.5f:
+      case 34.5f:
         //player does task
         //Waiting for player to finish fifth task
         if (wasPowerUsed)
@@ -396,28 +445,28 @@ public class StageTracker : MonoBehaviour
           wasPowerUsed = false;
         }
         break;
-      case 30f:
+      case 35f:
         // Bomb Congrats
         currTutorialStage += 0.5f;
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         gameScript.SetPause(true);
         break;
-      case 30.5f:
+      case 35.5f:
         CheckTouch();
         break;
-      case 31f:
+      case 36f:
         // load map
         currTutorialStage += 0.5f;
         StartLoad(0);
         break;
-      case 31.5f:
+      case 36.5f:
         if (SceneManager.GetActiveScene().name == "Tutorial_Entry")
         {
           currTutorialStage += 0.5f;
         }
         break;
-      case 32f:
+      case 37f:
         // Sendoff one
         currTutorialStage += 0.5f;
         CreateDialogueBox();
@@ -425,26 +474,26 @@ public class StageTracker : MonoBehaviour
         dialogueControl.DisplayNextSentenceMultiCharacters();
         SetActiveDialogueBox(true);
         break;
-      case 32.5f:
+      case 37.5f:
         //Waiting for player to click through Send-Off Dialogue
         CheckTouch();
         break;
-      case 33f:
+      case 38f:
         // Sendoff two
         dialogueControl.DisplayNextSentenceMultiCharacters();
         currTutorialStage += 0.5f;
         break;
-      case 33.5f:
+      case 38.5f:
         //Waiting for player to click through Dialogue
         CheckTouch();
         break;
-      case 34f:
+      case 39f:
         // load game
         currTutorialStage += 0.5f;
         dialogueControl.enabled = false;
         StartLoad(2);
         break;
-      case 34.5f:
+      case 39.5f:
         // destroy self
         if (SceneManager.GetActiveScene().name == "Map_t")
         {
