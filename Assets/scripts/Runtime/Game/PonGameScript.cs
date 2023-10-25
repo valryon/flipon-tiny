@@ -49,12 +49,13 @@ namespace Pon
 
 		private bool lostByFillingScreen = false;
 		private bool wonGame = false;
+    public bool isTutorial = false;
 
-		#endregion
+    #endregion
 
-		#region Timeline
+    #region Timeline
 
-		string currentLevelName;
+    string currentLevelName;
 		PlayerScript player;
 		private void Awake()
 		{
@@ -442,9 +443,14 @@ namespace Pon
 					}
 				}
 			}
-		}
 
-		private void OnScoreChanged(GridScript g, long score)
+      if (isTutorial)
+      {
+        StageTracker.GetPowerUsed(true);
+      }
+    }
+
+    private void OnScoreChanged(GridScript g, long score)
 		{
 			// Update UI
 			GameUIScript.SetScore(g.player.index, score);
@@ -472,9 +478,14 @@ namespace Pon
 		{
 			// Send blocks!
 			if (players.Count > 1) GenerateGarbage(g, c);
-		}
 
-		private void GenerateGarbage(GridScript g, ComboData c)
+			if (isTutorial)
+			{
+				StageTracker.GetCombo(g, c.blockCount);
+			}
+    }
+
+    private void GenerateGarbage(GridScript g, ComboData c)
 		{
 			// Every action send garbages, but not always a lot of it.
 			int width = 0;
@@ -603,45 +614,60 @@ namespace Pon
 			Log.Warning("Game is ended.");
 			SetPause(true);
 			isOver = true;
-			MapUIScript.mapInstance.wonLastGame = wonGame;
-			// When the player wins, award them currency
-			if (wonGame)
+			if (!isTutorial)
 			{
-                // Daily Bonus checks if its first time playing
-                DailyBonusManager.Instance.AwardDailyBonus();
+				MapUIScript.mapInstance.wonLastGame = wonGame;
+				// When the player wins, award them currency
+				if (wonGame)
+				{
+					// Daily Bonus checks if its first time playing
+					DailyBonusManager.Instance.AwardDailyBonus();
 
-                // Award them the standard currency for winning
-                CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
+					// Award them the standard currency for winning
+					CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
 
-                int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-				level++;
-				GameManager.gameManager.SaveLevel("Level " + level);
+					int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+					level++;
+					GameManager.gameManager.SaveLevel("Level " + level);
+				}
+
+				// music for winning/losing 
+
+
+				/*
+								Firebase.Analytics.FirebaseAnalytics.LogEvent(
+								Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
+								new Firebase.Analytics.Parameter[] {
+									new Firebase.Analytics.Parameter(
+										Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
+
+								}
+							);
+							*/
+
+				// Log Level end (user has won)
+				//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
+				if (wonGame)
+				{
+					int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+					level++;
+					GameManager.gameManager.SaveLevel("Level " + level);
+				}
+				// level ends, go back to map scene
+				SceneManager.LoadSceneAsync("Map_t");
 			}
-
-			// music for winning/losing 
-
-
-			/*
-              Firebase.Analytics.FirebaseAnalytics.LogEvent(
-              Firebase.Analytics.FirebaseAnalytics.EventLevelUp,
-              new Firebase.Analytics.Parameter[] {
-                new Firebase.Analytics.Parameter(
-                  Firebase.Analytics.FirebaseAnalytics.ParameterLevel, 1),
-
-              }
-            );
-            */
-
-			// Log Level end (user has won)
-			//GoogleAnalyticsHelper.AnalyticsLevelEnd(currentLevelName);
-			if (wonGame)
+			else
 			{
-				int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-				level++;
-				GameManager.gameManager.SaveLevel("Level " + level);
+				if (!wonGame)
+				{
+					StageTracker.ResetTutorial();
+					SceneManager.LoadSceneAsync("Tutorial_Game");
+				} else
+				{
+					StageTracker.SetTutorialStage(StageTracker.finalTutorialStage - 2f);
+					SceneManager.LoadSceneAsync("Tutorial_Entry");
+				}
 			}
-			// level ends, go back to map scene
-			SceneManager.LoadSceneAsync("Map_t");
 		}
 
 		#endregion

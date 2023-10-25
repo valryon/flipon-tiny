@@ -1,0 +1,33 @@
+Character Name	Emotion	Dialogue
+Cloud King	CloudKing_Satisfied	Ah, new Crystal Keeper, there you are! Welcome to the Cloudy Kingdom!
+Cloud King	CloudKing	Allow me to explain what your new job entails.
+Cloud King	CloudKing_Talking	The Cloudy Kingdom has four central regions that you're in charge of maintaining.
+Cloud King	CloudKing_Talking	These are the regions of sunny, snowy, windy, and rainy weather.
+Cloud King	CloudKing_Talking	Each region has a Guardian who helps protect the Kingdom from adversaries -- such as my brother.
+Cloud King	CloudKing_Sad	Banished years ago, my brother is now known as the fearsome Lord of Storms...
+Cloud King	CloudKing_Sad	He was an evil wizard who tried to take over the Kingdom, an absolute terror to us all--
+Blank	Blank	Suddenly, dark clouds loom overhead…
+Blank	LordOfStorms	Thunder booms and lightning strikes as The Lord of Storms appears. 
+Lord of Storms	LordOfStorms_Upset	Ha! You really thought you could get rid of me that easily? 
+Lord of Storms	LordOfStorms_Smirk	Dear brother, you were always too kind for your own good. Now, it’s time to recognize who the TRUE king is!
+Lord of Storms	LordOfStorms_Upset	And don’t worry about your lovely Guardians. They’re now under my watchful eye.
+Lord of Storms	LordOfStorms_Smirk	I think you’ll appreciate the changes I’ve made to them and their lands.
+Lord of Storms	LordOfStorms_Smirk	Now, it's time to take my fitting place on the throne!
+Blank	Blank	The Lord of Storms laughs manically, disappearing in a sudden puff of smoke...
+Cloud King	CloudKing_Surprised	Crystal Keeper, are you alright? It seems that the Lord of Storms is up to no good again.
+Cloud King	CloudKing_Sad	In his attempt to claim the Kingdom as his own, he has created vicious weather patterns and placed a nasty curse on the Guardians...
+Cloud King	CloudKing_Surprised	As our Crystal Keeper, I must ask for your help in saving Cloudy Kingdom! 
+Cloud King	CloudKing_Talking	By collecting Weather Crystals, you can heal our kingdom from this wretched weather, and return the guardians to their rightful form!
+Cloud King	CloudKing_Talking	Let me teach you how it's done!
+Cloud King	CloudKing_Talking	Swipe left or right to connect Crystals and gain points!
+Cloud King	CloudKing_Talking	Align three crystals of the same type horizontally or vertically to make a 3 combo. Give it a try!
+Cloud King	CloudKing_Satisfied	You're a natural! As expected of our Crystal Keeper.
+Cloud King	CloudKing_Talking	You can also match four of the same Crystals together to make a 4 combo. Give it a whirl!
+Cloud King	CloudKing_Satisfied	Great work!
+Cloud King	CloudKing_Talking	Now, match five of the same Crystals together to make a 5 combo. Try it out!
+Cloud King	CloudKing_Satisfied	Excellent, excellent! You can also increase the speed that the Crystals emerge at if you feel confident in your Crystal matching abilities.
+Cloud King	CloudKing_Talking	Try making an L combo by matching similar Crystals in an L shape. Have a go at it!
+Cloud King	CloudKing_Satisfied	Finally, once you've gained enough points, you can use a Bomb power-up. Use it and see what happens!
+Cloud King	CloudKing_Satisfied	Magnificent job, Crystal Keeper! You're well on your way to defeat The Lord of Storms. 
+Cloud King	CloudKing_Talking	Please traverse our lands, heal our guardians, defeat The Lord of Storms in the Cloudy Castle, and save us all!
+Cloud King	CloudKing_Talking	The kingdom's fate rests in your hands.

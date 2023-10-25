@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
+using static UnityEngine.UI.CanvasScaler;
+using System.IO;
 
 public class MenuUIScript : MonoBehaviour
 {
@@ -30,6 +32,9 @@ public class MenuUIScript : MonoBehaviour
 
     private float currentSoundVolume = 0.0f;
     private float currentSoundValue = 1.0f;
+
+    private bool isTutorialComplete = false;
+    private string TUTORIAL_FILENAME = "tutorialData.dat";
 
     private void Start()
     {
@@ -84,7 +89,14 @@ public class MenuUIScript : MonoBehaviour
     }
 
     private IEnumerator AsyncLoadIntoGame(){
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Map_t");
+        AsyncOperation asyncLoad;
+        if (isTutorialComplete)
+        {
+            asyncLoad = SceneManager.LoadSceneAsync("Map_t");
+        } else
+        {
+            asyncLoad = SceneManager.LoadSceneAsync("Tutorial_Entry");
+        }
         
         while(!asyncLoad.isDone){
             if(loadingTimer <= 0.75f){
@@ -227,6 +239,10 @@ public class MenuUIScript : MonoBehaviour
 
         // save
         PlayerPrefs.Save();
+
+        // Tutorial
+        string path = Path.Combine(Application.persistentDataPath, TUTORIAL_FILENAME);
+        File.WriteAllText(path, isTutorialComplete.ToString());
     }
 
     public void LoadSettings()
@@ -378,6 +394,21 @@ public class MenuUIScript : MonoBehaviour
         {
             colorBlindToggle.isOn = false;
         }
-    }
+
+        // Tutorial
+        string path = Path.Combine(Application.persistentDataPath, TUTORIAL_FILENAME);
+        if (File.Exists(path))
+        {
+          string content = File.ReadAllText(path);
+          if (bool.TryParse(content, out bool loadedTutorialState))
+          {
+            isTutorialComplete = loadedTutorialState;
+          }
+          else
+          {
+            Debug.LogError("Failed to parse saved tutorial data.");
+          }
+        }
+     }
 }
 

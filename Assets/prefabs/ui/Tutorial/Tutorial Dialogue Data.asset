@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110a27467b6c8ec4ab8de9241b63a5a0, type: 3}
+  m_Name: Tutorial Dialogue Data
+  m_EditorClassIdentifier: 
+  dialogueEntries:
+  - characterName: Cloud King
+    sentence: "Ah, new Crystal Keeper, there you are! Welcome to the Cloudy Kingdom!\r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "Allow me to explain what your new job entails.\r"
+    characterSprite: {fileID: 21300000, guid: 381fca6370777fc489089d617c35a4b1, type: 3}
+  - characterName: Cloud King
+    sentence: "The Cloudy Kingdom has four central regions that you're in charge
+      of maintaining.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "These are the regions of sunny, snowy, windy, and rainy weather.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Each region has a Guardian who helps protect the Kingdom from adversaries
+      -- such as my brother.\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Banished years ago, my brother is now known as the fearsome Lord of
+      Storms...\r"
+    characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
+  - characterName: Cloud King
+    sentence: "He was an evil wizard who tried to take over the Kingdom, an absolute
+      terror to us all--\r"
+    characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
+  - characterName: 
+    sentence: "Suddenly, dark clouds loom overhead\u2026\r"
+    characterSprite: {fileID: 0}
+  - characterName: 
+    sentence: "Thunder booms and lightning strikes as The Lord of Storms appears.
+      \r"
+    characterSprite: {fileID: 21300000, guid: 3e0d03cd3fe055645a79c638a8d5845c, type: 3}
+  - characterName: Lord of Storms
+    sentence: "Ha! You really thought you could get rid of me that easily? \r"
+    characterSprite: {fileID: 21300000, guid: c99c629e46c473a48b8fa13d8e087165, type: 3}
+  - characterName: Lord of Storms
+    sentence: "Dear brother, you were always too kind for your own good. Now, it\u2019s
+      time to recognize who the TRUE king is!\r"
+    characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
+  - characterName: Lord of Storms
+    sentence: "And don\u2019t worry about your lovely Guardians. They\u2019re now
+      under my watchful eye.\r"
+    characterSprite: {fileID: 21300000, guid: c99c629e46c473a48b8fa13d8e087165, type: 3}
+  - characterName: Lord of Storms
+    sentence: "I think you\u2019ll appreciate the changes I\u2019ve made to them
+      and their lands.\r"
+    characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
+  - characterName: Lord of Storms
+    sentence: "Now, it's time to take my fitting place on the throne!\r"
+    characterSprite: {fileID: 21300000, guid: a933e0687c7e7c34fa5d3d43916b9a1f, type: 3}
+  - characterName: 
+    sentence: "The Lord of Storms laughs manically, disappearing in a sudden puff
+      of smoke...\r"
+    characterSprite: {fileID: 0}
+  - characterName: Cloud King
+    sentence: "Crystal Keeper, are you alright? It seems that the Lord of Storms
+      is up to no good again.\r"
+    characterSprite: {fileID: 21300000, guid: adb9c1933ad60e742b2e831f9c91c6e2, type: 3}
+  - characterName: Cloud King
+    sentence: "In his attempt to claim the Kingdom as his own, he has created vicious
+      weather patterns and placed a nasty curse on the Guardians...\r"
+    characterSprite: {fileID: 21300000, guid: 0e211e77ac128894390f1c3783614bf1, type: 3}
+  - characterName: Cloud King
+    sentence: "As our Crystal Keeper, I must ask for your help in saving Cloudy Kingdom!
+      \r"
+    characterSprite: {fileID: 21300000, guid: adb9c1933ad60e742b2e831f9c91c6e2, type: 3}
+  - characterName: Cloud King
+    sentence: "By collecting Weather Crystals, you can heal our kingdom from this
+      wretched weather, and return the guardians to their rightful form!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Let me teach you how it's done!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Swipe left or right to connect Crystals and gain points!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Align three crystals of the same type horizontally or vertically to
+      make a 3 combo. Give it a try!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "You're a natural! As expected of our Crystal Keeper.\r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "You can also match four of the same Crystals together to make a 4
+      combo. Give it a whirl!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Great work!\r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "Now, match five of the same Crystals together to make a 5 combo. Try
+      it out!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Excellent, excellent! You can also increase the speed that the Crystals
+      emerge at if you feel confident in your Crystal matching abilities.\r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "Try making an L combo by matching similar Crystals in an L shape.
+      Have a go at it!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: "Finally, once you've gained enough points, you can use a Bomb power-up.
+      Use it and see what happens!\r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "Magnificent job, Crystal Keeper! You're well on your way to defeat
+      The Lord of Storms. \r"
+    characterSprite: {fileID: 21300000, guid: 338412435c911b64f93ad0cb4a1210f8, type: 3}
+  - characterName: Cloud King
+    sentence: "Please traverse our lands, heal our guardians, defeat The Lord of
+      Storms in the Cloudy Castle, and save us all!\r"
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  - characterName: Cloud King
+    sentence: The kingdom's fate rests in your hands.
+    characterSprite: {fileID: 21300000, guid: 477ea4f399c861641a8a258a3ec8c1d3, type: 3}
+  csvDelimiter: 0
+  csvFile: {fileID: 4900000, guid: c5291fa3a15dc6042af32953bfd6cbab, type: 3}
