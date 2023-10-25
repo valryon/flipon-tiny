@@ -16,8 +16,8 @@ MonoBehaviour:
   description: Expands you board by 1 column for more matching bliss!
   price: 10000
   icon: {fileID: 21300000, guid: 8c5b95c88bf1f494d9a6bde55857efce, type: 3}
-  isPurchased: 1
-  isEnabled: 1
+  isPurchased: 0
+  isEnabled: 0
   itemType: 0
   itemCodeName: ExpandBoardUpgrade
   incLevel: 0
