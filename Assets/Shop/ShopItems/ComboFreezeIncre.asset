@@ -20,5 +20,5 @@ MonoBehaviour:
   isEnabled: 0
   itemType: 2
   itemCodeName: ComboFreezeIncre
-  incLevel: 0
+  incLevel: 1
   incMaxLevel: 3

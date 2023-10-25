@@ -24,6 +24,7 @@ public class InventoryEditor : Editor
             File.Delete(path);
         }
         manager.playerInventory.items.Clear(); // Clear the in-memory items list
+        manager.PopulateInventoryUI();
         Debug.Log("Player inventory cleared!");
     }
 }
