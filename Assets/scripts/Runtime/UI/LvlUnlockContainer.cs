@@ -15,6 +15,6 @@ public class LvlUnlockContainer : MonoBehaviour
 	// Print Level Unlock States for Testing/Debugging
 	public void PrintArray()
 	{
-		Debug.Log($"[{string.Join(",", LvlUnlockStates)}]");
+		//Debug.Log($"[{string.Join(",", LvlUnlockStates)}]");
 	}
 }

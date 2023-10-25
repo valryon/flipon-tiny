@@ -11,14 +11,15 @@ public class ButtonObjectives : MonoBehaviour
     public int score;
     public int combos;
     public int fourCombos;
+    public int fiveCombos;
     public int LCombos;
     public int timesPowerUsed;
-    public int numBlock1Broken;
+    public int numBlueBlockBroken;
     public int numBlock2Broken;
-    public int numBlock3Broken;
-    public int numBlock4Broken;
+    public int numRedBlockBroken;
+    public int numPinkBlockBroken;
     public int numBlock5Broken;
-    public int numBlock6Broken;
+    public int numYellowBlock6Broken;
 
     // MAP MANAGER (handles current level and sets objectives in game scene)
 
@@ -67,7 +68,14 @@ public class ButtonObjectives : MonoBehaviour
         {
             MapUIScript.mapInstance.fourCombos = 0;
         }
-
+        if (fiveCombos > 0)
+        {
+            MapUIScript.mapInstance.fiveCombos = fiveCombos;
+        }
+        else
+        {
+            MapUIScript.mapInstance.fiveCombos = 0;
+        }
         if (LCombos > 0)
         {
             MapUIScript.mapInstance.LCombos = LCombos;
@@ -86,9 +94,9 @@ public class ButtonObjectives : MonoBehaviour
             MapUIScript.mapInstance.timesPowerUsed = 0;
         }
 
-        if (numBlock1Broken > 0)
+        if (numBlueBlockBroken > 0)
         {
-            MapUIScript.mapInstance.numBlock1Broken = numBlock1Broken;
+            MapUIScript.mapInstance.numBlock1Broken = numBlueBlockBroken;
         }
         else
         {
@@ -104,18 +112,18 @@ public class ButtonObjectives : MonoBehaviour
             MapUIScript.mapInstance.numBlock2Broken = 0;
         }
 
-        if (numBlock3Broken > 0)
+        if (numRedBlockBroken > 0)
         {
-            MapUIScript.mapInstance.numBlock3Broken = numBlock3Broken;
+            MapUIScript.mapInstance.numBlock3Broken = numRedBlockBroken;
         }
         else
         {
             MapUIScript.mapInstance.numBlock3Broken = 0;
         }
 
-        if (numBlock4Broken > 0)
+        if (numPinkBlockBroken > 0)
         {
-            MapUIScript.mapInstance.numBlock4Broken = numBlock4Broken;
+            MapUIScript.mapInstance.numBlock4Broken = numPinkBlockBroken;
         }
         else
         {
@@ -131,9 +139,9 @@ public class ButtonObjectives : MonoBehaviour
             MapUIScript.mapInstance.numBlock5Broken = 0;
         }
 
-        if (numBlock6Broken > 0)
+        if (numYellowBlock6Broken > 0)
         {
-            MapUIScript.mapInstance.numBlock6Broken = numBlock6Broken;
+            MapUIScript.mapInstance.numBlock6Broken = numYellowBlock6Broken;
         }
         else
         {

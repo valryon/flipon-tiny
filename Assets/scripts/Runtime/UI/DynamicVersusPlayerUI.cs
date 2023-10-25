@@ -26,6 +26,8 @@ namespace Pon
     public ObjectiveWidget objective2;
     public ObjectiveWidget objective3;
     public ObjectiveWidget objective4;
+    public ObjectiveWidget objective5;
+    public ObjectiveWidget objective6;
 
     private bool speedUp;
     private TimeWidget time;

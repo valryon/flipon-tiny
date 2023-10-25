@@ -30,16 +30,16 @@ public class RandomButtonObjectives : ButtonObjectives
                     timesPowerUsed = Random.Range(1, 3);
                     break;
                 case 5:
-                    numBlock1Broken = Random.Range(15, 36);
+                    numBlueBlockBroken = Random.Range(15, 36);
                     break;
                 case 6:
-                    numBlock3Broken = Random.Range(15, 36);
+                    numRedBlockBroken = Random.Range(15, 36);
                     break;
                 case 7:
-                    numBlock4Broken = Random.Range(15, 36);
+                    numPinkBlockBroken = Random.Range(15, 36);
                     break;
                 case 8:
-                    numBlock6Broken = Random.Range(15, 36);
+                    numYellowBlock6Broken = Random.Range(15, 36);
                     break;
             }
         }

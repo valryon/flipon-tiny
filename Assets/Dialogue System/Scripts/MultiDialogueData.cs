@@ -33,7 +33,7 @@ public class MultiDialogueData : ScriptableObject
 	[HideInInspector] public static string spriteFolder { get; set; }
 	MultiDialogueData()
 	{
-		spriteFolder = "Assets/sprites/Characters";
+		spriteFolder = "Assets/Resources/Characters";
 	}
 
 
@@ -60,15 +60,8 @@ public class MultiDialogueData : ScriptableObject
 
 	public Sprite[] LoadSpritesFromFolder()
 	{
-		List<Sprite> sprites = new List<Sprite>();
-		string[] assetPaths = AssetDatabase.FindAssets("t:Sprite", new string[] { spriteFolder });
-
-		foreach (string assetPath in assetPaths)
-		{
-			Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(AssetDatabase.GUIDToAssetPath(assetPath));
-			sprites.Add(sprite);
-		}
-		return sprites.ToArray();
+		Sprite[] sprites = (Sprite[])Resources.LoadAll(spriteFolder);
+		return sprites;
 	}
 
 	public void PopulateCharacterToSpriteMap()

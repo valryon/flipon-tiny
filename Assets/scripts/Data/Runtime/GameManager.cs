@@ -3,20 +3,22 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 using System;
-using UnityEditor;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
 	[System.Serializable]
 	public class PlayerData
 	{
-		public string level = "Level 11";
+		public string level = "Level 1";
 	}
 
 	private string savePath;
 	public static GameManager gameManager;
 	public Transform lvlParent;
 	public LvlUnlockContainer lvlUnlocks;
+	public Image[] CorruptBackgrounds = null;
 	private void Awake()
 	{
 		if (gameManager == null)
@@ -35,13 +37,14 @@ public class GameManager : MonoBehaviour
 		savePath = Path.Combine(Application.persistentDataPath, "playerData.dat");
 		lvlUnlocks.LvlUnlockStates = new bool[lvlParent.childCount];
 
-		if (MapUIScript.mapInstance != null)
-        {
-			MapUIScript.mapInstance.currentLevelName = LoadLevel();
-		}
+		MapUIScript.mapInstance.currentLevelName = LoadLevel();
+
 
 	}
-
+	public static void RevealMap(Image mask, float progression)
+	{
+		mask.fillAmount = progression;
+	}
 	public void SavePlayerData(PlayerData data)
 	{
 		BinaryFormatter formatter = new BinaryFormatter();
@@ -95,6 +98,30 @@ public class GameManager : MonoBehaviour
 	{
 		string resultString = Regex.Match(levelString, @"\d+").Value;
 		int level = Int32.Parse(resultString);
+		if (CorruptBackgrounds != null)
+		{
+			int region = level / 5;
+			if (region <= 1)
+			{
+				CorruptBackgrounds[0].fillAmount = 1 - ((level - 1) % 5 * 0.2f);
+			}
+			else if (1 < region && region <= 2)
+			{
+				CorruptBackgrounds[1].fillAmount = 1 - ((level - 1) % 5 * 0.2f);
+			}
+			else if (2 < region && region <= 3)
+			{
+				CorruptBackgrounds[2].fillAmount = 1 - ((level - 1) % 5 * 0.2f);
+			}
+			else if (3 < region && region <= 4)
+			{
+				CorruptBackgrounds[3].fillAmount = 1 - ((level - 1) % 5 * 0.2f);
+			}
+			else if (region > 4)
+			{
+				CorruptBackgrounds[4].fillAmount = 0;
+			}
+		}
 		for (int i = 0; i < level; i++)
 		{
 			lvlUnlocks.LvlUnlockStates[i] = true;

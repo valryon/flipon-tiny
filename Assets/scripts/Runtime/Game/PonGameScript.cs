@@ -183,7 +183,7 @@ namespace Pon
 				// Give new stats, widget will check if it's relevant
 				var currentStats = new ObjectiveStats(p, timeElapsed);
 
-				for (int i = 1; i <= 4; i++)
+				for (int i = 1; i <= 6; i++)
 				{
 					GameUIScript.UpdateObjective(p, i, currentStats);
 				}
@@ -708,10 +708,12 @@ namespace Pon
 
 					// Award them the standard currency for winning
 					CurrencyManager.Instance.AddCurrencyWithLimit(settings.currencyReward);
-
-					int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
-					level++;
-					GameManager.gameManager.SaveLevel("Level " + level);
+					if (currentLevelName != "")
+					{
+						int level = Int32.Parse(Regex.Match(currentLevelName, @"\d+").Value);
+						level++;
+						GameManager.gameManager.SaveLevel("Level " + level);
+					}
 				}
 
 				// music for winning/losing 

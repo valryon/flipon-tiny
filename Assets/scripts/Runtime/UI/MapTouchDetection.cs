@@ -41,7 +41,7 @@ public class MapTouchDetection : MonoBehaviour
 			lvlUnlocks = GameManager.gameManager.lvlUnlocks;
 			// prevLvl = Object's assigned level, also equals next level's index; prevLvl - 1 = previous level's index;
 			int prevLvl = int.Parse(mapManager.currentLevelName.Remove(0, 5));
-			if (prevLvl > 1 && prevLvl <= lvlParent.childCount - 2)
+			if (prevLvl > 1 && prevLvl <= lvlParent.childCount - 1)
 			{
         prevLvl = prevLvl - 1;
       } else if (prevLvl >= lvlParent.childCount)

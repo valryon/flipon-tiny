@@ -15,6 +15,7 @@ public class MapUIScript : MonoBehaviour
 	public int score;
 	public int combos;
 	public int fourCombos;
+	public int fiveCombos;
 	public int LCombos;
 	public int timesPowerUsed;
 	public int numBlock1Broken;
@@ -36,18 +37,19 @@ public class MapUIScript : MonoBehaviour
 	// method that loads the Game Scene on button click and sets a variable for the game settings
 	public void PlayLevel(int levelNum)
 	{
-		if(levelNum == -1) // endless mode
+
+		if (levelNum == -1) // endless mode
 		{
-            SceneManager.LoadSceneAsync("Game");
-            Debug.Log("ENDLESS MODE");
-        }
-		else 
+			SceneManager.LoadSceneAsync("Game");
+			Debug.Log("ENDLESS MODE");
+		}
+		else
 		{
-            mapInstance.currentLevelName = "Level" + levelNum.ToString();
-            GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
-            SceneManager.LoadSceneAsync("Game");
-            Debug.Log("PLAY GAME");
-        }
+			mapInstance.currentLevelName = "Level" + levelNum.ToString();
+			GameManager.gameManager.SaveLevel("Level" + levelNum.ToString());
+			SceneManager.LoadSceneAsync("Game");
+			Debug.Log("PLAY GAME");
+		}
 	}
 
 	public void Awake()
@@ -80,7 +82,7 @@ public class MapUIScript : MonoBehaviour
 		}
 		if(mapInstance.currentLevelName == null)
 		{
-			GameManager.gameManager.LoadLevel();
+			mapInstance.currentLevelName = GameManager.gameManager.LoadLevel();
 		}
 	}
 }
