@@ -678,7 +678,7 @@ MonoBehaviour:
       height: 1
     gridAngle: 0
     difficultySettings: {fileID: 0}
-  seed: 0
+  seed: 998
   garbagesType: 0
   disableChains: 0
   enableObjectives: 1
@@ -704,6 +704,7 @@ MonoBehaviour:
       numBlock6Broken: 0
       timesPowerUsed: 1
   playMode: 0
+  currencyReward: 100
 --- !u!4 &2017043633
 Transform:
   m_ObjectHideFlags: 0
