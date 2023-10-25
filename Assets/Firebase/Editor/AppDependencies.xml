@@ -5,7 +5,7 @@ FirebaseApp iOS and Android Dependencies.
 
 <dependencies>
   <iosPods>
-    <iosPod name="Firebase/Core" version="10.13.0" minTargetSdk="8.0">
+    <iosPod name="Firebase/Core" version="10.15.0" minTargetSdk="8.0">
     </iosPod>
   </iosPods>
   <androidPackages>
@@ -15,7 +15,7 @@ FirebaseApp iOS and Android Dependencies.
     </androidPackage>
     <androidPackage spec="com.google.android.gms:play-services-base:18.2.0">
     </androidPackage>
-    <androidPackage spec="com.google.firebase:firebase-app-unity:11.4.0">
+    <androidPackage spec="com.google.firebase:firebase-app-unity:11.5.0">
       <repositories>
         <repository>Assets/Firebase/m2repository</repository>
       </repositories>
