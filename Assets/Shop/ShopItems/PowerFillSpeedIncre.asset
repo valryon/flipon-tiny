@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: PowerFillSpeedIncre
   m_EditorClassIdentifier: 
   itemName: Fast, Faster, Fastest!
-  description: Your power fills up 10% faster!
-  price: 1000
+  description: Your power fills up 30% faster!
+  price: 2000
   icon: {fileID: 21300000, guid: fba6b8a94b41ae241a0bcc2ab3f2104f, type: 3}
-  isPurchased: 0
-  isEnabled: 0
+  isPurchased: 1
+  isEnabled: 1
   itemType: 2
+  itemCodeName: PowerFillSpeedIncre
+  incLevel: 1
+  incMaxLevel: 3

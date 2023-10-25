@@ -84,8 +84,7 @@ namespace Pon
         var zone = GetPlayerZone(player.player);
         var scaler = canvas.GetComponent<CanvasScaler>();
 
-        scaler.referenceResolution = new Vector2(referenceResolution.x * (1f / zone.rect.width),
-          referenceResolution.y * (1f / zone.rect.height));
+        scaler.referenceResolution = new Vector2(1080,1920); // single player only 
       }
     }
 

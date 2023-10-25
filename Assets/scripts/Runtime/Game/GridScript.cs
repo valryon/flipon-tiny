@@ -47,9 +47,10 @@ namespace Pon
     private const float GARBAGE_MAX_COOLDOWN = 3f;
     private const float GARBAGE_RETRY_COOLDOWN = 0.5f;
 
+    private float powerFillSpeedMult = 1;
     #endregion
 
-    #region Members
+        #region Members
 
     public Camera gridCam;
     public Canvas ui;
@@ -601,7 +602,7 @@ namespace Pon
           bonus += POWER_ADD_HIGH + ((blocksCount - 5) * POWER_ADD_HIGH_BONUS);
         }
 
-        bonus *= playerScript.power.ChargeMultiplicator;
+        bonus *= playerScript.power.ChargeMultiplicator * powerFillSpeedMult;
 
         PowerCharge += bonus;
       }
@@ -911,9 +912,13 @@ namespace Pon
       return grid.GetLine((int) grid.HighestBlock.y).Where(b => b != null && b.IsEmpty == false).ToArray();
     }
 
+    public void IncreasePowerFillSpeed(float amount)
+        {
+            powerFillSpeedMult = (1 + amount);
+        }
     #endregion
 
-    #region Power
+        #region Power
 
     public void UsePower()
     {

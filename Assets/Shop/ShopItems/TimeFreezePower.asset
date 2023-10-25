@@ -20,3 +20,6 @@ MonoBehaviour:
   isPurchased: 0
   isEnabled: 0
   itemType: 1
+  itemCodeName: TimeFreezePower
+  incLevel: 0
+  incMaxLevel: 0

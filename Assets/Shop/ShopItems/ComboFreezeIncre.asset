@@ -19,3 +19,6 @@ MonoBehaviour:
   isPurchased: 0
   isEnabled: 0
   itemType: 2
+  itemCodeName: ComboFreezeIncre
+  incLevel: 1
+  incMaxLevel: 3

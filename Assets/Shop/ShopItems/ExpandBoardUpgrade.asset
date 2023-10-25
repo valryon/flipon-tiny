@@ -19,3 +19,6 @@ MonoBehaviour:
   isPurchased: 0
   isEnabled: 0
   itemType: 0
+  itemCodeName: ExpandBoardUpgrade
+  incLevel: 0
+  incMaxLevel: 0

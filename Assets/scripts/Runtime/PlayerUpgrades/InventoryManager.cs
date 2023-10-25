@@ -66,6 +66,7 @@ public class InventoryManager : MonoBehaviour
         {
             item.isEnabled = true;
             SaveInventory();
+            PopulateInventoryUI();
         }
     }
 
@@ -75,6 +76,7 @@ public class InventoryManager : MonoBehaviour
         {
             item.isEnabled = false;
             SaveInventory();
+            PopulateInventoryUI();
         }
     }
 

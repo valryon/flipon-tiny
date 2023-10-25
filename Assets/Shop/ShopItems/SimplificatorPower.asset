@@ -19,3 +19,6 @@ MonoBehaviour:
   isPurchased: 0
   isEnabled: 0
   itemType: 1
+  itemCodeName: SimplificatorPower
+  incLevel: 0
+  incMaxLevel: 0
